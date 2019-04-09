@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('files/');?>assets/css/bootstrap.min.css">
 
     <!-- External Css -->
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('files/');?>css/rtl.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('files/');?>assets/css/fontawesome-all.min.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('files/');?>assets/css/themify-icons.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('files/');?>assets/css/et-line.css" />
