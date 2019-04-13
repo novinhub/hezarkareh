@@ -4,7 +4,7 @@
         <div class="row">
           <div class="col-12">
             <div class="banner-content">
-              <h1>58,246 Job Listed</h1>
+              <h1>58,246 کار </h1>
               <p>Create free account to find thousands Jobs, Employment & Career Opportunities around you!</p>
               <a href="add-resume.html" class="button">Upload Resume</a>
             </div>
@@ -87,7 +87,7 @@
                     <div class="job-list half-grid">
                       <div class="thumb">
                         <a href="#">
-                          <img src="images/job/company-logo-8.png" class="img-fluid" alt="">
+                          <img src="<?php echo base_url('files/');?>images/job/company-logo-8.png" class="img-fluid" alt="">
                         </a>
                       </div>
                       <div class="body">
@@ -111,7 +111,7 @@
                     <div class="job-list half-grid">
                       <div class="thumb">
                         <a href="#">
-                          <img src="images/job/company-logo-9.png" class="img-fluid" alt="">
+                          <img src="<?php echo base_url('files/');?>images/job/company-logo-9.png" class="img-fluid" alt="">
                         </a>
                       </div>
                       <div class="body">
@@ -135,7 +135,7 @@
                     <div class="job-list half-grid">
                       <div class="thumb">
                         <a href="#">
-                          <img src="images/job/company-logo-10.png" class="img-fluid" alt="">
+                          <img src="<?php echo base_url('files/');?>images/job/company-logo-10.png" class="img-fluid" alt="">
                         </a>
                       </div>
                       <div class="body">
@@ -159,7 +159,7 @@
                     <div class="job-list half-grid">
                       <div class="thumb">
                         <a href="#">
-                          <img src="images/job/company-logo-3.png" class="img-fluid" alt="">
+                          <img src="<?php echo base_url('files/');?>images/job/company-logo-3.png" class="img-fluid" alt="">
                         </a>
                       </div>
                       <div class="body">
@@ -183,7 +183,7 @@
                     <div class="job-list half-grid">
                       <div class="thumb">
                         <a href="#">
-                          <img src="images/job/company-logo-10.png" class="img-fluid" alt="">
+                          <img src="<?php echo base_url('files/');?>images/job/company-logo-10.png" class="img-fluid" alt="">
                         </a>
                       </div>
                       <div class="body">
@@ -207,7 +207,7 @@
                     <div class="job-list half-grid">
                       <div class="thumb">
                         <a href="#">
-                          <img src="images/job/company-logo-3.png" class="img-fluid" alt="">
+                          <img src="<?php echo base_url('files/');?>images/job/company-logo-3.png" class="img-fluid" alt="">
                         </a>
                       </div>
                       <div class="body">
@@ -233,7 +233,7 @@
                     <div class="job-list half-grid">
                       <div class="thumb">
                         <a href="#">
-                          <img src="images/job/company-logo-1.png" class="img-fluid" alt="">
+                          <img src="<?php echo base_url('files/');?>images/job/company-logo-1.png" class="img-fluid" alt="">
                         </a>
                       </div>
                       <div class="body">
@@ -257,7 +257,7 @@
                     <div class="job-list half-grid">
                       <div class="thumb">
                         <a href="#">
-                          <img src="images/job/company-logo-2.png" class="img-fluid" alt="">
+                          <img src="<?php echo base_url('files/');?>images/job/company-logo-2.png" class="img-fluid" alt="">
                         </a>
                       </div>
                       <div class="body">
@@ -281,7 +281,7 @@
                     <div class="job-list half-grid">
                       <div class="thumb">
                         <a href="#">
-                          <img src="images/job/company-logo-8.png" class="img-fluid" alt="">
+                          <img src="<?php echo base_url('files/');?>images/job/company-logo-8.png" class="img-fluid" alt="">
                         </a>
                       </div>
                       <div class="body">
@@ -305,7 +305,7 @@
                     <div class="job-list half-grid">
                       <div class="thumb">
                         <a href="#">
-                          <img src="images/job/company-logo-9.png" class="img-fluid" alt="">
+                          <img src="<?php echo base_url('files/');?>images/job/company-logo-9.png" class="img-fluid" alt="">
                         </a>
                       </div>
                       <div class="body">
@@ -329,7 +329,7 @@
                     <div class="job-list half-grid">
                       <div class="thumb">
                         <a href="#">
-                          <img src="images/job/company-logo-1.png" class="img-fluid" alt="">
+                          <img src="<?php echo base_url('files/');?>images/job/company-logo-1.png" class="img-fluid" alt="">
                         </a>
                       </div>
                       <div class="body">
@@ -353,7 +353,7 @@
                     <div class="job-list half-grid">
                       <div class="thumb">
                         <a href="#">
-                          <img src="images/job/company-logo-2.png" class="img-fluid" alt="">
+                          <img src="<?php echo base_url('files/');?>images/job/company-logo-2.png" class="img-fluid" alt="">
                         </a>
                       </div>
                       <div class="body">
@@ -384,7 +384,7 @@
                     <div class="job-list half-grid">
                       <div class="thumb">
                         <a href="#">
-                          <img src="images/job/company-logo-10.png" class="img-fluid" alt="">
+                          <img src="<?php echo base_url('files/');?>images/job/company-logo-10.png" class="img-fluid" alt="">
                         </a>
                       </div>
                       <div class="body">
@@ -408,7 +408,7 @@
                     <div class="job-list half-grid">
                       <div class="thumb">
                         <a href="#">
-                          <img src="images/job/company-logo-1.png" class="img-fluid" alt="">
+                          <img src="<?php echo base_url('files/');?>images/job/company-logo-1.png" class="img-fluid" alt="">
                         </a>
                       </div>
                       <div class="body">
@@ -432,7 +432,7 @@
                     <div class="job-list half-grid">
                       <div class="thumb">
                         <a href="#">
-                          <img src="images/job/company-logo-2.png" class="img-fluid" alt="">
+                          <img src="<?php echo base_url('files/');?>images/job/company-logo-2.png" class="img-fluid" alt="">
                         </a>
                       </div>
                       <div class="body">
@@ -456,7 +456,7 @@
                     <div class="job-list half-grid">
                       <div class="thumb">
                         <a href="#">
-                          <img src="images/job/company-logo-1.png" class="img-fluid" alt="">
+                          <img src="<?php echo base_url('files/');?>images/job/company-logo-1.png" class="img-fluid" alt="">
                         </a>
                       </div>
                       <div class="body">
@@ -480,7 +480,7 @@
                     <div class="job-list half-grid">
                       <div class="thumb">
                         <a href="#">
-                          <img src="images/job/company-logo-8.png" class="img-fluid" alt="">
+                          <img src="<?php echo base_url('files/');?>images/job/company-logo-8.png" class="img-fluid" alt="">
                         </a>
                       </div>
                       <div class="body">
@@ -504,7 +504,7 @@
                     <div class="job-list half-grid">
                       <div class="thumb">
                         <a href="#">
-                          <img src="images/job/company-logo-9.png" class="img-fluid" alt="">
+                          <img src="<?php echo base_url('files/');?>images/job/company-logo-9.png" class="img-fluid" alt="">
                         </a>
                       </div>
                       <div class="body">
@@ -530,7 +530,7 @@
                     <div class="job-list half-grid">
                       <div class="thumb">
                         <a href="#">
-                          <img src="images/job/company-logo-3.png" class="img-fluid" alt="">
+                          <img src="<?php echo base_url('files/');?>images/job/company-logo-3.png" class="img-fluid" alt="">
                         </a>
                       </div>
                       <div class="body">
@@ -554,7 +554,7 @@
                     <div class="job-list half-grid">
                       <div class="thumb">
                         <a href="#">
-                          <img src="images/job/company-logo-2.png" class="img-fluid" alt="">
+                          <img src="<?php echo base_url('files/');?>images/job/company-logo-2.png" class="img-fluid" alt="">
                         </a>
                       </div>
                       <div class="body">
@@ -578,7 +578,7 @@
                     <div class="job-list half-grid">
                       <div class="thumb">
                         <a href="#">
-                          <img src="images/job/company-logo-8.png" class="img-fluid" alt="">
+                          <img src="<?php echo base_url('files/');?>images/job/company-logo-8.png" class="img-fluid" alt="">
                         </a>
                       </div>
                       <div class="body">
@@ -602,7 +602,7 @@
                     <div class="job-list half-grid">
                       <div class="thumb">
                         <a href="#">
-                          <img src="images/job/company-logo-9.png" class="img-fluid" alt="">
+                          <img src="<?php echo base_url('files/');?>images/job/company-logo-9.png" class="img-fluid" alt="">
                         </a>
                       </div>
                       <div class="body">
@@ -626,7 +626,7 @@
                     <div class="job-list half-grid">
                       <div class="thumb">
                         <a href="#">
-                          <img src="images/job/company-logo-10.png" class="img-fluid" alt="">
+                          <img src="<?php echo base_url('files/');?>images/job/company-logo-10.png" class="img-fluid" alt="">
                         </a>
                       </div>
                       <div class="body">
@@ -650,7 +650,7 @@
                     <div class="job-list half-grid">
                       <div class="thumb">
                         <a href="#">
-                          <img src="images/job/company-logo-3.png" class="img-fluid" alt="">
+                          <img src="<?php echo base_url('files/');?>images/job/company-logo-3.png" class="img-fluid" alt="">
                         </a>
                       </div>
                       <div class="body">
@@ -697,7 +697,7 @@
               <div class="company-wrap">
                 <div class="thumb">
                   <a href="#">
-                    <img src="images/company/company-logo-1.png" class="img-fluid" alt="">
+                    <img src="<?php echo base_url('files/');?>images/company/company-logo-1.png" class="img-fluid" alt="">
                   </a>
                 </div>
                 <div class="body">
@@ -709,7 +709,7 @@
               <div class="company-wrap">
                 <div class="thumb">
                   <a href="#">
-                    <img src="images/company/company-logo-2.png" class="img-fluid" alt="">
+                    <img src="<?php echo base_url('files/');?>images/company/company-logo-2.png" class="img-fluid" alt="">
                   </a>
                 </div>
                 <div class="body">
@@ -721,7 +721,7 @@
               <div class="company-wrap">
                 <div class="thumb">
                   <a href="#">
-                    <img src="images/company/company-logo-3.png" class="img-fluid" alt="">
+                    <img src="<?php echo base_url('files/');?>images/company/company-logo-3.png" class="img-fluid" alt="">
                   </a>
                 </div>
                 <div class="body">
@@ -733,7 +733,7 @@
               <div class="company-wrap">
                 <div class="thumb">
                   <a href="#">
-                    <img src="images/company/company-logo-4.png" class="img-fluid" alt="">
+                    <img src="<?php echo base_url('files/');?>images/company/company-logo-4.png" class="img-fluid" alt="">
                   </a>
                 </div>
                 <div class="body">
@@ -745,7 +745,7 @@
               <div class="company-wrap">
                 <div class="thumb">
                   <a href="#">
-                    <img src="images/company/company-logo-1.png" class="img-fluid" alt="">
+                    <img src="<?php echo base_url('files/');?>images/company/company-logo-1.png" class="img-fluid" alt="">
                   </a>
                 </div>
                 <div class="body">
@@ -757,7 +757,7 @@
               <div class="company-wrap">
                 <div class="thumb">
                   <a href="#">
-                    <img src="images/company/company-logo-2.png" class="img-fluid" alt="">
+                    <img src="<?php echo base_url('files/');?>images/company/company-logo-2.png" class="img-fluid" alt="">
                   </a>
                 </div>
                 <div class="body">
@@ -769,7 +769,7 @@
               <div class="company-wrap">
                 <div class="thumb">
                   <a href="#">
-                    <img src="images/company/company-logo-3.png" class="img-fluid" alt="">
+                    <img src="<?php echo base_url('files/');?>images/company/company-logo-3.png" class="img-fluid" alt="">
                   </a>
                 </div>
                 <div class="body">
@@ -780,9 +780,7 @@
               </div>
               <div class="company-wrap">
                 <div class="thumb">
-                  <a href="#">
-                    <img src="images/company/company-logo-4.png" class="img-fluid" alt="">
-                  </a>
+                 <h6>kckc</h6>
                 </div>
                 <div class="body">
                   <h4><a href="employer-details.html">BioPro</a></h4>
@@ -849,7 +847,7 @@
           <div class="col-lg-6">
             <div class="call-to-action-box candidate-box">
               <div class="icon">
-                <img src="images/register-box/1.png" alt="">
+                <img src="<?php echo base_url('files/');?>images/register-box/1.png" alt="">
               </div>
               <span>Are You</span>
               <h3>Candidate?</h3>
@@ -859,7 +857,7 @@
           <div class="col-lg-6">
             <div class="call-to-action-box employer-register">
               <div class="icon">
-                <img src="images/register-box/2.png" alt="">
+                <img src="<?php echo base_url('files/');?>images/register-box/2.png" alt="">
               </div>
               <span>Are You</span>
               <h3>Employer?</h3>
@@ -928,7 +926,7 @@
           <div class="col-md-12">
             <div class="testimonial">
               <div class="testimonial-quote">
-                <img src="images/testimonial/quote.png" class="img-fluid" alt="">
+                <img src="<?php echo base_url('files/');?>images/testimonial/quote.png" class="img-fluid" alt="">
               </div>
               <div class="testimonial-for">
                 <div class="testimonial-item">
@@ -962,32 +960,32 @@
               </div>
               <div class="testimonial-nav">
                 <div class="commenter-thumb">
-                  <img src="images/testimonial/thumb-1.jpg" class="img-fluid commenter" alt="">
-                  <img src="images/testimonial/1.png" class="comapnyLogo" alt="">
+                  <img src="<?php echo base_url('files/');?>images/testimonial/thumb-1.jpg" class="img-fluid commenter" alt="">
+                  <img src="<?php echo base_url('files/');?>images/testimonial/1.png" class="comapnyLogo" alt="">
                 </div>
                 <div class="commenter-thumb">
-                  <img src="images/testimonial/thumb-2.jpg" class="img-fluid commenter" alt="">
-                  <img src="images/testimonial/2.png" class="comapnyLogo" alt="">
+                  <img src="<?php echo base_url('files/');?>images/testimonial/thumb-2.jpg" class="img-fluid commenter" alt="">
+                  <img src="<?php echo base_url('files/');?>images/testimonial/2.png" class="comapnyLogo" alt="">
                 </div>
                 <div class="commenter-thumb">
-                  <img src="images/testimonial/thumb-3.jpg" class="img-fluid commenter" alt="">
-                  <img src="images/testimonial/3.png" class="comapnyLogo" alt="">
+                  <img src="<?php echo base_url('files/');?>images/testimonial/thumb-3.jpg" class="img-fluid commenter" alt="">
+                  <img src="<?php echo base_url('files/');?>images/testimonial/3.png" class="comapnyLogo" alt="">
                 </div>
                 <div class="commenter-thumb">
-                  <img src="images/testimonial/thumb-4.jpg" class="img-fluid commenter" alt="">
-                  <img src="images/testimonial/4.png" class="comapnyLogo" alt="">
+                  <img src="<?php echo base_url('files/');?>images/testimonial/thumb-4.jpg" class="img-fluid commenter" alt="">
+                  <img src="<?php echo base_url('files/');?>images/testimonial/4.png" class="comapnyLogo" alt="">
                 </div>
                 <div class="commenter-thumb">
-                  <img src="images/testimonial/thumb-5.jpg" class="img-fluid commenter" alt="">
-                  <img src="images/testimonial/5.png" class="comapnyLogo" alt="">
+                  <img src="<?php echo base_url('files/');?>images/testimonial/thumb-5.jpg" class="img-fluid commenter" alt="">
+                  <img src="<?php echo base_url('files/');?>images/testimonial/5.png" class="comapnyLogo" alt="">
                 </div>
                 <div class="commenter-thumb">
-                  <img src="images/testimonial/thumb-2.jpg" class="img-fluid commenter" alt="">
-                  <img src="images/testimonial/2.png" class="comapnyLogo" alt="">
+                  <img src="<?php echo base_url('files/');?>images/testimonial/thumb-2.jpg" class="img-fluid commenter" alt="">
+                  <img src="<?php echo base_url('files/');?>images/testimonial/2.png" class="comapnyLogo" alt="">
                 </div>
                 <div class="commenter-thumb">
-                  <img src="images/testimonial/thumb-3.jpg" class="img-fluid commenter" alt="">
-                  <img src="images/testimonial/3.png" class="comapnyLogo" alt="">
+                  <img src="<?php echo base_url('files/');?>images/testimonial/thumb-3.jpg" class="img-fluid commenter" alt="">
+                  <img src="<?php echo base_url('files/');?>images/testimonial/3.png" class="comapnyLogo" alt="">
                 </div>
               </div>
             </div>

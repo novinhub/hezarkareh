@@ -46,7 +46,7 @@
   <body>
 
     <!-- Header -->
-    <header>
+    <header >
       <nav class="navbar navbar-expand-xl absolute-nav transparent-nav cp-nav navbar-light bg-light fluid-nav">
         <a class="navbar-brand" href="index-2.html"> 
           <img src="<?php echo base_url('files/');?>images/logo.png" class="img-fluid" alt="">
