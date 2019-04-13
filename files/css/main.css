@@ -302,7 +302,6 @@ a:focus {
 .banner-1 .banner-content p {
   color: #f5f8fe;
   font-size: 1.6rem;
-  font-family: "Roboto", sans-serif;
   max-width: 500px;
   position: relative;
 }
@@ -735,7 +734,7 @@ a:focus {
 }
 
 .searchAndFilter .bootstrap-select {
-  margin-right: 25px;
+  margin-right: 16px;
 }
 
 .searchAndFilter .bootstrap-select .dropdown-toggle .filter-option-inner {
@@ -749,7 +748,7 @@ a:focus {
   border-left: 0 solid transparent;
   position: absolute;
   top: 6px;
-  right: 20px;
+  
   content: '\f107';
   font-family: Font Awesome\ 5 Free;
   font-weight: 900;
@@ -758,7 +757,7 @@ a:focus {
 }
 
 .searchAndFilter .bootstrap-select .dropdown-toggle:after {
-  right: 10px;
+  left: 10px;
 }
 
 .searchAndFilter .bootstrap-select .dropdown-toggle .filter-option {
@@ -1080,7 +1079,6 @@ a:focus {
   float: left;
   width: 33%;
   padding: 8px 0;
-  font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-size: 1.4rem;
   position: relative;
@@ -4532,7 +4530,7 @@ a:focus {
 .company-wrap {
   border-radius: 3px;
   border: 1px solid rgba(0, 0, 0, 0.05);
-  background-image: -webkit-gradient(linear, left bottom, left top, from(#ffffff), to(rgba(36, 109, 248, 0.03)));
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#ffffff), to(rgba(238, 238, 240, 0.03)));
   background-image: -webkit-linear-gradient(bottom, #ffffff, rgba(36, 109, 248, 0.03));
   background-image: -o-linear-gradient(bottom, #ffffff, rgba(36, 109, 248, 0.03));
   background-image: linear-gradient(to top, #ffffff, rgba(36, 109, 248, 0.03));
@@ -4572,7 +4570,6 @@ a:focus {
   padding: 8px 20px;
   font-size: 1.4rem;
   font-weight: 500;
-  font-family: "Poppins", sans-serif;
   margin-top: 20px;
 }
 
@@ -9640,4 +9637,11 @@ header .absolute-nav {
   .policy-tab .nav-tabs .nav-item + .nav-item {
     margin-top: 15px;
   }
+}
+/** custom style **/
+.text-r{
+  text-align: right;
+}
+.bg-white{
+  background-color: white;
 }

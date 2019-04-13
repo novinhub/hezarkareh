@@ -10,10 +10,11 @@
     <title>Oficiona</title>
 
     <!-- Bootstrap CSS -->
+  
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('files/');?>assets/css/bootstrap.min.css">
 
     <!-- External Css -->
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url('files/');?>css/rtl.css">
+
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('files/');?>assets/css/fontawesome-all.min.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('files/');?>assets/css/themify-icons.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('files/');?>assets/css/et-line.css" />
@@ -23,6 +24,7 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('files/');?>assets/css/slick.css" /> 
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('files/');?>assets/css/owl.carousel.min.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('files/');?>assets/css/jquery.nstSlider.min.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('files/');?>css/rtl.css">
 
     <!-- Custom Css -->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('files/');?>css/main.css">
@@ -47,7 +49,7 @@
 
     <!-- Header -->
     <header >
-      <nav class="navbar navbar-expand-xl absolute-nav transparent-nav cp-nav navbar-light bg-light fluid-nav">
+      <nav class="navbar navbar-expand-xl absolute-nav transparent-nav cp-nav navbar-light bg-light fluid-nav ltr">
         <a class="navbar-brand" href="index-2.html"> 
           <img src="<?php echo base_url('files/');?>images/logo.png" class="img-fluid" alt="">
         </a>

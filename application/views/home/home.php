@@ -3,10 +3,10 @@
       <div class="container">
         <div class="row">
           <div class="col-12">
-            <div class="banner-content">
+            <div class="banner-content lefttbox text-center">
               <h1>58,246 کار </h1>
-              <p>Create free account to find thousands Jobs, Employment & Career Opportunities around you!</p>
-              <a href="add-resume.html" class="button">Upload Resume</a>
+              <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. </p>
+              <a href="add-resume.html" class="button">قرار دادن رزومه</a>
             </div>
           </div>
         </div>
@@ -22,9 +22,9 @@
             <div class="searchAndFilter-block">
               <div class="searchAndFilter">
                 <form action="#" class="search-form">
-                  <input type="text" placeholder="Enter Keywords">
+                  <input type="text" placeholder="کلمات کلیدی">
                   <select class="selectpicker" id="search-location">
-                    <option value="" selected>Location</option>
+                    <option value="" selected>مکان</option>
                     <option value="california">California</option>
                     <option value="las-vegas">Las Vegas</option>
                     <option value="new-work">New Work</option>
@@ -34,29 +34,29 @@
                     <option value="washington">Washington DC</option>
                     <option value="neveda">Neveda</option>
                   </select>
-                  <select class="selectpicker" id="search-category">
-                    <option value="" selected>Category</option>
+                  <select class="selectpicker text-right" id="search-category">
+                    <option value="" selected>دسته بندی</option>
                     <option value="real-state">Real State</option>
                     <option value="vehicales">Vehicales</option>
                     <option value="electronics">Electronics</option>
                     <option value="beauty">Beauty</option>
                     <option value="furnitures">Furnitures</option>
                   </select>
-                  <button class="button primary-bg"><i class="fas fa-search"></i>Search Job</button>
+                  <button class="button primary-bg mr-4">جستجوی کار<i class="fas fa-search"></i></button>
                 </form>
                 <div class="filter-categories">
-                  <h4>Job Category</h4>
+                  <h4>دسته بندی های آگهی  </h4>
                   <ul>
-                    <li><a href="job-listing.html"><i data-feather="bar-chart-2"></i>Accounting / Finance <span>(233)</span></a></li>
-                    <li><a href="job-listing.html"><i data-feather="edit-3"></i>Education <span>(46)</span></a></li>
-                    <li><a href="job-listing.html"><i data-feather="feather"></i>Design & Creative <span>(156)</span></a></li>
-                    <li><a href="job-listing.html"><i data-feather="briefcase"></i>Health Care <span>(98)</span></a></li>
-                    <li><a href="job-listing.html"><i data-feather="package"></i>Engineer & Architects <span>(188)</span></a></li>
-                    <li><a href="job-listing.html"><i data-feather="pie-chart"></i>Marketing & Sales <span>(124)</span></a></li>
-                    <li><a href="job-listing.html"><i data-feather="command"></i>Garments / Textile <span>(584)</span></a></li>
-                    <li><a href="job-listing.html"><i data-feather="globe"></i>Customer Support <span>(233)</span></a></li>
-                    <li><a href="job-listing.html"><i data-feather="headphones"></i>Digital Media <span>(15)</span></a></li>
-                    <li><a href="job-listing.html"><i data-feather="radio"></i>Telecommunication <span>(03)</span></a></li>
+                    <li><a href="#"><i ></i>حسابداری و فروش <span>(233)</span></a></li>
+                    <li><a href="#"><i ></i>طراحی و گرافیک  <span>(46)</span></a></li>
+                    <li><a href="#"><i ></i>مهندسی و فنی حرفه ای  <span>(156)</span></a></li>
+                    <li><a href="#"><i ></i>Health Care <span>(98)</span></a></li>
+                    <li><a href="#"><i ></i>Engineer & Architects <span>(188)</span></a></li>
+                    <li><a href="#"><i ></i>Marketing & Sales <span>(124)</span></a></li>
+                    <li><a href="#"><i ></i>Garments / Textile <span>(584)</span></a></li>
+                    <li><a href="#"><i ></i>Customer Support <span>(233)</span></a></li>
+                    <li><a href="#"><i ></i>Digital Media <span>(15)</span></a></li>
+                    <li><a href="#"><i ></i>Telecommunication <span>(03)</span></a></li>
                   </ul>
                 </div>
               </div>
@@ -72,14 +72,15 @@
       <div class="container">
         <div class="row">
           <div class="col">
-            <ul class="nav nav-tabs job-tab" id="myTab" role="tablist">
+            <!-- <ul class="nav nav-tabs job-tab" id="myTab" role="tablist">
               <li class="nav-item">
                 <a class="nav-link active" id="recent-tab" data-toggle="tab" href="#recent" role="tab" aria-controls="recent" aria-selected="true">Recent Job</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" id="feature-tab" data-toggle="tab" href="#feature" role="tab" aria-controls="feature" aria-selected="false">Feature Job</a>
               </li>
-            </ul>
+            </ul> -->
+             <h4 class="text-center mb-4">آخرین پیشنهادات</h4>
             <div class="tab-content" id="myTabContent">
               <div class="tab-pane fade show active" id="recent" role="tabpanel" aria-labelledby="recent-tab">
                 <div class="row">
@@ -92,11 +93,11 @@
                       </div>
                       <div class="body">
                         <div class="content">
-                          <h4><a href="job-details.html">Restaurant Team Member - Crew </a></h4>
+                          <h4 class="mr-4"><a href="job-details.html">کارگر رستوران </a></h4>
                           <div class="info">
-                            <span class="company"><a href="#"><i data-feather="briefcase"></i>Geologitic</a></span>
-                            <span class="office-location"><a href="#"><i data-feather="map-pin"></i>New Orleans</a></span>
-                            <span class="job-type temporary"><a href="#"><i data-feather="clock"></i>Temporary</a></span>
+                            <span class="company"><a href="#"><i data-feather="briefcase"></i>فستف فود رایز</a></span>
+                            <span class="office-location"><a href="#"><i data-feather="map-pin"></i>فرهنگ شهر</a></span>
+                            <span class="job-type temporary"><a href="#"><i data-feather="clock"></i>تمام وقت</a></span>
                           </div>
                         </div>
                         <div class="more">
@@ -682,12 +683,12 @@
     <!-- Jobs End -->
 
     <!-- Top Companies -->
-    <div class="section-padding-top padding-bottom-90">
+    <div class="section-padding-top padding-bottom-90 bg-white text-center ltr">
       <div class="container">
         <div class="row">
           <div class="col">
             <div class="section-header">
-              <h2>Top Companies</h2>
+              <h2>تست خودشناسی</h2>
             </div>
           </div>
         </div>
@@ -701,9 +702,9 @@
                   </a>
                 </div>
                 <div class="body">
-                  <h4><a href="employer-details.html">Digoin</a></h4>
-                  <span>Kansas City, Missouri</span>
-                  <a href="job-listing.html" class="button">4 Open Positions</a>
+                  <h4><a href="employer-details.html">تست هوش هیجانی</a></h4>
+                  <span>baron</span>
+                  <a href="job-listing.html" class="button">شروع تست</a>
                 </div>
               </div>
               <div class="company-wrap">
@@ -713,9 +714,9 @@
                   </a>
                 </div>
                 <div class="body">
-                  <h4><a href="employer-details.html">Orion Ltd.</a></h4>
-                  <span>Sacramento, California</span>
-                  <a href="job-listing.html" class="button">2 Open Positions</a>
+                  <h4><a href="employer-details.html">پروفایل دیسک</a></h4>
+                  <span>DISK</span>
+                  <a href="job-listing.html" class="button">شروع تست</a>
                 </div>
               </div>
               <div class="company-wrap">
@@ -725,9 +726,9 @@
                   </a>
                 </div>
                 <div class="body">
-                  <h4><a href="employer-details.html">Realhouse</a></h4>
-                  <span>London, United Kingdom</span>
-                  <a href="job-listing.html" class="button">4 Open Positions</a>
+                  <h4><a href="employer-details.html">تست سبک انگیزشی</a></h4>
+                  <span>DMSI</span>
+                  <a href="job-listing.html" class="button">شروع تست</a>
                 </div>
               </div>
               <div class="company-wrap">
@@ -737,9 +738,9 @@
                   </a>
                 </div>
                 <div class="body">
-                  <h4><a href="employer-details.html">BioPro</a></h4>
-                  <span>Ajax, Ontarioland</span>
-                  <a href="job-listing.html" class="button">1 Open Positions</a>
+                  <h4><a href="employer-details.html">تست توانایی‌ها</a></h4>
+                  <span>hartman</span>
+                  <a href="job-listing.html" class="button">شروع تست</a>
                 </div>
               </div>
               <div class="company-wrap">
@@ -749,43 +750,21 @@
                   </a>
                 </div>
                 <div class="body">
-                  <h4><a href="employer-details.html">Digoin</a></h4>
-                  <span>Kansas City, Missouri</span>
-                  <a href="job-listing.html" class="button">4 Open Positions</a>
+                  <h4><a href="employer-details.html">تست سبک حل تعارض</a></h4>
+                  <span>TKI</span>
+                  <a href="job-listing.html" class="button">شروع تست</a>
                 </div>
               </div>
               <div class="company-wrap">
                 <div class="thumb">
                   <a href="#">
-                    <img src="<?php echo base_url('files/');?>images/company/company-logo-2.png" class="img-fluid" alt="">
+                    <img src="<?php echo base_url('files/');?>images/company/company-logo-1.png" class="img-fluid" alt="">
                   </a>
                 </div>
                 <div class="body">
-                  <h4><a href="employer-details.html">Orion Ltd.</a></h4>
-                  <span>Sacramento, California</span>
-                  <a href="job-listing.html" class="button">2 Open Positions</a>
-                </div>
-              </div>
-              <div class="company-wrap">
-                <div class="thumb">
-                  <a href="#">
-                    <img src="<?php echo base_url('files/');?>images/company/company-logo-3.png" class="img-fluid" alt="">
-                  </a>
-                </div>
-                <div class="body">
-                  <h4><a href="employer-details.html">Realhouse</a></h4>
-                  <span>London, United Kingdom</span>
-                  <a href="job-listing.html" class="button">4 Open Positions</a>
-                </div>
-              </div>
-              <div class="company-wrap">
-                <div class="thumb">
-                 <h6>kckc</h6>
-                </div>
-                <div class="body">
-                  <h4><a href="employer-details.html">BioPro</a></h4>
-                  <span>Ajax, Ontarioland</span>
-                  <a href="job-listing.html" class="button">1 Open Positions</a>
+                  <h4><a href="employer-details.html">تست شخصیت شناسی</a></h4>
+                  <span>NEO FFI</span>
+                  <a href="job-listing.html" class="button">شروع تست</a>
                 </div>
               </div>
             </div>

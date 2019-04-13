@@ -118,20 +118,20 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="<?php echo base_url('files/');?>assets/js/jquery.min.js"></script>
-    <script src="<?php echo base_url('files/');?>assets/js/popper.min.js"></script>
-    <script src="<?php echo base_url('files/');?>assets/js/bootstrap.min.js"></script>
-    <script src="<?php echo base_url('files/');?>assets/js/feather.min.js"></script>
-    <script src="<?php echo base_url('files/');?>assets/js/bootstrap-select.min.js"></script>
-    <script src="<?php echo base_url('files/');?>assets/js/jquery.nstSlider.min.js"></script>
-    <script src="<?php echo base_url('files/');?>assets/js/owl.carousel.min.js"></script>
-    <script src="<?php echo base_url('files/');?>assets/js/visible.js"></script>
-    <script src="<?php echo base_url('files/');?>assets/js/jquery.countTo.js"></script>
-    <script src="<?php echo base_url('files/');?>assets/js/chart.js"></script>
-    <script src="<?php echo base_url('files/');?>assets/js/plyr.js"></script>
-    <script src="<?php echo base_url('files/');?>assets/js/tinymce.min.js"></script>
-    <script src="<?php echo base_url('files/');?>assets/js/slick.min.js"></script>
-    <script src="<?php echo base_url('files/');?>assets/js/jquery.ajaxchimp.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url('files/');?>assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url('files/');?>assets/js/popper.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url('files/');?>assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url('files/');?>assets/js/feather.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url('files/');?>assets/js/bootstrap-select.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url('files/');?>assets/js/jquery.nstSlider.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url('files/');?>assets/js/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url('files/');?>assets/js/visible.js"></script>
+    <script type="text/javascript" src="<?php echo base_url('files/');?>assets/js/jquery.countTo.js"></script>
+    <script type="text/javascript" src="<?php echo base_url('files/');?>assets/js/chart.js"></script>
+    <script type="text/javascript" src="<?php echo base_url('files/');?>assets/js/plyr.js"></script>
+    <script type="text/javascript" src="<?php echo base_url('files/');?>assets/js/tinymce.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url('files/');?>assets/js/slick.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url('files/');?>assets/js/jquery.ajaxchimp.min.js"></script>
 
     <script src="<?php echo base_url('files/');?>js/custom.js"></script>
 

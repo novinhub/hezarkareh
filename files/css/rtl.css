@@ -1,19 +1,20 @@
-@import url("fontiran.css"); /* لینک فایلی که وظیفه بارگذاری فونت ها را برعهده دارد */
+@import url("fontiran.css"); 
 body {
 	font-family: IRANSans !important;
 	font-weight: 300;
 	direction: rtl;
+	text-align: right;
 	background-color: #E2E2E2;
 	margin: 0;
 }
-h1, h2, h3, h4, h5, h6,input, textarea , .tooltip, .popover, .sweet-alert{
+h1, h2, h3, h4, h5, h6,input, textarea , .tooltip, .popover, .sweet-alert, .modal{
 	font-family: IRANSans !important;
 }
 h1 {
 	font-weight: bold;
 }
 .wrapper {
-	max-width: 900px;
+	max-width: 900px; 
 	margin: 0 auto;
 }
 .ltr {
@@ -156,7 +157,7 @@ blockquote {
 	
 	padding-right: 20px;
 	padding-left: 4px;
-	float: right;
+	float: left;
 	margin-bottom: 10px;
 	min-width: 0px;
 }
@@ -188,3 +189,7 @@ blockquote {
 	margin-bottom: 0px;
 	padding-bottom: 0px;
 }
+.dropdown-menu
+{
+	text-align: right
+} 
