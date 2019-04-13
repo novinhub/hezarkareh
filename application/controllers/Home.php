@@ -7,6 +7,7 @@ function __construct(){
 parent::__construct();
 }
 	function index(){
+
 	$this->load->view('header');
 	$this->load->view('home/home');
 	$this->load->view('footer');

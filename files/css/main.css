@@ -5232,7 +5232,7 @@ header .absolute-nav {
 .account-entry .modal-header h5 svg {
   height: 15px;
   width: 15px;
-  margin-right: 7px;
+  margin-left: 7px;
   color: #6f7484;
 }
 
@@ -5274,7 +5274,6 @@ header .absolute-nav {
   background: #f7f9fc;
   border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 3px;
-  font-family: "Poppins", sans-serif;
   font-weight: 500;
   font-size: 1.4rem;
   color: #232630;
@@ -6253,7 +6252,6 @@ header .absolute-nav {
 }
 
 .fact .fact-name {
-  font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-size: 1.5rem;
   margin-top: 0;
@@ -6295,7 +6293,6 @@ header .absolute-nav {
 
 .call-to-action-box a {
   text-transform: uppercase;
-  font-family: "Poppins", sans-serif;
   font-weight: 600;
   margin-top: 40px;
 }
@@ -7030,7 +7027,6 @@ header .absolute-nav {
 
 .footer-widget.widget-about .about-contact svg {
   height: 15px;
-  margin-right: 15px;
 }
 
 .footer-widget.footer-shortcut-link ul {

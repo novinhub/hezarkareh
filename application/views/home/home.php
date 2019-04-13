@@ -783,8 +783,8 @@
               <div class="fact-icon">
                 <i data-feather="briefcase"></i>
               </div>
-              <p class="fact-number"><span class="count" data-form="0" data-to="12376"></span></p>
-              <p class="fact-name">Live Jobs</p>
+              <p class="fact-number"><span class="count" data-form="0" data-to="103"></span></p>
+              <p class="fact-name">پیشنهاد کار</p>
             </div>
           </div>
           <div class="col-md-3 col-sm-6">
@@ -792,8 +792,8 @@
               <div class="fact-icon">
                 <i data-feather="users"></i>
               </div>
-              <p class="fact-number"><span class="count" data-form="0" data-to="89562"></span></p>
-              <p class="fact-name">Candidate</p>
+              <p class="fact-number"><span class="count" data-form="0" data-to="684"></span></p>
+              <p class="fact-name">کارفرما</p>
             </div>
           </div>
           <div class="col-md-3 col-sm-6">
@@ -801,8 +801,8 @@
               <div class="fact-icon">
                 <i data-feather="file-text"></i>
               </div>
-              <p class="fact-number"><span class="count" data-form="0" data-to="28166"></span></p>
-              <p class="fact-name">Resume</p>
+              <p class="fact-number"><span class="count" data-form="0" data-to="1354"></span></p>
+              <p class="fact-name">رزومه</p>
             </div>
           </div>
           <div class="col-md-3 col-sm-6">
@@ -810,8 +810,8 @@
               <div class="fact-icon">
                 <i data-feather="award"></i>
               </div>
-              <p class="fact-number"><span class="count" data-form="0" data-to="1366"></span></p>
-              <p class="fact-name">Companies</p>
+              <p class="fact-number"><span class="count" data-form="0" data-to="1620"></span></p>
+              <p class="fact-name">کارجو</p>
             </div>
           </div>
         </div>
@@ -822,25 +822,25 @@
     <!-- Registration Box -->
     <div class="section-padding">
       <div class="container">
-        <div class="row">
-          <div class="col-lg-6">
-            <div class="call-to-action-box candidate-box">
-              <div class="icon">
-                <img src="<?php echo base_url('files/');?>images/register-box/1.png" alt="">
-              </div>
-              <span>Are You</span>
-              <h3>Candidate?</h3>
-              <a href="#" data-toggle="modal" data-target="#exampleModalLong2">Register Now <i class="fas fa-arrow-right"></i></a>
-            </div>
-          </div>
+        <div class="row"> 
           <div class="col-lg-6">
             <div class="call-to-action-box employer-register">
               <div class="icon">
                 <img src="<?php echo base_url('files/');?>images/register-box/2.png" alt="">
               </div>
-              <span>Are You</span>
-              <h3>Employer?</h3>
-              <a href="#" data-toggle="modal" data-target="#exampleModalLong3">Register Now <i class="fas fa-arrow-right"></i></a>
+              <span>آیا شما</span>
+              <h3>کارفرما هستید؟</h3>
+              <a href="#" data-toggle="modal" data-target="#modalemployer">ثبت نام کنید <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="call-to-action-box candidate-box">
+              <div class="icon">
+                <img src="<?php echo base_url('files/');?>images/register-box/1.png" alt="">
+              </div>
+              <span>آیا شما</span>
+              <h3>کارجو هستید؟</h3>
+              <a href="#" data-toggle="modal" data-target="#modalCandidate">ثبت نام کنید <i class="fas fa-arrow-right"></i></a>
             </div>
           </div>
         </div>
@@ -848,21 +848,60 @@
     </div>
     <!-- Registration Box End -->
 
-    <!-- Modal -->
+    <!-- Modal Employer -->
     <div class="account-entry">
-      <div class="modal fade" id="exampleModalLong3" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal fade" id="modalemployer" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title"><i data-feather="edit"></i>Registration</h5>
+              <h5 class="modal-title"><i data-feather="edit"></i>ثبت نام</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div class="modal-body">
               <div class="account-type">
-                <a href="#" class="candidate-acc"><i data-feather="user"></i>Candidate</a>
-                <a href="#" class="employer-acc active"><i data-feather="briefcase"></i>Employer</a>
+                <a href="#" class="candidate-acc"><i data-feather="user"></i>کارجو</a>
+                <a href="#" class="employer-acc active"><i data-feather="briefcase"></i>کارفرما</a>
+              </div>
+              <form action="#">
+                <div class="form-group">
+                  <input type="text" placeholder="Username" class="form-control">
+                </div>
+                <div class="form-group">
+                  <input type="email" placeholder="Email Address" class="form-control">
+                </div>
+                <div class="form-group">
+                  <input type="password" placeholder="Password" class="form-control">
+                </div>
+                <div class="more-option terms">
+                  <div class="form-check">
+                  </div>
+                </div>
+                <button class="button primary-bg btn-block">ثبت نام</button>
+              </form>
+              <p class="mt-2">ثبت نام کرده اید؟ <a class="btn btn-primary" href="#">ورود</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+ <!--/ Modal Employer -->
+ <!-- Modal Candidate -->
+     <div class="account-entry">
+      <div class="modal fade" id="modalCandidate" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title"><i data-feather="edit"></i>ثبت نام</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="account-type">
+                <a href="#" class="candidate-acc active"><i data-feather="user"></i>کارجو</a>
+                <a href="#" class="employer-acc "><i data-feather="briefcase"></i>کارفرما</a>
               </div>
               <form action="#">
                 <div class="form-group">
@@ -884,115 +923,11 @@
                 </div>
                 <button class="button primary-bg btn-block">Register</button>
               </form>
-              <div class="shortcut-login">
-                <span>Or connect with</span>
-                <div class="buttons">
-                  <a href="#" class="facebook"><i class="fab fa-facebook-f"></i>Facebook</a>
-                  <a href="#" class="google"><i class="fab fa-google"></i>Google</a>
-                </div>
-                <p>Already have an account? <a href="#">Login</a></p>
-              </div>
+              <p class="mt-2">ثبت نام کرده اید؟ <a class="btn btn-primary" href="#">ورود</a></p>
             </div>
           </div>
         </div>
       </div>
     </div>
-
-    <!-- Testimonial -->
-    <div class="section-padding-bottom">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="testimonial">
-              <div class="testimonial-quote">
-                <img src="<?php echo base_url('files/');?>images/testimonial/quote.png" class="img-fluid" alt="">
-              </div>
-              <div class="testimonial-for">
-                <div class="testimonial-item">
-                  <p>“On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charmsto send our denim shorts wardrob One”</p>
-                  <h5>Maria Marlin @ Google</h5>
-                </div>
-                <div class="testimonial-item">
-                  <p>“On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charmsto send our denim shorts wardrob Two”</p>
-                  <h5>Laura Harper @ Amazon</h5>
-                </div>
-                <div class="testimonial-item">
-                  <p>“On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charmsto send our denim shorts wardrob Three”</p>
-                  <h5>John Doe @ Envato</h5>
-                </div>
-                <div class="testimonial-item">
-                  <p>“On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charmsto send our denim shorts wardrob Four”</p>
-                  <h5>Jenny Doe @ Dribbble</h5>
-                </div>
-                <div class="testimonial-item">
-                  <p>“On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charmsto send our denim shorts wardrob Five”</p>
-                  <h5>Michle Clark @ Apple</h5>
-                </div>
-                <div class="testimonial-item">
-                  <p>“On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charmsto send our denim shorts wardrob Two”</p>
-                  <h5>Laura Harper @ Amazon</h5>
-                </div>
-                <div class="testimonial-item">
-                  <p>“On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charmsto send our denim shorts wardrob Three”</p>
-                  <h5>John Doe @ Envato</h5>
-                </div>
-              </div>
-              <div class="testimonial-nav">
-                <div class="commenter-thumb">
-                  <img src="<?php echo base_url('files/');?>images/testimonial/thumb-1.jpg" class="img-fluid commenter" alt="">
-                  <img src="<?php echo base_url('files/');?>images/testimonial/1.png" class="comapnyLogo" alt="">
-                </div>
-                <div class="commenter-thumb">
-                  <img src="<?php echo base_url('files/');?>images/testimonial/thumb-2.jpg" class="img-fluid commenter" alt="">
-                  <img src="<?php echo base_url('files/');?>images/testimonial/2.png" class="comapnyLogo" alt="">
-                </div>
-                <div class="commenter-thumb">
-                  <img src="<?php echo base_url('files/');?>images/testimonial/thumb-3.jpg" class="img-fluid commenter" alt="">
-                  <img src="<?php echo base_url('files/');?>images/testimonial/3.png" class="comapnyLogo" alt="">
-                </div>
-                <div class="commenter-thumb">
-                  <img src="<?php echo base_url('files/');?>images/testimonial/thumb-4.jpg" class="img-fluid commenter" alt="">
-                  <img src="<?php echo base_url('files/');?>images/testimonial/4.png" class="comapnyLogo" alt="">
-                </div>
-                <div class="commenter-thumb">
-                  <img src="<?php echo base_url('files/');?>images/testimonial/thumb-5.jpg" class="img-fluid commenter" alt="">
-                  <img src="<?php echo base_url('files/');?>images/testimonial/5.png" class="comapnyLogo" alt="">
-                </div>
-                <div class="commenter-thumb">
-                  <img src="<?php echo base_url('files/');?>images/testimonial/thumb-2.jpg" class="img-fluid commenter" alt="">
-                  <img src="<?php echo base_url('files/');?>images/testimonial/2.png" class="comapnyLogo" alt="">
-                </div>
-                <div class="commenter-thumb">
-                  <img src="<?php echo base_url('files/');?>images/testimonial/thumb-3.jpg" class="img-fluid commenter" alt="">
-                  <img src="<?php echo base_url('files/');?>images/testimonial/3.png" class="comapnyLogo" alt="">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Testimonial End -->
-
-    <!-- NewsLetter -->
-    <div class="newsletter-bg padding-top-90 padding-bottom-90">
-      <div class="container">
-        <div class="row">
-          <div class="col-xl-5 col-lg-6">
-            <div class="newsletter-wrap">
-              <h3>Newsletter</h3>
-              <p>Get e-mail updates about our latest news and Special offers. We don’t send spam so don’t worry.</p>
-              <form action="#" class="newsletter-form form-inline">
-                <div class="form-group">
-                  <input type="text" class="form-control" placeholder="Email address...">
-                </div>
-                <button class="btn button">Submit<i class="fas fa-caret-right"></i></button>
-                <p class="newsletter-error">0 - Please enter a value</p>
-                <p class="newsletter-success">Thank you for subscribing!</p>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- NewsLetter End -->
+ <!--/ Modal Employer -->
+ 

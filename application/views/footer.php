@@ -20,12 +20,6 @@
                   <li><a href="#"><i data-feather="instagram"></i></a></li>
                   <li><a href="#"><i data-feather="youtube"></i></a></li>
                 </ul>
-                <select class="selectpicker select-language" id="select-country">
-                  <option value="United States of America" selected>EN</option>
-                  <option value="United Kingdom">GB</option>
-                  <option value="Spain">ES</option>
-                  <option value="Portugal">PT</option>
-                </select>
               </div>
             </div>
           </div>
@@ -36,9 +30,9 @@
           <div class="row">
             <div class="col-lg-5 col-sm-6">
               <div class="footer-widget widget-about">
-                <h4>About Us</h4>
+                <h4>درباره ما</h4>
                 <div class="widget-inner">
-                  <p class="description">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.</p>
+                  <p class="description">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.</p>
                   <span class="about-contact"><i data-feather="phone-forwarded"></i>+8 246-345-0698</span>
                   <span class="about-contact"><i data-feather="mail"></i>supportmail@gmail.com</span>
                 </div>
@@ -87,7 +81,7 @@
           </div>
         </div>
       </div>
-      <div class="footer-bottom-area">
+      <div class="footer-bottom-area ltr">
         <div class="container">
           <div class="row">
             <div class="col">
