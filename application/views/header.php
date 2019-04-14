@@ -28,7 +28,7 @@
 
     <!-- Custom Css -->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('files/');?>css/main.css">
-
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('files/');?>dashboard/css/dashboard.css">
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600%7CRoboto:300i,400,500" rel="stylesheet">
 
@@ -92,9 +92,9 @@
           <ul class="navbar-nav ml-auto main-nav">
             <li class="menu-item active"><a title="Home" href="home-1.html">Home</a></li>
             <li class="menu-item dropdown">
-              <a title="" href="#" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Jobs</a>
+              <a title="" href="" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Jobs</a>
               <ul  class="dropdown-menu">
-                <li class="menu-item"><a href="job-listing.html">Job Listing</a></li>
+                <li class="menu-item"><a href="<?php echo base_url('candidates');?>">Job Listing</a></li>
                 <li class="menu-item"><a href="job-listing-with-map.html">Job Listing With Map</a></li>
                 <li class="menu-item"><a href="job-details.html">Job Details</a></li>
                 <li class="menu-item"><a href="post-job.html">Post Job</a></li>

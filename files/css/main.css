@@ -9641,3 +9641,8 @@ header .absolute-nav {
 .bg-white{
   background-color: white;
 }
+.bg-custom{
+  height: 100px;
+  background-color: blue;
+  background-image: linear-gradient(to right, #246df8 , #3c98fb);
+}
