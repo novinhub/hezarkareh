@@ -2954,7 +2954,7 @@ a:focus {
 
 .job-post-form .form-group .form-control {
   height: 40px;
-  padding: 0;
+
   border: 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 0;
@@ -3026,7 +3026,7 @@ a:focus {
 
 .job-post-form .basic-info-input .form-group i {
   position: absolute;
-  right: 0;
+  left: 0;
   top: 13px;
   z-index: 5;
   color: #aaa;
