@@ -2384,8 +2384,7 @@ a:focus {
 .job-list .body .more .deadline {
   font-size: 1.3rem;
   margin-top: 10px;
-  font-style: italic;
-  font-weight: 300;
+  font-weight: 350;
   display: block;
   text-align: right;
 }
@@ -2929,7 +2928,7 @@ a:focus {
 }
 
 .basic-info-input h4 {
-  font-family: "Poppins", sans-serif;
+
   font-weight: 500;
   font-size: 1.5rem;
   margin-bottom: 30px;
@@ -2948,7 +2947,7 @@ a:focus {
 
 .job-post-form .form-group label {
   font-size: 1.4rem;
-  font-family: "Poppins", sans-serif;
+
   font-weight: 500;
   color: #6f7484;
 }
@@ -2984,7 +2983,7 @@ a:focus {
 
 .job-post-form .col-form-label {
   font-size: 1.4rem;
-  font-family: "Poppins", sans-serif;
+
   font-weight: 500;
   color: #6f7484;
 }
@@ -9645,4 +9644,7 @@ header .absolute-nav {
   height: 100px;
   background-color: blue;
   background-image: linear-gradient(to right, #246df8 , #3c98fb);
+}
+.circle{
+  border-radius: 50px;
 }

@@ -6,7 +6,7 @@ body {
 	text-align: right;
 	margin: 0;
 }
-h1, h2, h3, h4, h5, h6,input, textarea , .tooltip, .popover, .sweet-alert, .modal{
+h1, h2, h3, h4, h5, h6,input, textarea ,button, .tooltip, .popover, .sweet-alert, .modal {
 	font-family: IRANSans !important;
 }
 h1 {
@@ -18,6 +18,9 @@ h1 {
 }
 .ltr {
 	direction: ltr;
+}
+.rtl {
+	direction: rtl;
 }
 .text-right {
 	text-align: right;

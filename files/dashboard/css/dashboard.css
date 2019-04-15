@@ -41,11 +41,9 @@
       overflow: hidden; }
     .dashboard-sidebar .user-info .user-body h5 {
       font-size: 1.5rem;
-      font-family: "Poppins", sans-serif;
       font-weight: 600; }
   .dashboard-sidebar .profile-progress .progress-on {
     text-transform: uppercase;
-    font-family: "Roboto", sans-serif;
     font-weight: 400;
     font-size: 1.3rem;
     margin-bottom: 0; }
@@ -59,8 +57,7 @@
     .dashboard-sidebar .profile-progress .progress-body .progress-to {
       position: absolute;
       top: -20px;
-      right: 0;
-      font-family: "Roboto", sans-serif;
+      left: 6px;
       font-weight: 400;
       font-size: 1.3rem;
       line-height: 1;
@@ -78,7 +75,6 @@
           color: #aaa;
           width: 25px; }
         .dashboard-sidebar .dashboard-menu ul li a {
-          font-family: "Poppins", sans-serif;
           color: #6f7484;
           font-weight: 400;
           font-size: 1.4rem;
@@ -87,10 +83,10 @@
           color: #246df8; }
         .dashboard-sidebar .dashboard-menu ul li:hover a, .dashboard-sidebar .dashboard-menu ul li.active a {
           color: #246df8;
-          background-image: -webkit-gradient(linear, left top, right top, from(rgba(36, 109, 248, 0.2)), to(rgba(36, 109, 248, 0)));
-          background-image: -webkit-linear-gradient(left, rgba(36, 109, 248, 0.2), rgba(36, 109, 248, 0));
-          background-image: -o-linear-gradient(left, rgba(36, 109, 248, 0.2), rgba(36, 109, 248, 0));
-          background-image: linear-gradient(to right, rgba(36, 109, 248, 0.2), rgba(36, 109, 248, 0)); }
+          background-image: -webkit-gradient(linear, left top, right top, from(rgba(36, 109, 248, 0)), to(rgba(36, 109, 248, 0.2)));
+          background-image: -webkit-linear-gradient(left, rgba(36, 109, 248, 0), rgba(36, 109, 248, 0.2));
+          background-image: -o-linear-gradient(left, rgba(36, 109, 248, 0), rgba(36, 109, 248, 0.2));
+          background-image: linear-gradient(to right, rgba(36, 109, 248, 0), rgba(36, 109, 248, 0.2)); }
     .dashboard-sidebar .dashboard-menu ul.delete {
       border-top: 1px solid rgba(0, 0, 0, 0.08);
       padding-bottom: 0;
@@ -101,10 +97,10 @@
         color: #ff3366; }
       .dashboard-sidebar .dashboard-menu ul.delete li:hover a {
         color: #ff3366;
-        background-image: -webkit-gradient(linear, left top, right top, from(rgba(255, 51, 102, 0.2)), to(rgba(255, 51, 102, 0)));
-        background-image: -webkit-linear-gradient(left, rgba(255, 51, 102, 0.2), rgba(255, 51, 102, 0));
-        background-image: -o-linear-gradient(left, rgba(255, 51, 102, 0.2), rgba(255, 51, 102, 0));
-        background-image: linear-gradient(to right, rgba(255, 51, 102, 0.2), rgba(255, 51, 102, 0)); }
+        background-image: -webkit-gradient(linear, left top, right top, from(rgba(255, 51, 102, 0)), to(rgba(255, 51, 102, 0.2)));
+        background-image: -webkit-linear-gradient(left, rgba(255, 51, 102, 0), rgba(255, 51, 102, 0.2));
+        background-image: -o-linear-gradient(left, rgba(255, 51, 102, 0), rgba(255, 51, 102, 0.2));
+        background-image: linear-gradient(to right, rgba(255, 51, 102, 0), rgba(255, 51, 102, 0.2)); }
 
 .modal-delete .modal-dialog {
   margin: 0 auto;
@@ -129,7 +125,7 @@
     .modal-delete .modal-body h4 svg {
       height: 15px;
       width: 15px;
-      margin-right: 10px; }
+      margin-left: 10px; }
   .modal-delete .modal-body form {
     margin-top: 30px; }
     .modal-delete .modal-body form .form-group {
@@ -1608,3 +1604,9 @@
     display: block; }
     .dashboard-section .modal .modal-body .title .add-more {
       margin-top: 15px; } }
+/* custom style */
+.btn-custom{
+  font-size: 1.5rem;
+  line-height: 1;
+  font-weight: 500;
+}

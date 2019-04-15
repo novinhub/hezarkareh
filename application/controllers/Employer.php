@@ -7,12 +7,12 @@ function __construct(){
 parent::__construct();
 }
 	function index(){
-
+	// $header['title'] = 'داشبورد';
+	// $header['active'] = 'dashbord';
     $this->load->view('header');
     $this->load->view('employer/header');
 	$this->load->view('employer/dashbord');
 	$this->load->view('footer');
 	}
-
 }
 ?>

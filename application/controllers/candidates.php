@@ -14,6 +14,14 @@ parent::__construct();
 	$this->load->view('candidates/footer');
 	$this->load->view('footer');
 	}
+	function resume(){
+
+		$this->load->view('header');
+		$this->load->view('candidates/header');
+		$this->load->view('candidates/resume');
+		$this->load->view('candidates/footer');
+		$this->load->view('footer');
+		}
 
 }
 ?>

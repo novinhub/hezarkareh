@@ -1,87 +1,70 @@
 
-              <div class="dashboard-content-wrapper">
                 <div class="dashboard-section user-statistic-block">
                   <div class="user-statistic">
                     <i data-feather="pie-chart"></i>
                     <h3>132</h3>
-                    <span>Companies Viewed</span>
+                    <h6>آمار بازدید کارفرمایان از رزومه </h6>
                   </div>
                   <div class="user-statistic">
                     <i data-feather="briefcase"></i>
                     <h3>12</h3>
-                    <span>Applied Jobs</span>
+                    <h6>تعداد درخواست های استخدام</h6>
                   </div>
                   <div class="user-statistic">
                     <i data-feather="heart"></i>
                     <h3>32</h3>
-                    <span>Favourite Jobs</span>
+                    <h6>تعداد کار ها با تخصص شما</h6>
                   </div>
                 </div>
-                <div class="dashboard-section dashboard-view-chart">
-                  <canvas id="view-chart" width="400" height="200"></canvas>
-                </div>
-                <div class="dashboard-section dashboard-recent-activity">
-                  <h4 class="title">Recent Activity</h4>
-                  <div class="activity-list">
-                    <i class="fas fa-bolt"></i>
-                    <div class="content">
-                      <h5>Your Resume Updated!</h5>
-                      <span class="time">5 hours ago</span>
+                
+                <div class="job-list rtl">
+                      <div class="thumb">
+                        <a href="#">
+                          <img src="<?php echo base_url('files/');?>images/job/company-logo-2.png" class="img-fluid" alt="">
+                        </a>
+                      </div>
+                      <div class="body">
+                        <div class="content">
+                          <h4><a class="mr-4" href="#">مدیر فروشگاه</a></h4>
+                          <div class="info">
+                            <span class="company"><a href="#"><i data-feather="briefcase"></i>مدیریت</a></span>
+                            <span class="office-location"><a href="#"><i data-feather="map-pin"></i>شیراز</a></span>
+                            <span class="job-type part-time"><a href="#"><i data-feather="clock"></i>تمام وقت</a></span>
+                          </div>
+                        </div>
+                        <div class="more">
+                          <div class="buttons">
+                           
+                            <a href="#" class="favourite"><i data-feather="heart"></i></a>
+                          </div>
+                        
+                          <p class="deadline">تاریخ انتشار: Oct 31, 2018</p>
+                        </div>
+                      </div>
                     </div>
-                    <div class="close-activity">
-                      <i class="fas fa-times"></i>
+                    <div class="job-list rtl">
+                      <div class="thumb">
+                        <a href="#">
+                          <img src="<?php echo base_url('files/');?>images/job/company-logo-2.png" class="img-fluid" alt="">
+                        </a>
+                      </div>
+                      <div class="body">
+                        <div class="content">
+                          <h4><a class="mr-4" href="#">مدیر فروشگاه</a></h4>
+                          <div class="info">
+                            <span class="company"><a href="#"><i data-feather="briefcase"></i>مدیریت</a></span>
+                            <span class="office-location"><a href="#"><i data-feather="map-pin"></i>شیراز</a></span>
+                            <span class="job-type part-time"><a href="#"><i data-feather="clock"></i>تمام وقت</a></span>
+                          </div>
+                        </div>
+                        <div class="more">
+                          <div class="buttons">
+                           
+                            <a href="#" class="favourite"><i data-feather="heart"></i></a>
+                          </div>
+                        
+                          <p class="deadline">تاریخ انتشار: Oct 31, 2018</p>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                  <div class="activity-list">
-                    <i class="fas fa-arrow-circle-down"></i>
-                    <div class="content">
-                      <h5>Someone downloaded your resume.</h5>
-                      <span class="time">11 hours ago</span>
-                    </div>
-                    <div class="close-activity">
-                      <i class="fas fa-times"></i>
-                    </div>
-                  </div>
-                  <div class="activity-list">
-                    <i class="fas fa-check-square"></i>
-                    <div class="content">
-                      <h5>You applied for Project Manager @homeland</h5>
-                      <span class="time">11 hours ago</span>
-                    </div>
-                    <div class="close-activity">
-                      <i class="fas fa-times"></i>
-                    </div>
-                  </div>
-                  <div class="activity-list">
-                    <i class="fas fa-check-square"></i>
-                    <div class="content">
-                      <h5>You applied for Project Manager @homeland</h5>
-                      <span class="time">5 hours ago</span>
-                    </div>
-                    <div class="close-activity">
-                      <i class="fas fa-times"></i>
-                    </div>
-                  </div>
-                  <div class="activity-list">
-                    <i class="fas fa-user"></i>
-                    <div class="content">
-                      <h5>You changed password successfuly</h5>
-                      <span class="time">2 days ago</span>
-                    </div>
-                    <div class="close-activity">
-                      <i class="fas fa-times"></i>
-                    </div>
-                  </div>
-                  <div class="activity-list">
-                    <i class="fas fa-heart"></i>
-                    <div class="content">
-                      <h5>Someone bookmarked you</h5>
-                      <span class="time">3 days ago</span>
-                    </div>
-                    <div class="close-activity">
-                      <i class="fas fa-times"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
+</div>
