@@ -398,7 +398,7 @@
     .download-resume a svg {
       height: 14px;
       width: 14px;
-      margin-left: 10px; }
+      margin-right: 10px; }
     .download-resume a:hover {
       background: #246df8;
       color: #ffffff; }
@@ -480,8 +480,8 @@
       width: 15px; }
 
 .details-section.dashboard-section h4 {
-  padding-bottom: 30px;
-  padding-right: 32px; }
+  padding-bottom: 20px;
+  padding-right: 22px; }
 
 .dashboard-section .information {
   padding: 20px;

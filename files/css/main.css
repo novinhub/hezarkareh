@@ -4081,13 +4081,14 @@ a:focus {
 .personal-information ul li span {
   font-size: "Poppins", sans-serif;
   font-weight: 500;
-  margin-right: 5px;
+  margin-right: 10px;
+  margin-left: 3px;
   color: #232630;
 }
 
-.personal-information ul li + li {
+/* .personal-information ul li + li {
   margin-top: 8px;
-}
+} */
 
 .information {
   padding: 30px;
@@ -6857,7 +6858,7 @@ header .absolute-nav {
 .professonal-skill .progress-group .progress-item .progress-body .progress-to {
   position: absolute;
   top: -25px;
-  right: 0;
+  left: 0;
 }
 
 .professonal-skill .progress-group .progress-item:nth-child(2n) {

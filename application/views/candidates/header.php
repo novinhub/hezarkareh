@@ -32,7 +32,7 @@
                   <ul>
                     <li class="active"><i class="fas fa-home"></i><a href="<?php echo base_url('candidates');?>">داشبورد</a></li>
                     <li><i class="fas fa-file-alt"></i><a href="<?php echo base_url('candidates/resume');?>">رزومه</a></li>
-                    <li><i class="fas fa-edit"></i><a href="edit-resume.html">ساخت رزومه</a></li>
+                    <li><i class="fas fa-edit"></i><a href="<?php echo base_url('candidates/edit_resume');?>">ساخت رزومه</a></li>
                     <li><i class="fas fa-heart"></i><a href="dashboard-bookmark.html">نشان شده ها</a></li>
                     <li><i class="fas fa-check-square"></i><a href="dashboard-applied.html">درخواست های استخدام</a></li>
                   </ul>
