@@ -22,7 +22,7 @@
             <div class="searchAndFilter-block">
               <div class="searchAndFilter">
                 <form action="#" class="search-form">
-                  <input type="text" placeholder="کلمات کلیدی">
+                  <input type="text" placeholder="کلمات کلیدی"> 
                   <select class="selectpicker" id="search-location">
                     <option value="" selected>مکان</option>
                     <option value="california">California</option>
