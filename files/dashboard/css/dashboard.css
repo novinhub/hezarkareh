@@ -320,7 +320,7 @@
 .upload-profile-photo .file-upload {
   position: absolute;
   bottom: 0;
-  left: 0;
+  right: 0;
   overflow: hidden;
   width: 150px;
   border-bottom-right-radius: 3px;
@@ -354,12 +354,11 @@
   margin-bottom: 30px; }
   .dashboard-form .form-group label {
     font-size: 1.4rem;
-    font-family: "Poppins", sans-serif;
     font-weight: 500;
     color: #6f7484; }
   .dashboard-form .form-group .form-control {
     height: 40px;
-    padding: 0;
+    padding: 10px;
     border: 0;
     border-bottom: 1px solid rgba(0, 0, 0, 0.08);
     border-radius: 0;
@@ -1484,7 +1483,6 @@
   .manage-candidate-container .table th {
     border-top: 0;
     font-size: 1.4rem;
-    font-family: "Poppins", sans-serif;
     font-weight: 500;
     color: #6f7484;
     padding-left: 0;
@@ -1529,14 +1527,14 @@
     .manage-candidate-container .status svg {
       height: 15px;
       width: 15px;
-      margin-right: 8px; }
+      margin-left: 8px; }
   .manage-candidate-container .action {
     text-align: right; }
     .manage-candidate-container .action a svg {
       height: 15px;
       width: 15px; }
     .manage-candidate-container .action a + a {
-      margin-left: 10px; }
+      margin-right: 10px; }
     .manage-candidate-container .action .download {
       color: #01d13d; }
     .manage-candidate-container .action .inbox {

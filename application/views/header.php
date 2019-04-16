@@ -95,7 +95,7 @@
               <a title="" href="" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Jobs</a>
               <ul  class="dropdown-menu">
                 <li class="menu-item"><a href="<?php echo base_url('candidates');?>">Job Listing</a></li>
-                <li class="menu-item"><a href="job-listing-with-map.html">Job Listing With Map</a></li>
+                <li class="menu-item"><a href="<?php echo base_url('employer');?>">Job Listing With Map</a></li>
                 <li class="menu-item"><a href="job-details.html">Job Details</a></li>
                 <li class="menu-item"><a href="post-job.html">Post Job</a></li>
               </ul>

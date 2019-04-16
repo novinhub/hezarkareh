@@ -7,12 +7,40 @@ function __construct(){
 parent::__construct();
 }
 	function index(){
-	// $header['title'] = 'داشبورد';
-	// $header['active'] = 'dashbord';
-    $this->load->view('header');
-    $this->load->view('employer/header');
-	$this->load->view('employer/dashbord');
-	$this->load->view('footer');
+	    $this->load->view('header');
+ 	    $this->load->view('employer/header');
+		$this->load->view('employer/dashbord');
+		$this->load->view('employer/footer');
+		$this->load->view('footer');
 	}
+	function manage_candidate(){
+		$this->load->view('header');
+		$this->load->view('employer/header');
+		$this->load->view('employer/manage_candidate');
+		$this->load->view('employer/footer');
+		$this->load->view('footer');
+		}
+	function manage_jobs(){
+		$this->load->view('header');
+		$this->load->view('employer/header');
+		$this->load->view('employer/manage_jobs');
+		$this->load->view('employer/footer');
+		$this->load->view('footer');
+		}
+	function post_job(){
+		$this->load->view('header');
+		$this->load->view('employer/header');
+		$this->load->view('employer/post_job');
+		$this->load->view('employer/footer');
+		$this->load->view('footer');
+		}
+	function edit_profile(){
+		$this->load->view('header');
+		$this->load->view('employer/header');
+		$this->load->view('employer/edit_profile');
+		$this->load->view('employer/footer');
+		$this->load->view('footer');
+	}
+		
 }
 ?>

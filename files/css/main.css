@@ -2937,7 +2937,7 @@ a:focus {
 
 .basic-info-input h4 svg {
   height: 15px;
-  margin-right: 7px;
+  margin-left: 7px;
   color: #aaa;
 }
 
@@ -9648,4 +9648,7 @@ header .absolute-nav {
 }
 .circle{
   border-radius: 50px;
+}
+.mt-6{
+  margin-top: 5rem;
 }
