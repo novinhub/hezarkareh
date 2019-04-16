@@ -13,6 +13,14 @@ class jobs extends CI_Controller {
         $this->load->view('jobs/jobs');
         $this->load->view('footer');
     }
+    public function details()
+    {
+        $header['title'] = 'کارها';
+        $header['active'] = 'jobs';
+        $this->load->view('header', $header);
+        $this->load->view('jobs/details');
+        $this->load->view('footer');
+    }
 
 }
 

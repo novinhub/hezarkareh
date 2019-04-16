@@ -1157,7 +1157,7 @@ a:focus {
   content: "\e622";
   font-family: 'themify';
   top: 0;
-  right: 0;
+  left: 0;
   -webkit-transition: all .3s ease;
   -o-transition: all .3s ease;
   transition: all .3s ease;
@@ -1224,7 +1224,7 @@ a:focus {
 .job-filter-wrapper .job-filter.job-type ul li svg, .candidate-filter-wrapper .job-filter.job-type ul li svg, .employer-filter-wrapper .job-filter.job-type ul li svg, .job-filter-wrapper .job-type.candidate-filter ul li svg, .candidate-filter-wrapper .job-type.candidate-filter ul li svg, .employer-filter-wrapper .job-type.candidate-filter ul li svg, .job-filter-wrapper .candidate-filter.candidate-type ul li svg, .candidate-filter-wrapper .candidate-filter.candidate-type ul li svg, .employer-filter-wrapper .candidate-filter.candidate-type ul li svg, .job-filter-wrapper .candidate-filter.employer-type ul li svg, .candidate-filter-wrapper .candidate-filter.employer-type ul li svg, .employer-filter-wrapper .candidate-filter.employer-type ul li svg, .job-filter-wrapper .job-filter.candidate-type ul li svg, .candidate-filter-wrapper .job-filter.candidate-type ul li svg, .employer-filter-wrapper .job-filter.candidate-type ul li svg, .job-filter-wrapper .candidate-type.employer-filter ul li svg, .candidate-filter-wrapper .candidate-type.employer-filter ul li svg, .employer-filter-wrapper .candidate-type.employer-filter ul li svg, .job-filter-wrapper .job-type.employer-filter ul li svg, .candidate-filter-wrapper .job-type.employer-filter ul li svg, .employer-filter-wrapper .job-type.employer-filter ul li svg, .job-filter-wrapper .employer-filter.employer-type ul li svg, .candidate-filter-wrapper .employer-filter.employer-type ul li svg, .employer-filter-wrapper .employer-filter.employer-type ul li svg, .job-filter-wrapper .job-filter.employer-type ul li svg, .candidate-filter-wrapper .job-filter.employer-type ul li svg, .employer-filter-wrapper .job-filter.employer-type ul li svg {
   height: 14px;
   width: 14px;
-  margin-right: 7px;
+  margin-left: 7px;
 }
 
 .job-filter-wrapper .job-filter.job-type ul .full-time svg, .candidate-filter-wrapper .job-filter.job-type ul .full-time svg, .employer-filter-wrapper .job-filter.job-type ul .full-time svg, .job-filter-wrapper .job-type.candidate-filter ul .full-time svg, .candidate-filter-wrapper .job-type.candidate-filter ul .full-time svg, .employer-filter-wrapper .job-type.candidate-filter ul .full-time svg, .job-filter-wrapper .candidate-filter.candidate-type ul .full-time svg, .candidate-filter-wrapper .candidate-filter.candidate-type ul .full-time svg, .employer-filter-wrapper .candidate-filter.candidate-type ul .full-time svg, .job-filter-wrapper .candidate-filter.employer-type ul .full-time svg, .candidate-filter-wrapper .candidate-filter.employer-type ul .full-time svg, .employer-filter-wrapper .candidate-filter.employer-type ul .full-time svg, .job-filter-wrapper .job-filter.candidate-type ul .full-time svg, .candidate-filter-wrapper .job-filter.candidate-type ul .full-time svg, .employer-filter-wrapper .job-filter.candidate-type ul .full-time svg, .job-filter-wrapper .candidate-type.employer-filter ul .full-time svg, .candidate-filter-wrapper .candidate-type.employer-filter ul .full-time svg, .employer-filter-wrapper .candidate-type.employer-filter ul .full-time svg, .job-filter-wrapper .job-type.employer-filter ul .full-time svg, .candidate-filter-wrapper .job-type.employer-filter ul .full-time svg, .employer-filter-wrapper .job-type.employer-filter ul .full-time svg, .job-filter-wrapper .employer-filter.employer-type ul .full-time svg, .candidate-filter-wrapper .employer-filter.employer-type ul .full-time svg, .employer-filter-wrapper .employer-filter.employer-type ul .full-time svg, .job-filter-wrapper .job-filter.employer-type ul .full-time svg, .candidate-filter-wrapper .job-filter.employer-type ul .full-time svg, .employer-filter-wrapper .job-filter.employer-type ul .full-time svg {
@@ -1360,7 +1360,7 @@ a:focus {
 .job-filter-wrapper .job-filter-dropdown .dropdown-toggle::after, .candidate-filter-wrapper .job-filter-dropdown .dropdown-toggle::after, .employer-filter-wrapper .job-filter-dropdown .dropdown-toggle::after, .job-filter-wrapper .candidate-filter-dropdown .dropdown-toggle::after, .candidate-filter-wrapper .candidate-filter-dropdown .dropdown-toggle::after, .employer-filter-wrapper .candidate-filter-dropdown .dropdown-toggle::after, .job-filter-wrapper .employer-filter-dropdown .dropdown-toggle::after, .candidate-filter-wrapper .employer-filter-dropdown .dropdown-toggle::after, .employer-filter-wrapper .employer-filter-dropdown .dropdown-toggle::after {
   position: absolute;
   top: 17px;
-  right: 0;
+  left: 0;
 }
 
 .job-filter-wrapper .job-filter-dropdown .bootstrap-select .dropdown-menu li a, .candidate-filter-wrapper .job-filter-dropdown .bootstrap-select .dropdown-menu li a, .employer-filter-wrapper .job-filter-dropdown .bootstrap-select .dropdown-menu li a, .job-filter-wrapper .candidate-filter-dropdown .bootstrap-select .dropdown-menu li a, .candidate-filter-wrapper .candidate-filter-dropdown .bootstrap-select .dropdown-menu li a, .employer-filter-wrapper .candidate-filter-dropdown .bootstrap-select .dropdown-menu li a, .job-filter-wrapper .employer-filter-dropdown .bootstrap-select .dropdown-menu li a, .candidate-filter-wrapper .employer-filter-dropdown .bootstrap-select .dropdown-menu li a, .employer-filter-wrapper .employer-filter-dropdown .bootstrap-select .dropdown-menu li a {
@@ -1492,7 +1492,7 @@ a:focus {
 }
 
 .job-view-controller-wrapper .job-view-controller .controller, .candidate-view-controller-wrapper .job-view-controller .controller, .employer-view-controller-wrapper .job-view-controller .controller, .job-view-controller-wrapper .candidate-view-controller .controller, .candidate-view-controller-wrapper .candidate-view-controller .controller, .employer-view-controller-wrapper .candidate-view-controller .controller, .job-view-controller-wrapper .employer-view-controller .controller, .candidate-view-controller-wrapper .employer-view-controller .controller, .employer-view-controller-wrapper .employer-view-controller .controller {
-  margin-right: 15px;
+  margin-left: 15px;
   height: 40px;
   width: 40px;
   border: 1px solid rgba(0, 0, 0, 0.08);
@@ -1554,7 +1554,7 @@ a:focus {
 .job-view-filter .dropdown-toggle::after, .candidate-view-filter .dropdown-toggle::after, .employer-view-filter .dropdown-toggle::after {
   position: absolute;
   top: 17px;
-  right: 15px;
+  left: 15px;
 }
 
 .job-view-filter .dropdown.bootstrap-select:focus, .candidate-view-filter .dropdown.bootstrap-select:focus, .employer-view-filter .dropdown.bootstrap-select:focus {
@@ -2295,6 +2295,7 @@ a:focus {
   font-weight: 500;
   color: #232630;
   margin-bottom: 15px;
+  margin-right: 10px;
 }
 
 .job-list .body .content .info span {
@@ -2346,7 +2347,7 @@ a:focus {
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   font-size: 1.4rem;
-  margin-left: 20px;
+  margin-right: 20px;
   background: #f9f9f9;
   border: 1px solid rgba(0, 0, 0, 0.08);
 }
@@ -9650,4 +9651,10 @@ header .absolute-nav {
 }
 .mt-6{
   margin-top: 5rem;
+}
+.header-custom{
+  background-color: #daf4fc;
+  text-align: center;
+  min-height: 100px;
+
 }
