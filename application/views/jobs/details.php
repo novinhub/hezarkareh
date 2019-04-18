@@ -9,78 +9,74 @@
               <div class="job-title-and-info">
                 <div class="title">
                   <div class="thumb">
-                    <img src="images/job/company-logo-1.png" class="img-fluid" alt="">
+                    <img src="<?php echo base_url('files/')?>images/job/company-logo-1.png" class="img-fluid" alt="">
                   </div>
                   <div class="title-body">
-                    <h4>Designer Required</h4>
+                    <h4>آشپز فست فود</h4>
                     <div class="info">
-                      <span class="company"><a href="#"><i data-feather="briefcase"></i>Theoreo</a></span>
-                      <span class="office-location"><a href="#"><i data-feather="map-pin"></i>New York City</a></span>
-                      <span class="job-type full-time"><a href="#"><i data-feather="clock"></i>Full Time</a></span>
+                      <span class="company"><a href="#"><i data-feather="briefcase"></i>آشپز </a></span>
+                      <span class="office-location"><a href="#"><i data-feather="map-pin"></i>شیراز </a></span>
+                      <span class="job-type full-time"><a href="#"><i data-feather="clock"></i>موقت</a></span>
                     </div>
                   </div>
                 </div>
                 <div class="buttons">
-                  <a class="save" href="#"><i data-feather="heart"></i>Save Job</a>
-                  <a class="apply" href="#">Apply Online</a>
+                  <a class="save" href="#"><i data-feather="heart"></i>ذخیره شغل</a>
+                  <a class="apply" href="#">فرستادن رزومه</a>
                 </div>
               </div>
               <div class="details-information section-padding-60">
                 <div class="row">
                   <div class="col-xl-7 col-lg-8 offset-xl-1">
                     <div class="description details-section">
-                      <h4><i data-feather="align-left"></i>Job Description</h4>
-                      <p>Combined with a handful of model sentence structures, to generate lorem Ipsum which  It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including.</p>
-                      <p>Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable </p>
+                      <h4><i data-feather="align-left"></i>توضیحات شغل</h4>
+<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد. </p>
                     </div>
                     <div class="responsibilities details-section">
-                      <h4><i data-feather="zap"></i>Responsibilities</h4>
+                      <h4><i data-feather="zap"></i>وضایف</h4>
                       <ul>
-                        <li>The applicants should have experience in the following areas</li>
-                        <li>Skills on M.S Word, Excel, and Integrated Accounting package i.e. Software</li>
-                        <li>Have sound knowledge of commercial activities.</li>
-                        <li>Should have vast knowledge in IAS/ IFRS, Company Act, Income Tax, VAT.</li>
-                        <li>Good verbal and written communication skills.</li>
-                        <li>Leadership, analytical, and problem-solving abilities.</li>
+                        <li>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از.</li>
+                        <li>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از.</li>
+                        <li>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از.</li>
+                        <li>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از.</li>
+                        <li>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از.</li>
+                        <li>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از.</li>
                       </ul>
                     </div>
                     <div class="edication-and-experience details-section">
-                      <h4><i data-feather="book"></i>Education + Experience</h4>
+                      <h4><i data-feather="book"></i>تحصیلات و تجربیات</h4>
                       <ul>
-                        <li>M.Com (Accounting) / M.B.S / M.B.A under National University with CA course complete.</li>
-                        <li>M.S (Statistics) any Public University / National University.</li>
-                        <li>Masters of library science any Public University.</li>
-                        <li>2 to 3 year(s) Experiance</li>
-                        <li>Females candidate are discourage to apply.</li>
+                        <li>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از.</li>
+                        <li>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از.</li>
+                        <li>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از.</li>
+                        <li>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از.</li>
+                        <li>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از.</li>
                       </ul>
                     </div>
                     <div class="other-benifit details-section">
-                      <h4><i data-feather="gift"></i>Other Benefits</h4>
+                      <h4><i data-feather="gift"></i>مزایا</h4>
                       <ul>
-                        <li>Health and life insurance </li>
-                        <li>2 days of weekend </li>
-                        <li>2 annual performanc Bonuses</li>
-                        <li>Lunch &amp; Snacks</li>
+                        <li>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از.</li>
+                        <li>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از.</li>
+                        <li>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از.</li>
+                        <li>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از.</li>
                       </ul>
                     </div>
                     <div class="job-apply-buttons">
-                      <a href="#" class="apply">Apply Online</a>
-                      <a href="#" class="email"><i data-feather="mail"></i>Email Job</a>
+                      <a href="#" class="apply">فرستادم رزومه</a>
+                      <a href="#" class="email"><i data-feather="mail"></i>فرستادن</a>
                     </div>
                   </div>
                   <div class="col-xl-4  col-lg-4">
                     <div class="information-and-share">
                       <div class="job-summary">
-                        <h4>Job Summary</h4>
+                        <h4>خلاصه کار </h4>
                         <ul>
-                          <li><span>Published on:</span> Oct 6, 2018</li>
-                          <li><span>Vacancy:</span> 08</li>
-                          <li><span>Employment Status:</span> Full-time</li>
-                          <li><span>Experience:</span> 2 to 3 year(s)</li>
-                          <li><span>Job Location:</span> New ork City</li>
-                          <li><span>Salary:</span> $32k - $36k</li>
-                          <li><span>Gender:</span> Any</li>
-                          <li><span>Application Deadline:</span> Oct 15, 2018</li>
+                          <li>نوع کار:<span>تمام وقت</span></li>
+                          <li> سابقه کار:<span>3سال</span></li>
+                          <li>مکان<span>شیراز</span></li>
+                          <li>حقوق:<span>3ملیون</span></li>
+                          <li>جنسیت<span>مرد</span></li>
                         </ul>
                       </div>
                       <div class="share-job-post">
@@ -93,23 +89,17 @@
                         <a href="#" class="add-more"><span class="ti-plus"></span></a>
                       </div>
                       <div class="buttons">
-                        <a href="#" class="button print"><i data-feather="printer"></i>Print Job</a>
-                        <a href="#" class="button report"><i data-feather="flag"></i>Report Job</a>
-                      </div>
-                      <div class="job-location">
-                        <h4>Job Location</h4>
-                        <div id="map-area">
-                          <div class="cp-map" id="location" data-lat="40.713355" data-lng="-74.005535" data-zoom="10"></div>
-                        </div>
+                        <a href="#" class="button print"><i data-feather="printer"></i>پرینت</a>
+                        <a href="#" class="button report"><i data-feather="flag"></i>شکایات</a>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="row">
+              <!-- <div class="row">
                 <div class="col-xl-7 col-lg-8">
                   <div class="company-information details-section">
-                    <h4><i data-feather="briefcase"></i>About the Company</h4>
+                    <h4><i data-feather="briefcase"></i>درباره شرکت</h4>
                     <ul>
                       <li><span>Company Name:</span> The Oreo Company Ltd.</li>
                       <li><span>Address:</span> Queens, NY 11375 USA</li>
@@ -119,7 +109,7 @@
                     </ul>
                   </div>
                 </div>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>

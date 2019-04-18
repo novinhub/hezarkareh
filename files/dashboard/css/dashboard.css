@@ -1512,7 +1512,7 @@
       .manage-candidate-container .title .body .info span svg {
         height: 15px;
         width: 15px;
-        margin-right: 7px;
+        margin-left: 7px;
         color: #aaa; }
     .manage-candidate-container .title .body .info .full-time a svg {
       color: #ff9247; }
