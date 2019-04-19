@@ -1,13 +1,25 @@
 <div  class="bg-custom"></div>
-<!-- <div class="header-custom">
-    <h3 class="pt-5">کارها</h3>
-    <nav aria-label="breadcrumb">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="#">Home</a></li>
-    <li class="breadcrumb-item active" aria-current="page">Library</li>
-  </ol>
-</nav>
-</div> -->
+ <!-- Breadcrumb -->
+ <!-- <div class="alice-bg padding-top-60 padding-bottom-60">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-5"></div>
+          <div class="col-md-2">
+            <div class="breadcrumb-area text-center">
+              <h1>کار ها</h1>
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="#">خانه</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">کار ها</li>
+                </ol>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+    <!-- Breadcrumb End -->
+
  <!-- Job Listing -->
  <div class="alice-bg section-padding-bottom">
       <div class="container">

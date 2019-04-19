@@ -9657,3 +9657,7 @@ header .absolute-nav {
   min-height: 100px;
 
 }
+.breadcrumb{
+  position: absolute;
+  width: 100%;
+}
