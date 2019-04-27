@@ -6371,7 +6371,7 @@ header .absolute-nav {
   content: '\f067';
   font-family: 'Font Awesome\ 5 Free';
   font-weight: 900;
-  margin-right: 10px;
+  margin-left: 10px;
 }
 
 .call-to-action-2 .call-to-action-button .button:hover {
