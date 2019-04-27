@@ -1,4 +1,26 @@
-
+   <?php if($this->uri->segment(1) != ''){ ?>
+    <!-- Call to Action -->
+    <div class="call-to-action-bg padding-top-90 padding-bottom-90">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <div class="call-to-action-2">
+              <div class="call-to-action-content">
+                <h2>بهترین کارجو با کارفرمای خود را پیدا کنید</h2>
+                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. </p>
+              </div>
+              <div class="call-to-action-button">
+                <a href="#" class="button">فرستادن رزومه</a>
+                <span>یا</span>
+                <a href="#" class="button">ساختن شغل جدید</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+   <?php } ?>
+    <!-- Call to Action End -->
     <!-- Footer -->
     <footer class="footer-bg">
       <div class="footer-top border-bottom section-padding-top padding-bottom-40">
