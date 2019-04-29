@@ -9661,3 +9661,18 @@ header .absolute-nav {
   position: absolute;
   width: 100%;
 }
+.alert-succsses2{
+  background-color: #06f349;
+}
+.alert-danger2{
+  background-color: #Ff2231;
+}
+.text-white{
+  color: white;
+}
+.alert-warning2{
+  background-color: #ffac16;
+}
+.alert-info2{
+  background-color: #888895;
+}

@@ -1,4 +1,11 @@
+
 <div  class="bg-custom"></div>
+<div class="alert alert-info2 text-white alert-dismissible fade show text-center text-white m-3" role="alert">
+  <strong>موفقیت!</strong> لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. 
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span class="text-white" aria-hidden="true">&times;</span>
+  </button>
+</div>
  <div class="row">
      <div class="col-md-2"></div>
      <div class="col-md-4">
