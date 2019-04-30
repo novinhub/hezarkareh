@@ -8,7 +8,7 @@
             <div class="dashboard-sidebar col-md-3 rtl">
                 <div class="user-info">
                   <div class="thumb">
-                    <img src="<?php echo base_url('files/');?>dashboard/images/user.png" class="img-fluid circle img-thumbnail" alt="">
+                    <img src="<?php echo base_url('upload/employer/avatar/').$this->session->userdata('pic_name');?>" class="img-fluid circle img-thumbnail" alt="">
                   </div>
                   <div class="user-body mr-4">
                     <h5>علیرضا باانصاف</h5>
@@ -22,22 +22,22 @@
                     </div>
                     <div class="progress-body">
                       <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 0;"></div>
+                        <div class="progress-bar" role="progressbar" aria-valuenow="<?php echo $percent;?>" aria-valuemin="0" aria-valuemax="100" style="width: 0;"></div>
                       </div>
-                      <p class="progress-to left">45%</p>
+                      <p class="progress-to left"><?php echo $percent."%";?></p>
                     </div>
                   </div>
                 </div>
                 <div class="dashboard-menu">
                   <ul>
-                    <li class="active"><i class="fas fa-home"></i><a href="<?php echo base_url('employer');?>">داشبورد</a></li>
-                    <li><i class="fas fa-user"></i><a href="<?php echo base_url('employer/edit_profile');?>">ویرایش پروفایل</a></li>
+                    <li class="<?php if($active == 'dashbord'){echo 'active';}?>"><i class="fas fa-home"></i><a href="<?php echo base_url('employer');?>">داشبورد</a></li>
+                    <li class="<?php if($active == 'edit'){echo 'active';}?>" ><i class="fas fa-user"></i><a href="<?php echo base_url('employer/edit/').$this->session->userdata('id');?>">ویرایش پروفایل</a></li>
                     <li><i class="fas fa-plus-square"></i><a href="<?php echo base_url('employer/post_job');?>">ایجاد شغل جدید</a></li>
                     <li><i class="fas fa-briefcase"></i><a href="<?php echo base_url('employer/manage_jobs');?>">همه شغل ها</a></li>
                     <li><i class="fas fa-users"></i><a href="<?php echo base_url('employer/manage_candidate');?>">کارجو های مرتبط</a></li>
                   </ul>
                   <ul class="delete">
-                    <li><i class="fas fa-power-off"></i><a href="#" data-toggle="modal" data-target="#modal-logoute">خارج شدن</a></li>
+                    <li><i class="fas fa-power-off"></i><a href="" data-toggle="modal" data-target="#modal-logoute">خارج شدن</a></li>
                     <li><i class="fas fa-trash-alt"></i><a href="#" data-toggle="modal" data-target="#modal-delete">پاک کرده رزومه</a></li>
                   </ul>
                   <!--delet Modal -->
@@ -66,7 +66,7 @@
                           <p>آیا میخواهید خارج شوید؟</p>
                           
                           <div class="modal-footer d-block text-center">
-                     <a class="btn btn-danger px-4 py-3 btn-custom" href="#">بله</a>
+                     <a class="btn btn-danger px-4 py-3 btn-custom" href="<?php echo base_url('employer/log_out'); ?>">بله</a>
                      <button type="button" class="close btn bg-secondary px-4 py-3 text-light ml-4 mr-2 float-none" data-dismiss="modal">بستن </button>
                      </div>
                         </div>

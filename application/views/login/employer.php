@@ -1,11 +1,12 @@
-
 <div  class="bg-custom"></div>
-<div class="alert alert-info2 text-white alert-dismissible fade show text-center text-white m-3" role="alert">
-  <strong>موفقیت!</strong> لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. 
+<?php if($this->session->has_userdata('msg')){ $msg = $this->session->userdata('msg');?>
+<div class="alert alert-<?php echo $msg[1]; ?> text-white alert-dismissible fade show text-center text-white m-3" role="alert">
+  <?php echo $msg[0]; ?>
   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
     <span class="text-white" aria-hidden="true">&times;</span>
   </button>
 </div>
+<?php } ?>
  <div class="row">
      <div class="col-md-2"></div>
      <div class="col-md-4">
@@ -20,17 +21,17 @@
               </button>
             </div>
             <div class="modal-body">
-              <form action="#">
+              <form action="<?php echo base_url('login/employer_log')?>" method="post">
 
                 <div class="form-group">
-                  <input type="username" placeholder="نام کابری" class="form-control">
+                  <input type="username" name="username" placeholder="نام کابری" class="form-control" required>
                 </div>
                 <div class="form-group">
-                  <input type="password" placeholder="کلمه عبور" class="form-control">
+                  <input type="password" name="password" placeholder="کلمه عبور" class="form-control" required>
                 </div>
                 <div class="more-option terms">
                 </div>
-                <button class="button primary-bg btn-block">ورود</button>
+                <button name="sub" type="submit" class="button primary-bg btn-block">ورود</button>
               </form>
             </div>
           </div>
@@ -51,19 +52,19 @@
             </div>
             <div class="modal-body">
 
-              <form action="#">
+              <form action="<?php echo base_url('login/employer')?>" method="post">
               <div class="form-group">
-                  <input type="username" placeholder="شماره همراه" class="form-control">
+                  <input type="text" title='لطفا شماره تلفن معتبر وارد کنید' name = "tel" maxlength="11" pattern="[0-9]{11}" placeholder="شماره همراه" class="form-control" required>
                 </div>
                 <div class="form-group">
-                  <input type="username" placeholder="نام کاربری" class="form-control">
+                  <input type="text" name = "username" placeholder="نام کاربری" class="form-control" required>
                 </div>
 
                 <div class="form-group">
-                  <input type="password" placeholder="رمز عبور" class="form-control">
+                  <input type="password" name = "password" placeholder="رمز عبور" class="form-control" required>
                 </div>
 
-                <button class="button primary-bg btn-block">ثبت نام</button>
+                <button type="submit" name="sub" class="button primary-bg btn-block">ثبت نام</button>
               </form>
             </div>
           </div>
