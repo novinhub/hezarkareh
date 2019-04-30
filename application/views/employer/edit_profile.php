@@ -39,12 +39,9 @@
               <div class="input-group responsive">
                 <select  id="pemissions-list" class="selectpicker "
                          title="<?php if($edit->state != ''){echo $edit->state;}else{echo 'نام استان و شهر خود را وارد کنید';}?>" data-live-search="true">
-                  <option>cow</option>
-                  <option >bull</option>
-                  <option >ox</option>
-                  <option>ASD</option>
-                  <option >Bla</option>
-                  <option>Ble</option>
+                   <?php foreach($place as $rows){ if($rows->id == $edit->place_id){$select = "selected";}else{$select = '';} ?>      
+                  <option value = "<?php echo $rows->id;?>" <?php echo $select;?>><?php echo $rows->state." - ".$rows->city;?></option>
+                        <?php } ?>
                 </select>
                 <span class="input-group-btn">
                   <button type="submit" form="load-selected-permission" class="btn btn-default center">
@@ -57,7 +54,7 @@
       </form>
     </div>
 
-    
+
 
                     <div class="form-group row">
                       <label class="col-sm-3 col-form-label">شماره تماس:</label>

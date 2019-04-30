@@ -94,6 +94,7 @@ public function edit(){
 			 }
 			 $data['percent'] = $percent;
 			 $data['edit'] = $this->base_model->run_query("SELECT employer.* , place.state , place.city , field.name FROM employer left join place on employer.place_id = place.id left join field on employer.field_id = field.id where employer.id = '$id'" , 'row');
+			 $data['place'] = $this->base_model->get_data('place' , '*' , 'result' , NULL , NULL , NULL ,array('state' , 'ASC'));
 			 $header['title'] = ' ویرایش پروفایل ';
 			 $header['active'] = 'edit';
 			 $this->load->view('header' , $header);
