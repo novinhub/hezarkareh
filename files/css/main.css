@@ -9676,3 +9676,19 @@ header .absolute-nav {
 .alert-info2{
   background-color: #888895;
 }
+.bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn){
+  width: 100%;
+}
+.bootstrap-select>.dropdown-toggle{
+  font-size: 13px;
+  background-color: white;
+  border: white;
+  color: #495057;
+}
+.dropdown-item{
+  font-size: 13px;
+  color: #495057;
+}
+.bootstrap-select .dropdown-toggle .filter-option-inner-inner{
+  margin-right: 6px;
+}
