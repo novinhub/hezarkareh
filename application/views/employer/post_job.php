@@ -7,6 +7,30 @@
                         <input type="text" class="form-control" placeholder="عنوان شغل خود را بنوسید">
                       </div>
                     </div>
+                    <div class="form-group row">
+			<label class="col-sm-3 col-form-label font-lg"> مکان : </label>
+      <div id="load-selected" class=" form-control col-sm-9 responsive">
+							<select id="pemissions-list" name="place_id" class="selectpicker " title="<?php if($employer->state == ''){echo 'نام استان و شهر خود را وارد کنید ';}?>" data-live-search="true" required>
+								<?php foreach($place as $rows){ if($rows->id == $employer->place_id){$select = "selected";}else{$select = '';} ?>
+								<option value="<?php echo $rows->id;?>" <?php echo $select;?>>
+									<?php echo $rows->state." - ".$rows->city;?>
+								</option>
+								<?php } ?>
+							</select>
+				</div>
+    </div>
+    <div class="form-group row">
+			<label class="col-sm-3 col-form-label font-lg"> دسته بندی شغل  : </label>
+      <div id="load-selected" class=" form-control col-sm-9 responsive">
+							<select id="pemissions-list" name="field_id" class="selectpicker " title="<?php if($employer->name == ''){echo 'حوزه فعالیت خود را وارد کنید';}?>" data-live-search="true" required>
+								<?php foreach($field as $row){ if($row->id == $employer->field_id){$select = "selected";}else{$select = '';} ?>
+								<option value="<?php echo $row->id;?>" <?php echo $select;?>>
+									<?php echo $row->name;?>
+								</option>
+								<?php } ?>
+							</select>
+				</div>
+		</div>
                     <div class="row">
                       <label class="col-md-3 col-form-label">شرایط کار</label>
                       <div class="col-md-9">
@@ -87,42 +111,6 @@
                       <label class="col-md-3 col-form-label">مزایا</label>
                       <div class="col-md-9">
                         <textarea type="text" class="form-control" placeholder="مزایا خود را بنوسید"></textarea>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <label class="col-md-3 col-form-label">مکان شما</label>
-                      <div class="col-md-9">
-                        <div class="row">
-                          <div class="col-md-6">
-                            <div class="form-group">
-                              <select class="form-control">
-                                <option>استان</option>
-                                <option>فارس</option>
-                                <option>تهرات</option>
-                                <option>یزد</option>
-                                <option>اصفهان</option>
-                              </select>
-                              <i class="fa fa-caret-down"></i>
-                            </div>
-                          </div>
-                          <div class="col-md-6">
-                            <div class="form-group">
-                              <select class="form-control">
-                                <option>شهر</option>
-                                <option>شیراز</option>
-                                <option>تهران</option>
-                                <option>اصفهان</option>                       
-                                <option>یزد</option>
-                              </select>
-                              <i class="fa fa-caret-down"></i>
-                            </div>
-                          </div>
-                          <div class="col-md-12">
-                            <div class="form-group">
-                              <input type="text" class="form-control" placeholder="آدرس">
-                            </div>
-                          </div>
-                        </div>
                       </div>
                     </div>
                     <div class="row">

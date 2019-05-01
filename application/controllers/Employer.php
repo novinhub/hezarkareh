@@ -130,7 +130,10 @@ public function post(){
 				$message['msg'][1] = 'info2';
 				$this->session->set_flashdata($message);
 				redirect('employer/edit');
-			} 
+			}
+			$data['employer'] = $pro;
+			$data['place'] = $this->base_model->get_data('place' , '*' , 'result' , NULL , NULL , NULL , array('state' , 'ASC'));
+			$data['field'] = $this->base_model->get_data('field' , '*' , 'result' , NULL , NULL , NULL , array('name' , 'ASC'));
 			$header['title'] = ' ایجاد آگهی جدید ';
 			$header['active'] =  'post';
 			$this->load->view('header' ,$header );
