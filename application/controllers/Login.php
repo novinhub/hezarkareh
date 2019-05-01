@@ -59,24 +59,26 @@ class Login extends CI_Controller {
                         $message['msg'][1] = 'info2';
                         $this->session->set_flashdata($message);
                         redirect('login/employer');
-                    }else{
-                    $sess['id'] = $res->id;
+                    }else{   
+                    $sess['id'] = $res;
                     $sess['username'] = $data['username'];
-                    $sess['pic_name'] = $data['co_pic'];
+                    $sess['fullname'] = $data['fullname'];
+                    $sess['co_pic'] = $data['co_pic'];
                     $sess['e_login'] = TRUE;
                     $this->session->set_userdata($sess);
                     $message['msg'][0] = " در این قسمت اطلاعات مربوط به پروفایل خود را تکمیل کنید ";
                     $message['msg'][1] = 'info2';
                     $this->session->set_flashdata($message);
-                    redirect("employer/edit/$res->id");
+                    redirect("employer/edit");
                     }
                 }
             }
+        }else{
+            $header['title'] = 'ورود و ثبت نام کارفرما';
+            $this->load->view('header', $header);
+            $this->load->view('login/employer');
+            $this->load->view('footer');
         }
-        $header['title'] = 'ورود و ثبت نام کارفرما';
-        $this->load->view('header', $header);
-        $this->load->view('login/employer');
-        $this->load->view('footer');
     }
     //login
     public function employer_log(){
@@ -94,7 +96,7 @@ class Login extends CI_Controller {
 			}else{
                 $username = $this->db->escape_str($this->input->post('username'));
                 $password = $this->db->escape_str($this->input->post('password'));
-                $check = $this->base_model->get_data('employer' , 'id , username , co_pic , password' , 'row' , array('username'=>$username));
+                $check = $this->base_model->get_data('employer' , 'id , fullname ,  username , co_pic , password' , 'row' , array('username'=>$username));
                 if(empty($check)){
                     $message['msg'][0] = " نام کاربری به اسم  ".$username." وجود ندارد ";
                     $message['msg'][1] = 'danger2';
@@ -112,7 +114,8 @@ class Login extends CI_Controller {
                     $this->base_model->update('employer' , $data , array('id'=> $check->id));
                     $sess['id'] = $check->id;
                     $sess['username'] = $check->username;
-                    $sess['pic_name'] = $check->co_pic;
+                    $sess['fullname'] = $check->fullname;
+                    $sess['co_pic'] = $check->co_pic;
                     $sess['e_login'] = TRUE;
                     $this->session->set_userdata($sess);
                     redirect('employer');

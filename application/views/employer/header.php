@@ -8,10 +8,10 @@
             <div class="dashboard-sidebar col-md-3 rtl">
                 <div class="user-info">
                   <div class="thumb">
-                    <img src="<?php echo base_url('upload/employer/avatar/').$this->session->userdata('pic_name');?>" class="img-fluid circle img-thumbnail" alt="">
+                    <img src="<?php echo base_url('upload/employer/avatar/').$this->session->userdata('co_pic');?>" class="img-fluid circle img-thumbnail" alt="">
                   </div>
                   <div class="user-body mr-4">
-                    <h5>علیرضا باانصاف</h5>
+                    <h5><?php if($this->session->userdata('fullname') != ''){echo $this->session->userdata('fullname');}else{echo $this->session->userdata('username');} ?></h5>
                     <!-- <span></span> -->
                   </div>
                 </div>
@@ -31,8 +31,8 @@
                 <div class="dashboard-menu">
                   <ul>
                     <li class="<?php if($active == 'dashbord'){echo 'active';}?>"><i class="fas fa-home"></i><a href="<?php echo base_url('employer');?>">داشبورد</a></li>
-                    <li class="<?php if($active == 'edit'){echo 'active';}?>" ><i class="fas fa-user"></i><a href="<?php echo base_url('employer/edit/').$this->session->userdata('id');?>">ویرایش پروفایل</a></li>
-                    <li><i class="fas fa-plus-square"></i><a href="<?php echo base_url('employer/post_job');?>">ایجاد شغل جدید</a></li>
+                    <li class="<?php if($active == 'edit'){echo 'active';}?>" ><i class="fas fa-user"></i><a href="<?php echo base_url('employer/edit');?>">ویرایش پروفایل</a></li>
+                    <li class="<?php if($active == 'post'){echo 'active';}?>"><i class="fas fa-plus-square"></i><a href="<?php echo base_url('employer/post');?>">ایجاد آگهی جدید</a></li>
                     <li><i class="fas fa-briefcase"></i><a href="<?php echo base_url('employer/manage_jobs');?>">همه شغل ها</a></li>
                     <li><i class="fas fa-users"></i><a href="<?php echo base_url('employer/manage_candidate');?>">کارجو های مرتبط</a></li>
                   </ul>

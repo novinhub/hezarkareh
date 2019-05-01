@@ -7,31 +7,31 @@
 
 </div>
 <?php } ?>
-<form action="#" class="dashboard-form rtl">
+<form action="<?php echo base_url('employer/edit'); ?>" method="post" class="dashboard-form rtl" enctype="multipart/form-data">
 	<div class="dashboard-section basic-info-input">
 		<h4><i data-feather="user-check"></i>پروفایل</h4>
 		<div class="form-group row">
 			<label class="col-sm-3 col-form-label">نام و نام خانوادگی:</label>
 			<div class="col-sm-9">
-				<input type="text" name="fullname" value="<?php echo $edit->fullname; ?>" class="form-control" placeholder="علی شیرازی">
+				<input type="text" name="fullname" value="<?php echo $edit->fullname; ?>" class="form-control" placeholder="علی شیرازی" required>
 			</div>
 		</div>
 		<div class="form-group row">
 			<label class="col-sm-3 col-form-label">نام شرکت:</label>
 			<div class="col-sm-9">
-				<input type="text" name="co_name" value="<?php echo $edit->co_name; ?>" class="form-control" placeholder="نوین تک">
+				<input type="text" name="co_name" value="<?php echo $edit->co_name; ?>" class="form-control" placeholder="نوین تک" required>
 			</div>
 		</div>
     <div class="form-group row">
     <label class="col-sm-3 col-form-label">آدرس وب سایت : <small class='text-primary'> (اختیاری) </small></label>
 			<div class="col-sm-9">
-				<input type="text" name="co_name" value="<?php echo $edit->co_name; ?>" class="form-control" placeholder="novin-network.com">
+				<input type="url" name="co_web" value="<?php echo $edit->co_web; ?>" class="form-control" placeholder="https://novin-network.com">
 			</div>
 		</div>
 		<div class="form-group row">
-			<label class="col-sm-3 col-form-label font-lg">آدرس وب سایت : </label>
+			<label class="col-sm-3 col-form-label font-lg"> مکان : </label>
       <div id="load-selected" class=" form-control col-sm-9 responsive">
-							<select id="pemissions-list" class="selectpicker " title="<?php if($edit->state != ''){echo $edit->state;}else{echo 'نام استان و شهر خود را وارد کنید ';}?>" data-live-search="true">
+							<select id="pemissions-list" name="place_id" class="selectpicker " title="<?php if($edit->state == ''){echo 'نام استان و شهر خود را وارد کنید ';}?>" data-live-search="true" required>
 								<?php foreach($place as $rows){ if($rows->id == $edit->place_id){$select = "selected";}else{$select = '';} ?>
 								<option value="<?php echo $rows->id;?>" <?php echo $select;?>>
 									<?php echo $rows->state." - ".$rows->city;?>
@@ -41,12 +41,12 @@
 				</div>
     </div>
     <div class="form-group row">
-			<label class="col-sm-3 col-form-label font-lg">آدرس وب سایت : </label>
+			<label class="col-sm-3 col-form-label font-lg"> حوزه فعالیت : </label>
       <div id="load-selected" class=" form-control col-sm-9 responsive">
-							<select id="pemissions-list" class="selectpicker " title="<?php if($edit->state != ''){echo $edit->state;}else{echo 'نام استان و شهر خود را وارد کنید ';}?>" data-live-search="true">
-								<?php foreach($place as $rows){ if($rows->id == $edit->place_id){$select = "selected";}else{$select = '';} ?>
-								<option value="<?php echo $rows->id;?>" <?php echo $select;?>>
-									<?php echo $rows->state." - ".$rows->city;?>
+							<select id="pemissions-list" name="field_id" class="selectpicker " title="<?php if($edit->name == ''){echo 'حوزه فعالیت خود را وارد کنید';}?>" data-live-search="true" required>
+								<?php foreach($field as $row){ if($row->id == $edit->field_id){$select = "selected";}else{$select = '';} ?>
+								<option value="<?php echo $row->id;?>" <?php echo $select;?>>
+									<?php echo $row->name;?>
 								</option>
 								<?php } ?>
 							</select>
@@ -54,38 +54,22 @@
 		</div>
 
 		<div class="form-group row">
-			<label class="col-sm-3 col-form-label">شماره تماس:</label>
+			<label class="col-sm-3 col-form-label">اطلاعات تکمیلی</label>
 			<div class="col-sm-9">
-				<input type="text" class="form-control" placeholder="09...">
-			</div>
-		</div>
-		<div class="form-group row">
-			<label class="col-sm-3 col-form-label">آدرس:</label>
-			<div class="col-sm-9">
-				<input type="text" class="form-control" placeholder="شیراز خیابان ...">
-			</div>
-		</div>
-		<div class="form-group row">
-			<label class="col-sm-3 col-form-label">دسته بندی شغلی:</label>
-			<div class="col-sm-9">
-				<input type="text" class="form-control" placeholder="طراحی">
-			</div>
-		</div>
-		<div class="form-group row">
-			<label class="col-sm-3 col-form-label">درباره ما</label>
-			<div class="col-sm-9">
-				<textarea class="form-control" placeholder=""></textarea>
+				<textarea class="form-control" name="explain" required placeholder="لطفا یک یا دو خط در مورد شرکت خود توضیح دهید"><?php echo $edit->explain; ?></textarea>
 			</div>
 		</div>
 	</div>
 	<div class="dashboard-section upload-profile-photo">
 		<div class="update-photo">
-			<img class="image" src="<?php echo base_url('files/');?>dashboard/images/company-logo.png" alt="">
+			<img class="image" src="<?php echo base_url('upload/employer/avatar/').$this->session->userdata('co_pic');?>" alt="">
 		</div>
 		<div class="file-upload">
-			<input type="file" class="file-input">Change Avatar
-		</div>
-	</div>
+			<input type="file" name="co_pic" class="file-input">انتخاب لوگو شرکت
+    </div>
+  </div>
+  <small class="text-primary"> عکس ارسالی باید کمتر از 2MB باشد و یکی از فورمت های  PNG|JPEG|GIF باشد </small>
+  <button type="submit" name="sub">ثبت ویرایش</button>
 </form>
 
 
