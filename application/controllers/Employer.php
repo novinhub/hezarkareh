@@ -134,6 +134,12 @@ public function post(){
 			$data['employer'] = $pro;
 			$data['place'] = $this->base_model->get_data('place' , '*' , 'result' , NULL , NULL , NULL , array('state' , 'ASC'));
 			$data['field'] = $this->base_model->get_data('field' , '*' , 'result' , NULL , NULL , NULL , array('name' , 'ASC'));
+			$data['assist'] = $this->base_model->get_data('assist' , '*');
+			$data['experience'] = $this->base_model->get_data('experience' , '*');
+			$data['sex'] = $this->base_model->get_data('sex' , '*');
+			$data['salary'] = $this->base_model->get_data('salary' , '*');
+			$data['soldier'] = $this->base_model->get_data('soldier' , '*');
+			$data['proof'] = $this->base_model->get_data('proof' , '*');
 			$header['title'] = ' ایجاد آگهی جدید ';
 			$header['active'] =  'post';
 			$this->load->view('header' ,$header );

@@ -37,16 +37,15 @@
                         <div class="row">
                           <div class="col-md-6">
                             <div class="form-group">
-                              <select class="form-control">
-                                <option>دسته بندی را انتخاب کنید</option>
-                                <option>طراحی</option>
-                                <option>سلامتی</option>
-                                <option>برنامه نویسی</option>
-                                <option>مدیریت</option>
+                              <select class="form-control" name="assist_id">
+                                <?php foreach($assist as $a){?>
+                                <option value="<?php echo $a->id;?>"><?php echo $a->assist_name?></option>
+                                <?php } ?>
                               </select>
                               <i class="fa fa-caret-down"></i>
                             </div>
                           </div>
+                          <!-- حذف شود -->
                           <div class="col-md-6">
                             <div class="form-group">
                               <input type="text" class="form-control" placeholder="محل کار">
@@ -54,29 +53,25 @@
                           </div>
                           <div class="col-md-6">
                             <div class="form-group">
-                              <select class="form-control">
-                                <option>نوع کار</option>
-                                <option>نیمه وقت</option>
-                                <option>تمام وقت</option>
-                                <option>موقتی</option>                       
-                                <option>فریلنس</option>
+                              <select class="form-control" name='exp_id'>
+                                <?php foreach($experience as $b){ ?>
+                                <option value="<?php echo $b->id?>"><?php echo $b->exp_name?></option>
+                                <?php } ?>
                               </select>
                               <i class="fa fa-caret-down"></i>
                             </div>
                           </div>
                           <div class="col-md-6">
                             <div class="form-group">
-                              <select class="form-control">
-                                <option>کارآموز</option>
-                                <option>سابقه کار</option>
-                                <option>کمتر از 1 سال</option>
-                                <option>2 سال</option>
-                                <option>3 سال</option>
-                                <option>بیشتر از 4 سال</option>
+                              <select class="form-control" name="salary_id">
+                                <?php foreach($salary as $c){?>
+                                <option value = '<?php echo $c->id;?>'><?php echo $c->salary_name;?></option>
+                                <?php } ?>
                               </select>
                               <i class="fa fa-caret-down"></i>
                             </div>
                           </div>
+                          <!-- حذف شود -->
                           <div class="col-md-6">
                             <div class="form-group">
                               <input type="text" class="form-control" placeholder="حقوق ماهیانه">
@@ -84,10 +79,30 @@
                           </div>
                           <div class="col-md-6">
                             <div class="form-group">
-                              <select class="form-control">
-                                <option>جنسیت</option>
-                                <option>مرد</option>
-                                <option>زن</option>
+                              <select class="form-control" name="proof_id">
+                                <?php foreach($proof as $d){?>
+                                <option value="<?php echo $d->id; ?>"><?php echo $d->proof_name; ?></option>
+                                <?php } ?>
+                              </select>
+                              <i class="fa fa-caret-down"></i>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <select class="form-control" name="sex_id">
+                                <?php foreach($sex as $e){?>
+                                <option value="<?php echo $e->id; ?>"><?php echo $e->sex_name; ?></option>
+                                <?php } ?>
+                              </select>
+                              <i class="fa fa-caret-down"></i>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <select class="form-control" name="soldier_id">
+                                <?php foreach($soldier as $f){?>
+                                <option value="<?php echo $f->id; ?>"><?php echo $f->soldier_name; ?></option>
+                                <?php } ?>
                               </select>
                               <i class="fa fa-caret-down"></i>
                             </div>
@@ -96,11 +111,12 @@
                       </div>
                     </div>
                     <div class="form-group row">
-                      <label class="col-md-3 col-form-label">عنوان شغل</label>
+                      <label class="col-md-3 col-form-label">شرح موقعیت شغلی</label>
                       <div class="col-md-9">
                         <textarea type="text" class="form-control" placeholder="عنوان شغل خود را بنوسید"></textarea>
                       </div>
                     </div>
+                    <!-- حذف شود -->
                     <div class="form-group row">
                       <label class="col-md-3 col-form-label">تحصیلات</label>
                       <div class="col-md-9">
@@ -113,6 +129,7 @@
                         <textarea type="text" class="form-control" placeholder="مزایا خود را بنوسید"></textarea>
                       </div>
                     </div>
+                    <!-- کامل حذف شود -->
                     <div class="row">
                       <label class="col-md-3 col-form-label">درباره شرکت</label>
                       <div class="col-md-9">
