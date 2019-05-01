@@ -39,60 +39,39 @@ function get_data($table , $select , $ret = 'result', $where = NULL , $limit = N
      return $query->result();
     }
 }
-// function get_data($table,$select, $ret = 'result', $where=NULL,$limit=NULL , $offset=NULL ,$order_by=NULL ,$group_by=NULL, $or_where=NULL,$where_in=NULL){
-    
-//     $this->db->select($select);
-    
-//     if($where !=NULL){
-//         $this -> db -> where($where);
-//     }
-//     if($or_where!=NULL){
-//         $this -> db -> or_where($or_where);
-//     }
-//     if($where_in !=NULL){
-//         $this -> db -> where_in($where_in);
-//     }
-//     if($group_by !=NULL){
-//         $this -> db -> group_by($group_by);
-//     }
-//     if($order_by !=NULL){
-//         $this->db->order_by($order_by[0] , $order_by[1]);
-//     }
-//     $query = $this->db->get($table , $limit , $offset);
-    
-//     if($ret != 'result'){
-//         return $query->row();
-//     }else{
-//      return $query->result();
-//     }
-// }
 
-// function get_data_join($from , $join , $select ,$join_where ,$ret = 'result' , $where = NULL, $limit = NULL , $offset = NULL , $order_by = NULL , $join2 = NULL , $join3 = NULL){
-//     $this->db->select($select);
-//     $this->db->from($from);
-//     $this->db->join($join , $join_where);
-// 	if($join2 != NULL){
-// 		$this->db->join($join2[0] , $join2[1]);
-// 	}
-// 	if($join3 != NULL){
-// 		$this->db->join($join3[0] , $join3[1]);
-// 	}
-//     if($where != NULL){
-//         $this->db->where($where);
-//     }
-//     if($order_by != NULL){
-//         $this->db->order_by($order_by[0] , $order_by[1]);
-//     }
-//    if($limit != NULL){
-//         $this->db->limit($limit , $offset);
-//     }
-//     $query = $this->db->get();
-//     if($ret != 'result'){
-//         return $query->row();
-//     }else{
-//         return $query->result();
-//     }
-// }
+
+function get_data_join($from , $join , $select ,$join_where ,$ret = 'result' , $where = NULL, $limit = NULL , $offset = NULL , $order_by = NULL , $join2 = NULL , $join3 = NULL , $group = NULL){
+    $this->db->select($select);
+    $this->db->from($from);
+    $this->db->join($join , $join_where);
+	if($join2 != NULL){
+		$this->db->join($join2[0] , $join2[1]);
+	}
+	if($join3 != NULL){
+		$this->db->join($join3[0] , $join3[1]);
+	}
+    if($where != NULL){
+        $this->db->where($where);
+    }
+    if($order_by != NULL){
+        $this->db->order_by($order_by[0] , $order_by[1]);
+    }
+    if($group != NULL){
+        $this->db->group_by($group);
+    }
+   if($limit != NULL){
+        $this->db->limit($limit , $offset);
+    }
+    $query = $this->db->get();
+    if($ret != 'result'){
+        return $query->row();
+    }else{
+        return $query->result();
+    }
+}
+
+
 // function get_data_left($from , $join , $select ,$join_where, $side ,$ret = 'result' , $where = NULL, $limit = NULL , $offset = NULL , $order_by = NULL , $group = NULL){
 //     $this->db->select($select);
 //     $this->db->from($from);

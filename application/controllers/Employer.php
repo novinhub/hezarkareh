@@ -5,6 +5,7 @@ class Employer extends CI_Controller{
 
 function __construct(){
 parent::__construct();
+$this->load->library('Convertdate');
 }
 public function index(){
 		if(!$this->session->has_userdata('e_login') or $this->session->userdata('e_login') != TRUE){
@@ -113,6 +114,37 @@ public function post(){
 		$id = $this->session->userdata('id');
 		if(isset($id) and is_numeric($id)){
           if(isset($_POST['sub'])){
+			$date = $this->convertdate->convert(time());
+			$ex = $this->convertdate->convert(time() + 864000);
+			$data['title'] = $this->input->post('title');
+			$data['field_id'] = $this->input->post('field_id');
+			$data['place_id'] = $this->input->post('place_id');
+			$data['assist_id'] = $this->input->post('assist_id');
+			$data['exp_id'] = $this->input->post('exp_id');
+			$data['sex_id'] = $this->input->post('sex_id');
+			$data['salary_id'] = $this->input->post('salary_id');
+			$data['soldier_id'] = $this->input->post('soldier_id');
+			$data['proof_id'] = $this->input->post('proof_id');
+			$data['explain'] = $this->input->post('explain');
+			$data['benefit'] = $this->input->post('benefit');
+			$data['date_job'] = $date['d'];
+			$data['time_job'] = $date['t'];
+			$data['expire'] = $ex['d'];
+			$data['expire_time'] = $ex['t'];
+			$data['pub'] = 1;
+			$data['employer_id'] = $id;
+			$res = $this->base_model->insert('job' , $data);
+			if($res == FALSE){
+				$message['msg'][0] = ' مشکلی در ثبت اطلاعات رخ داده است لطفا دوباره سعی کنید ';
+				$message['msg'][1] = 'danger2';
+				$this->session->set_flashdata($message);
+				redirect('employer/post');
+			}else{
+				$message['msg'][0] = ' آگهی شما با موفقیت ثبت شد . جهت انتشار آگهی لطفا منتظر تایید ما باشید ';
+				$message['msg'][1] = 'success2';
+				$this->session->set_flashdata($message);
+				redirect('employer/post');
+			}
 
 		  }else{
 			$pro = $this->base_model->get_data('employer' , 'fullname , co_name , co_web , co_pic , explain , place_id , field_id' , 'row' , array('id'=>$id));

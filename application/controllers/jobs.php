@@ -13,7 +13,7 @@ class jobs extends CI_Controller {
         $this->load->view('jobs/jobs');
         $this->load->view('footer');
     }
-    public function details()
+    public function detail()
     {
         $header['title'] = 'کارها';
         $header['active'] = 'jobs';
