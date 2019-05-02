@@ -185,23 +185,44 @@ public function post(){
 		}
 		}
 	//post
+	//jobs
+	public function jobs(){
+		if(!$this->session->has_userdata('e_login') or $this->session->userdata('e_login') != TRUE){
+			show_404();
+		}
+		$id = $this->session->userdata('id');
+		if(isset($id) and is_numeric($id)){
+			$pro = $this->base_model->get_data('employer' , 'fullname , co_name , co_web , co_pic , explain , place_id , field_id' , 'row' , array('id'=>$id));
+			$percent = 0;
+			if($pro->fullname != ''){ $percent += 15; }
+			if($pro->co_name != ''){ $percent += 15; }
+			if($pro->co_web != ''){ $percent += 10; }
+			if($pro->co_pic != 'default.png'){ $percent += 15; }
+			if($pro->explain != ''){ $percent += 15; }
+			if($pro->place_id != 0){ $percent += 15; }
+			if($pro->field_id != 0){ $percent += 15; }
+			$data['percent'] = $percent;
+			$header['title'] = 'آگهی های من | هزارکاره';
+			$header['active'] = 'jobs';
+			$data['jobs'] = $this->base_model->get_data_join('job' , 'employer' , 'job.id , job.title , place.state , place.city , assist.assist_name , employer.co_pic , employer.co_name' , 'job.employer_id = employer.id' ,'result', array('job.pub'=> 1) , 12 , 0 , array('job.date_job' , 'DESC') , array('place' , 'place.id = job.place_id') , array('assist' , 'assist.id = job.assist_id'));
+			$this->load->view('header' , $header);
+			$this->load->view('employer/header' , $data);
+			$this->load->view('employer/manage_jobs');
+			$this->load->view('employer/footer');
+			$this->load->view('footer');
+		}else{
+			show_404();
+		}
+		}
+		//jobs
 public function manage_candidate(){
 		if(!$this->session->has_userdata('e_login') or $this->session->userdata('e_login') != TRUE){
 			show_404();
 		}
+		
 		$this->load->view('header');
 		$this->load->view('employer/header');
 		$this->load->view('employer/manage_candidate');
-		$this->load->view('employer/footer');
-		$this->load->view('footer');
-		}
-public function manage_jobs(){
-		if(!$this->session->has_userdata('e_login') or $this->session->userdata('e_login') != TRUE){
-			show_404();
-		}
-		$this->load->view('header');
-		$this->load->view('employer/header');
-		$this->load->view('employer/manage_jobs');
 		$this->load->view('employer/footer');
 		$this->load->view('footer');
 		}
