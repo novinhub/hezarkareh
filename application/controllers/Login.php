@@ -126,12 +126,113 @@ class Login extends CI_Controller {
         }
     }
     //employer
-    public function candidates(){
-        $header['title'] = 'ورود و ثبت نام کارجو';
-        $header['active'] = 'about';
-        $this->load->view('header', $header);
-        $this->load->view('login/candidates');
-        $this->load->view('footer');
+    //applicant
+    public function applicant(){
+        if($this->session->has_userdata('s_login') and $this->session->userdata('s_login')){
+            redirect('applicant');
+        }
+        if(isset($_POST['sub'])){
+            $this->form_validation->set_rules('tel' , 'tel' , 'required|max_length[11]|numeric');
+			$this->form_validation->set_rules('username' , 'username' , 'required|max_length[100]');
+			$this->form_validation->set_rules('password','password' , 'required|max_length[100]');
+			if($this->form_validation->run() == FALSE){
+				$message['msg'][0] = "لطفا اطلاعات خواسته شده را وارد کنید";
+				$message['msg'][1] = 'danger2';
+				$this->session->set_flashdata($message);
+				redirect('login/applicant');
+			}else{
+                $name = trim($this->input->post('username') ,  ' ');
+                $tel = $this->input->post('tel');
+                $check = $this->base_model->get_data('applicant' , 'username , tel_number' , 'row' , "username = '$name' OR tel_number = '$tel'");
+                if(!empty($check)){
+                    if($check->username == $name){
+                       $msg = ' از نام کاربری  '.$name." قبلا استفاده شده است . لطفا نام دیگری را انتخاب کنید ";
+                    }else if($check->tel_number == $tel){
+                        $msg = ' شماره تلفن '.$tel." قبلا استفاده شده است . لطفا شماره دیگری وارد کنید ";
+                    }
+                    $message['msg'][0] = $msg;
+                    $message['msg'][1] = 'danger2';
+                    $this->session->set_flashdata($message);
+                    redirect('login/applicant');
+                }else{
+                    $date = $this->convertdate->convert(time());
+                    $pass = $this->input->post('password');
+                    $data['username'] = $name;
+                    $data['tel_number'] = $tel;
+                    $data['password'] = password_hash($pass, PASSWORD_DEFAULT);
+                    $data['pic_name'] = 'default.png';
+                    $data['date_sign'] = $date['d'];
+                    $data['date_log'] = $date['d'];
+                    $data['time_log'] = $date['t'];
+                    $res = $this->base_model->insert('applicant' , $data);
+                    if($res == FALSE){
+                        $message['msg'][0] = "مشکلی در ثبت اطلاعات رخ داده است . لطفا دوباره سعی کنید";
+                        $message['msg'][1] = 'info2';
+                        $this->session->set_flashdata($message);
+                        redirect('login/applicant');
+                    }else{   
+                    $sess['id'] = $res;
+                    $sess['username'] = $data['username'];
+                    // $sess['fullname'] = $data['fullname'];
+                    $sess['pic_seeker'] = $data['pic_name'];
+                    $sess['a_login'] = TRUE;
+                    $this->session->set_userdata($sess);
+                    // $message['msg'][0] = " در این قسمت اطلاعات مربوط به پروفایل خود را تکمیل کنید ";
+                    // $message['msg'][1] = 'info2';
+                    // $this->session->set_flashdata($message);
+                    redirect("applicant");
+                    }
+                }
+            }
+
+        }else{
+            $header['title'] = 'ورود و ثبت نام کارجو';
+            $this->load->view('header', $header);
+            $this->load->view('login/applicant');
+            $this->load->view('footer');
+        }
+    }
+    public function applicant_log(){
+        if(isset($_POST['sub'])){
+            $this->form_validation->set_rules('username' , 'username' , 'required|max_length[100]');
+			$this->form_validation->set_rules('password','password' , 'required|max_length[100]');
+			if($this->form_validation->run() == FALSE){
+				$message['msg'][0] = "لطفا اطلاعات خواسته شده را وارد کنید";
+				$message['msg'][1] = 'danger2';
+				$this->session->set_flashdata($message);
+				redirect('login/applicant');
+			}else{
+                $username = $this->db->escape_str($this->input->post('username'));
+                $password = $this->db->escape_str($this->input->post('password'));
+                $check = $this->base_model->get_data('applicant' , 'id , pic_name ,  username  , password' , 'row' , array('username'=>$username));
+                if(empty($check)){
+                    $message['msg'][0] = " نام کاربری به اسم  ".$username." وجود ندارد ";
+                    $message['msg'][1] = 'danger2';
+                    $this->session->set_flashdata($message);
+                    redirect('login/applicant');
+                }else if(!password_verify($password , $check->password)){
+					$message['msg'][0] = ' رمز عبور اشتباه می باشد';
+					$message['msg'][1] = 'danger2';
+					$this->session->set_flashdata($message);
+					redirect('login/applicant');
+				}else{
+                    $date = $this->convertdate->convert(time());
+                    $data['date_log'] = $date['d'];
+                    $data['time_log'] = $date['t'];
+                    $this->base_model->update('applicant' , $data , array('id'=> $check->id));
+                    $sess['id'] = $check->id;
+                    $sess['username'] = $check->username;
+                    // $sess['fullname'] = $check->fullname;
+                    // $sess['co_pic'] = $check->co_pic;
+                    $sess['a_login'] = TRUE;
+                    $sess['pic_seeker'] = $check->pic_name;
+                    $this->session->set_userdata($sess);
+                    redirect('applicant');
+                } 
+            }
+        }else{
+            show_404();
+        }
     }
 }
 

@@ -61,12 +61,12 @@
           <ul class="navbar-nav ml-auto main-nav">
           <?php if($this->session->has_userdata('e_login')){ ?> 
             <li class="menu-item post-job ml-3"><a href="<?php echo base_url('employer')?>">ورود به پنل</a></li>
-          <?php }else if($this->session->has_userdata('c_login')){ ?> 
-            <li class="menu-item post-job"><a href="<?php echo base_url('candidates')?>">ورود به پنل</a></li>
+          <?php }else if($this->session->has_userdata('a_login')){ ?> 
+            <li class="menu-item post-job"><a href="<?php echo base_url('applicant')?>">ورود به پنل</a></li>
           <?php }else{ ?>
           <li class="menu-item post-job ml-3"><a href="<?php echo base_url('login/employer')?>"> ورود کارفرما</a></li>
-          <li class="menu-item post-job"><a href="<?php echo base_url('login/candidates')?>">ورود کارجو</a></li>
-          <?php }?>
+          <li class="menu-item post-job"><a href="<?php echo base_url('login/applicant')?>">ورود کارجو</a></li>
+          <?php } ?>
           <li class="menu-item active"><a  href="<?php echo base_url('home')?>">خانه</a></li>
           <li class="menu-item "><a  href="<?php echo base_url('jobs')?>">آگهی های استخدام</a></li>
           <li class="menu-item "><a  href="<?php echo base_url('test')?>"> تست خودشناسی</a></li>

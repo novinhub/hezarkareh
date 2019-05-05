@@ -13,17 +13,17 @@
               </button>
             </div>
             <div class="modal-body">
-              <form action="#">
+              <form action="<?php echo base_url('login/applicant_log')?>" method="post">
 
                 <div class="form-group">
-                  <input type="username" placeholder="نام کابری" class="form-control">
+                  <input type="text" name="username" placeholder="نام کابری" class="form-control" required>
                 </div>
                 <div class="form-group">
-                  <input type="password" placeholder="کلمه عبور" class="form-control">
+                  <input type="password" name="password" placeholder="کلمه عبور" class="form-control" required>
                 </div>
                 <div class="more-option terms">
                 </div>
-                <button class="button primary-bg btn-block">ورود</button>
+                <button type="submit" name="sub" class="button primary-bg btn-block">ورود</button>
               </form>
             </div>
           </div>
@@ -44,19 +44,19 @@
             </div>
             <div class="modal-body">
 
-              <form action="#">
+              <form action="<?php echo base_url('login/applicant')?>" method="post">
               <div class="form-group">
-                  <input type="username" placeholder="شماره همراه" class="form-control">
+                  <input type="text" name = "tel" maxlength="11" pattern="[0-9]{11}" name ='tel' placeholder="شماره همراه" class="form-control" required>
                 </div>
                 <div class="form-group">
-                  <input type="username" placeholder="نام کاربری" class="form-control">
+                  <input type="text" name = "username" placeholder="نام کاربری" class="form-control" required>
                 </div>
 
                 <div class="form-group">
-                  <input type="password" placeholder="رمز عبور" class="form-control">
+                  <input type="password" name="password" placeholder="رمز عبور" class="form-control" required>
                 </div>
 
-                <button class="button primary-bg btn-block">ثبت نام</button>
+                <button type="submit" name="sub" class="button primary-bg btn-block">ثبت نام</button>
               </form>
             </div>
           </div>
