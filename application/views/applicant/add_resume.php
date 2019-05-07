@@ -11,7 +11,7 @@
 	<div class="basic-info-input">
 		<div class="dashboard-section upload-profile-photo col-md-3 mb-5">
 			<div class="update-photo">
-				<img class="image" src="<?php echo base_url('upload/employer/avatar/') ;?>default66.png" alt="">
+				<img class="image" src="<?php echo base_url('upload/employer/avatar/').$this->session->userdata('pic_seeker') ;?>" alt="">
 			</div>
 			<div class="file-upload">
 				<input type="file" name="co_pic" class="file-input">انتخاب عکس

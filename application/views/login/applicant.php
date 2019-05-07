@@ -1,4 +1,12 @@
 <div  class="bg-custom"></div>
+<?php if($this->session->has_userdata('msg')){ $msg = $this->session->userdata('msg');?>
+<div class="alert alert-<?php echo $msg[1]; ?> text-white alert-dismissible fade show text-center text-white m-3" role="alert">
+  <?php echo $msg[0]; ?>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span class="text-white" aria-hidden="true">&times;</span>
+  </button>
+</div>
+<?php } ?>
  <div class="row">
      <div class="col-md-2"></div>
      <div class="col-md-4">
