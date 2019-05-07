@@ -160,7 +160,7 @@
       -webkit-box-shadow: none;
       box-shadow: none;
       outline: none;
-      font-family: "Poppins", sans-serif;
+       
       font-weight: 600;
       font-size: 1.4rem;
       cursor: pointer;
@@ -215,7 +215,7 @@
       font-weight: 500; }
     .user-statistic-block .user-statistic span {
       font-size: 1.5rem;
-      font-family: "Poppins", sans-serif;
+       
       font-weight: 400; }
     .user-statistic-block .user-statistic:first-child {
       background-image: -webkit-gradient(linear, left top, right top, from(#aa91fa), to(#9eacfd));
@@ -270,7 +270,7 @@
       color: #aaafbc; }
     .dashboard-recent-activity .activity-list span {
       font-size: 1.3rem;
-      font-family: "Poppins", sans-serif;
+       
       font-weight: 400;
       font-style: italic; }
     .dashboard-recent-activity .activity-list .close-activity {
@@ -329,6 +329,7 @@
   color: #fff;
   font-size: 1.3rem;
   border: 0;
+  width: 130px;
   padding: 10px 0;
   background: rgba(36, 109, 248, 0.7);
   -webkit-transition: all 0.3s ease;
@@ -387,13 +388,25 @@
   .download-resume a {
     margin-right: 10px;
     padding: 15px 20px;
-    font-family: "Poppins", sans-serif;
+     
     font-weight: 600;
     font-size: 1.4rem;
     background: rgba(36, 109, 248, 0.15);
     color: #246df8;
     border-radius: 3px;
     margin-bottom: 10px; }
+    .download-resume button{
+      
+    margin-right: 10px;
+    padding: 15px 20px;
+     
+    font-weight: 600;
+    font-size: 1.4rem;
+    background: rgba(36, 109, 248, 0.15);
+    color: #246df8;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    }
     .download-resume a svg {
       height: 14px;
       width: 14px;
@@ -420,7 +433,7 @@
   color: #246df8;
   display: inline-block;
   font-size: 1.4rem;
-  font-family: "Poppins", sans-serif;
+   
   font-weight: 600;
   border: 0;
   padding: 15px 15px 15px 20px;
@@ -553,7 +566,7 @@
     .dashboard-section .modal .modal-body .title h4 {
       font-size: 1.5rem;
       text-transform: uppercase;
-      font-family: "Poppins", sans-serif;
+       
       font-weight: 600; }
       .dashboard-section .modal .modal-body .title h4 svg {
         height: 15px;
@@ -562,7 +575,7 @@
         color: #aaa; }
     .dashboard-section .modal .modal-body .title .add-more {
       font-size: 1.3rem;
-      font-family: "Poppins", sans-serif;
+       
       font-weight: 500;
       padding: 3px 15px;
       margin-right: 0;
@@ -576,7 +589,7 @@
   .dashboard-section .modal .modal-body form h4 {
     font-size: 1.5rem;
     text-transform: uppercase;
-    font-family: "Poppins", sans-serif;
+     
     font-weight: 600;
     padding-top: 30px;
     padding-bottom: 20px; }
@@ -666,7 +679,7 @@
       -webkit-box-shadow: none;
       box-shadow: none;
       outline: none;
-      font-family: "Poppins", sans-serif;
+       
       font-weight: 600;
       font-size: 1.4rem;
       padding: 15px 30px;
@@ -716,7 +729,7 @@
 .dashboard-applied .bookmark-title,
 .dashboard-applied .apply-title {
   font-size: 1.6rem;
-  font-family: "Poppins", sans-serif;
+   
   font-weight: 600;
   padding: 10px 0 25px; }
 
@@ -814,7 +827,7 @@
   .pricing .package-title {
     font-size: 3.0rem;
     font-weight: 500;
-    font-family: "Poppins", sans-serif;
+     
     margin-bottom: 10px; }
   .pricing .description {
     font-size: 1.5rem; }
@@ -879,7 +892,7 @@
     .pricing .buy-button .button {
       border-radius: 3px;
       padding: 10px 30px;
-      font-family: "Poppins", sans-serif;
+       
       font-weight: 500;
       font-size: 1.4rem;
       color: #ffffff; }
@@ -1021,7 +1034,7 @@
       position: relative; }
       .message-lists .message-single .body .username {
         font-size: 1.4rem;
-        font-family: "Poppins", sans-serif;
+         
         font-weight: 400;
         color: #6f7484; }
       .message-lists .message-single .body .text-number {
@@ -1065,7 +1078,7 @@
     padding-bottom: 19px; }
     .message-box .message-box-header h5 {
       font-size: 1.4rem;
-      font-family: "Poppins", sans-serif;
+       
       font-weight: 500; }
   .message-box .dashboard-conversation {
     padding: 25px 0;
@@ -1237,7 +1250,7 @@
     padding-left: 15px; }
     .dashboard-sidebar .company-info .company-body h5 {
       font-size: 1.5rem;
-      font-family: "Poppins", sans-serif;
+       
       font-weight: 600; }
 
 .media-inputs .input-group-text {
@@ -1259,7 +1272,7 @@
 
 .media-inputs h4,
 .social-inputs h4 {
-  font-family: "Poppins", sans-serif;
+   
   font-weight: 500;
   font-size: 1.5rem;
   margin-bottom: 30px;
@@ -1419,7 +1432,7 @@
   .manage-job-container .table th {
     border-top: 0;
     font-size: 1.4rem;
-    font-family: "Poppins", sans-serif;
+     
     font-weight: 500;
     color: #6f7484;
     padding-left: 0;

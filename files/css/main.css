@@ -4862,6 +4862,7 @@ header .absolute-nav {
   padding: 12px 30px;
   border-radius: 3px;
   font-weight: 500;
+  margin-left: 20px;
 }
 
 .cp-nav .navbar-collapse .navbar-nav .post-job a i {
@@ -9662,7 +9663,7 @@ header .absolute-nav {
   width: 100%;
 }
 .alert-success2{
-  background-color: #06f349;
+  background-color: #1b923d;
 }
 .alert-danger2{
   background-color: #Ff2231;

@@ -25,6 +25,7 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('files/');?>assets/css/owl.carousel.min.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('files/');?>assets/css/jquery.nstSlider.min.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('files/');?>css/rtl.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('files/');?>assets/bootstrap-PersianDateTimePicker/jquery.Bootstrap-PersianDateTimePicker.min.css">
 
     <!-- Custom Css -->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('files/');?>css/main.css">
