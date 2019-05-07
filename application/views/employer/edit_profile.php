@@ -11,13 +11,13 @@
 	<div class="dashboard-section basic-info-input">
 		<h4><i data-feather="user-check"></i>پروفایل</h4>
 		<div class="form-group row">
-			<label class="col-sm-3 col-form-label">نام و نام خانوادگی:</label>
+			<label class="col-sm-3 col-form-label">نام و نام خانوادگی :</label>
 			<div class="col-sm-9">
 				<input type="text" name="fullname" value="<?php echo $edit->fullname; ?>" class="form-control" placeholder="علی شیرازی" required>
 			</div>
 		</div>
 		<div class="form-group row">
-			<label class="col-sm-3 col-form-label">نام شرکت:</label>
+			<label class="col-sm-3 col-form-label">نام شرکت :</label>
 			<div class="col-sm-9">
 				<input type="text" name="co_name" value="<?php echo $edit->co_name; ?>" class="form-control" placeholder="نوین تک" required>
 			</div>

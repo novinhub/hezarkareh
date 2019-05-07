@@ -2,8 +2,8 @@
                 <div class="dashboard-section user-statistic-block">
                   <div class="user-statistic">
                     <i data-feather="command"></i>
-                    <h3>06</h3>
-                    <h6>شغل های فرستاده شده</h6>
+                    <h3><?php echo $count_job;?></h3>
+                    <h6>تعداد آگهی های شما </h6>
                   </div>
                   <div class="user-statistic">
                     <i data-feather="file-text"></i>

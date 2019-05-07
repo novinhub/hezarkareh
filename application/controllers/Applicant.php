@@ -31,5 +31,12 @@ parent::__construct();
 		$this->load->view('footer');
 		}
 
+	//log out
+		public function log_out(){
+			$this->session->sess_destroy();
+			redirect('home');
+		}
+	//log out	
+
 }
 ?>

@@ -66,7 +66,7 @@
                           <p>آیا میخواهید خارج شوید؟</p>
                           
                           <div class="modal-footer d-block text-center">
-                     <a class="btn btn-danger px-4 py-3 btn-custom" href="#">بله</a>
+                     <a class="btn btn-danger px-4 py-3 btn-custom" href="<?php echo base_url('applicant/log_out');?>">بله</a>
                      <button type="button" class="close btn bg-secondary px-4 py-3 text-light ml-4 mr-2 float-none" data-dismiss="modal">بستن </button>
                      </div>
                         </div>

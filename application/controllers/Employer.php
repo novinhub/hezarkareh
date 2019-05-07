@@ -11,23 +11,29 @@ public function index(){
 		if(!$this->session->has_userdata('e_login') or $this->session->userdata('e_login') != TRUE){
 			show_404();
 		}
-		$pro = $this->base_model->get_data('employer' , 'fullname , co_name , co_web , co_pic , explain , place_id , field_id' , 'row' , array('id'=>$this->session->userdata('id')));
-		$percent = 0;
-		if($pro->fullname != ''){ $percent += 15; }
-		if($pro->co_name != ''){ $percent += 15; }
-		if($pro->co_web != ''){ $percent += 10; }
-		if($pro->co_pic != 'default.png'){ $percent += 15; }
-		if($pro->explain != ''){ $percent += 15; }
-		if($pro->place_id != 0){ $percent += 15; }
-		if($pro->field_id != 0){ $percent += 15; }
-		$data['percent'] = $percent;
-		$header['title'] = ' داشبورد کارفرما ';
-		$header['active'] = 'dashbord';
-	    $this->load->view('header' , $header);
- 	    $this->load->view('employer/header' , $data);
-		$this->load->view('employer/dashbord');
-		$this->load->view('employer/footer');
-		$this->load->view('footer');
+		$id = $this->session->userdata('id');
+		if(isset($id) and is_numeric($id)){
+			$pro = $this->base_model->get_data('employer' , 'fullname , co_name , co_web , co_pic , explain , place_id , field_id' , 'row' , array('id'=> $id ));
+			$percent = 0;
+			if($pro->fullname != ''){ $percent += 15; }
+			if($pro->co_name != ''){ $percent += 15; }
+			if($pro->co_web != ''){ $percent += 10; }
+			if($pro->co_pic != 'default.png'){ $percent += 15; }
+			if($pro->explain != ''){ $percent += 15; }
+			if($pro->place_id != 0){ $percent += 15; }
+			if($pro->field_id != 0){ $percent += 15; }
+			$data['percent'] = $percent;
+			$header['title'] = ' داشبورد کارفرما ';
+			$header['active'] = 'dashbord';
+			$data['count_job'] = $this->base_model->get_count('job' , array('employer_id'=> $id));
+			$this->load->view('header' , $header);
+			 $this->load->view('employer/header' , $data);
+			$this->load->view('employer/dashbord');
+			$this->load->view('employer/footer');
+			$this->load->view('footer');
+		}else{
+			show_404();
+		}
 	}
 	//edit
 	public function edit(){
@@ -204,7 +210,7 @@ public function post(){
 			$data['percent'] = $percent;
 			$header['title'] = 'آگهی های من | هزارکاره';
 			$header['active'] = 'jobs';
-			$data['jobs'] = $this->base_model->get_data_join('job' , 'employer' , 'job.id , job.title , place.state , place.city , assist.assist_name , employer.co_pic , employer.co_name' , 'job.employer_id = employer.id' ,'result', array('job.pub'=> 1) , 12 , 0 , array('job.date_job' , 'DESC') , array('place' , 'place.id = job.place_id') , array('assist' , 'assist.id = job.assist_id'));
+			$data['jobs'] = $this->base_model->get_data_join('job' , 'employer' , 'job.id , job.title , place.state , job.expire , job.expire_time , place.city , assist.assist_name , employer.co_pic , employer.co_name' , 'job.employer_id = employer.id' ,'result', array('job.pub'=> 1) , 12 , 0 , array('job.date_job' , 'DESC') , array('place' , 'place.id = job.place_id') , array('assist' , 'assist.id = job.assist_id'));
 			$this->load->view('header' , $header);
 			$this->load->view('employer/header' , $data);
 			$this->load->view('employer/manage_jobs');

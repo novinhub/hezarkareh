@@ -33,7 +33,7 @@
                     <li class="<?php if($active == 'dashbord'){echo 'active';}?>"><i class="fas fa-home"></i><a href="<?php echo base_url('employer');?>">داشبورد</a></li>
                     <li class="<?php if($active == 'edit'){echo 'active';}?>" ><i class="fas fa-user"></i><a href="<?php echo base_url('employer/edit');?>">ویرایش پروفایل</a></li>
                     <li class="<?php if($active == 'post'){echo 'active';}?>"><i class="fas fa-plus-square"></i><a href="<?php echo base_url('employer/post');?>">ایجاد آگهی جدید</a></li>
-                    <li><i class="fas fa-briefcase"></i><a href="<?php echo base_url('employer/jobs');?>">آگهی های من</a></li>
+                    <li class="<?php if($active == 'jobs'){echo 'active';}?>"><i class="fas fa-briefcase"></i><a href="<?php echo base_url('employer/jobs');?>">آگهی های من</a></li>
                     <li><i class="fas fa-users"></i><a href="<?php echo base_url('employer/manage_candidate');?>">کارجو های مرتبط</a></li>
                   </ul>
                   <ul class="delete">

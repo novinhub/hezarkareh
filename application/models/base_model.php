@@ -96,22 +96,6 @@ function get_data_join($from , $join , $select ,$join_where ,$ret = 'result' , $
 //     }
 // }
 
-
-
-
-
-// function get_count($table , $where){
-// 			if($where == 'ALL'){
-// 				return $this->db->count_all($table);
-// 			}
-// 			else{
-// 			$this->db->count_all_results($table);
-// 			$this->db->where($where);
-// 			$this->db->from($table);
-// 			return $this->db->count_all_results();	
-// 			}
-// }
-
 // function search_data($from , $join , $select ,$join_where , $side  , $like , $where = NULL , $order_by = NULL , $group_by = NULL){
 //     $this->db->select($select);
 //     $this->db->from($from);
@@ -158,6 +142,18 @@ function update_batch($table , $data , $key){
         return TRUE;
     }else{
         return FALSE;
+    }
+}
+
+function get_count($table , $where){
+    if($where == 'ALL'){
+        return $this->db->count_all($table);
+    }
+    else{
+    $this->db->count_all_results($table);
+    $this->db->where($where);
+    $this->db->from($table);
+    return $this->db->count_all_results();	
     }
 }
 

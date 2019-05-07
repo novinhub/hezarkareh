@@ -14,6 +14,9 @@ class Login extends CI_Controller {
         if($this->session->has_userdata('e_login') and $this->session->userdata('e_login') == TRUE){
             redirect('employer');
         }
+        if($this->session->has_userdata('a_login') and $this->session->userdata('a_login') == TRUE){
+            redirect('home');
+        }
         if(isset($_POST['sub'])){
             $this->form_validation->set_rules('tel' , 'tel' , 'required|max_length[11]|numeric');
 			$this->form_validation->set_rules('username' , 'username' , 'required|max_length[100]');
@@ -28,6 +31,7 @@ class Login extends CI_Controller {
                 $tel = $this->input->post('tel');
                 $check = $this->base_model->get_data('employer' , 'username , tel_number' , 'row' , "username = '$name' OR tel_number = '$tel'");
                 if(!empty($check)){
+                    $msg = '';
                     if($check->username == $name){
                        $msg = ' از نام کاربری  '.$name." قبلا استفاده شده است . لطفا نام دیگری را انتخاب کنید ";
                     }else if($check->tel_number == $tel){
@@ -62,6 +66,7 @@ class Login extends CI_Controller {
                     }else{   
                     $sess['id'] = $res;
                     $sess['username'] = $data['username'];
+                    $sess['tel_number'] = $data['tel_number'];
                     $sess['fullname'] = $data['fullname'];
                     $sess['co_pic'] = $data['co_pic'];
                     $sess['e_login'] = TRUE;
@@ -85,6 +90,9 @@ class Login extends CI_Controller {
         if($this->session->has_userdata('e_login') and $this->session->userdata('e_login') == TRUE){
             redirect('employer');
         }
+        if($this->session->has_userdata('a_login') and $this->session->userdata('a_login') == TRUE){
+            redirect('home');
+        }
         if(isset($_POST['sub'])){
             $this->form_validation->set_rules('username' , 'username' , 'required|max_length[100]');
 			$this->form_validation->set_rules('password','password' , 'required|max_length[100]');
@@ -96,7 +104,8 @@ class Login extends CI_Controller {
 			}else{
                 $username = $this->db->escape_str($this->input->post('username'));
                 $password = $this->db->escape_str($this->input->post('password'));
-                $check = $this->base_model->get_data('employer' , 'id , fullname ,  username , co_pic , password' , 'row' , array('username'=>$username));
+                $username = trim($username , ' ');
+                $check = $this->base_model->get_data('employer' , 'id , username , tel_number , password , fullname , co_pic ' , 'row' , array('username'=>$username));
                 if(empty($check)){
                     $message['msg'][0] = " نام کاربری به اسم  ".$username." وجود ندارد ";
                     $message['msg'][1] = 'danger2';
@@ -114,6 +123,7 @@ class Login extends CI_Controller {
                     $this->base_model->update('employer' , $data , array('id'=> $check->id));
                     $sess['id'] = $check->id;
                     $sess['username'] = $check->username;
+                    $sess['tel_number'] = $check->tel_number;
                     $sess['fullname'] = $check->fullname;
                     $sess['co_pic'] = $check->co_pic;
                     $sess['e_login'] = TRUE;
@@ -128,8 +138,11 @@ class Login extends CI_Controller {
     //employer
     //applicant
     public function applicant(){
-        if($this->session->has_userdata('s_login') and $this->session->userdata('s_login')){
+        if($this->session->has_userdata('a_login') and $this->session->userdata('a_login')){
             redirect('applicant');
+        }
+        if($this->session->has_userdata('e_login') and $this->session->userdata('e_login')){
+            redirect('home');
         }
         if(isset($_POST['sub'])){
             $this->form_validation->set_rules('tel' , 'tel' , 'required|max_length[11]|numeric');
@@ -141,10 +154,12 @@ class Login extends CI_Controller {
 				$this->session->set_flashdata($message);
 				redirect('login/applicant');
 			}else{
-                $name = trim($this->input->post('username') ,  ' ');
+                $name = $this->db->escape_str($this->input->post('username'));
+                $name = trim($name ,  ' ');
                 $tel = $this->input->post('tel');
                 $check = $this->base_model->get_data('applicant' , 'username , tel_number' , 'row' , "username = '$name' OR tel_number = '$tel'");
                 if(!empty($check)){
+                    $msg = '';
                     if($check->username == $name){
                        $msg = ' از نام کاربری  '.$name." قبلا استفاده شده است . لطفا نام دیگری را انتخاب کنید ";
                     }else if($check->tel_number == $tel){
@@ -171,13 +186,13 @@ class Login extends CI_Controller {
                         $this->session->set_flashdata($message);
                         redirect('login/applicant');
                     }else{   
-                    $sess['id'] = $res;
-                    $sess['username'] = $data['username'];
-                    // $sess['fullname'] = $data['fullname'];
+                    $sess['a_id'] = $res;
+                    $sess['a_tel'] = $data['tel_number'];
+                    $sess['a_username'] = $data['username'];
                     $sess['pic_seeker'] = $data['pic_name'];
                     $sess['a_login'] = TRUE;
                     $this->session->set_userdata($sess);
-                    // $message['msg'][0] = " در این قسمت اطلاعات مربوط به پروفایل خود را تکمیل کنید ";
+                    // $message['msg'][0] = " در این قسمت می توانید رزومه خود را بسازید ";
                     // $message['msg'][1] = 'info2';
                     // $this->session->set_flashdata($message);
                     redirect("applicant");
@@ -193,6 +208,12 @@ class Login extends CI_Controller {
         }
     }
     public function applicant_log(){
+        if($this->session->has_userdata('a_login') and $this->session->userdata('a_login')){
+            redirect('applicant');
+        }
+        if($this->session->has_userdata('e_login') and $this->session->userdata('e_login')){
+            redirect('home');
+        }
         if(isset($_POST['sub'])){
             $this->form_validation->set_rules('username' , 'username' , 'required|max_length[100]');
 			$this->form_validation->set_rules('password','password' , 'required|max_length[100]');
@@ -203,8 +224,9 @@ class Login extends CI_Controller {
 				redirect('login/applicant');
 			}else{
                 $username = $this->db->escape_str($this->input->post('username'));
+                $username = trim($username , ' ');
                 $password = $this->db->escape_str($this->input->post('password'));
-                $check = $this->base_model->get_data('applicant' , 'id , pic_name ,  username  , password' , 'row' , array('username'=>$username));
+                $check = $this->base_model->get_data('applicant' , 'id , tel_number ,  username , pic_name , password' , 'row' , array('username'=>$username));
                 if(empty($check)){
                     $message['msg'][0] = " نام کاربری به اسم  ".$username." وجود ندارد ";
                     $message['msg'][1] = 'danger2';
@@ -220,10 +242,9 @@ class Login extends CI_Controller {
                     $data['date_log'] = $date['d'];
                     $data['time_log'] = $date['t'];
                     $this->base_model->update('applicant' , $data , array('id'=> $check->id));
-                    $sess['id'] = $check->id;
-                    $sess['username'] = $check->username;
-                    // $sess['fullname'] = $check->fullname;
-                    // $sess['co_pic'] = $check->co_pic;
+                    $sess['a_id'] = $check->id;
+                    $sess['a_tel'] = $check->tel_number;
+                    $sess['a_username'] = $check->username;
                     $sess['a_login'] = TRUE;
                     $sess['pic_seeker'] = $check->pic_name;
                     $this->session->set_userdata($sess);

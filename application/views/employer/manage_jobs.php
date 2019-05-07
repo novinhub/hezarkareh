@@ -1,7 +1,7 @@
 <h6 class="p-3 mb-3" >آگهی های من</h6>
 
                    <?php if(empty($jobs)){ ?>
-                    <h1>علی اگر کون گشادت یاری میده یه موردی یافت نشد بساز</h1>
+                    <h1>عموردی یافت نشد</h1>
                    <?php }else{ foreach($jobs as $rows){ ?>
                     <div class="job-list rtl">
                       <div class="thumb">
@@ -24,7 +24,7 @@
                             <a href="#" class="favourite"><i data-feather="heart"></i></a>
                           </div>
                         
-                          <p class="deadline">تاریخ انتشار: Oct 31, 2018</p>
+                          <p class="deadline"> تاریخ انقضا :  <?php echo $rows->expire." ".$rows->expire_time; ?></p>
                         </div>
                       </div>
                     </div>
