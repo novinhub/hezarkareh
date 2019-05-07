@@ -179,6 +179,8 @@ class Login extends CI_Controller {
                     $data['date_sign'] = $date['d'];
                     $data['date_log'] = $date['d'];
                     $data['time_log'] = $date['t'];
+                    $data['add_resume'] = 1;
+                    $data['edit_resume'] = 0;
                     $res = $this->base_model->insert('applicant' , $data);
                     if($res == FALSE){
                         $message['msg'][0] = "مشکلی در ثبت اطلاعات رخ داده است . لطفا دوباره سعی کنید";
@@ -190,6 +192,8 @@ class Login extends CI_Controller {
                     $sess['a_tel'] = $data['tel_number'];
                     $sess['a_username'] = $data['username'];
                     $sess['pic_seeker'] = $data['pic_name'];
+                    $sess['add_resume'] = $data['add_resume'];
+                    $sess['edit_resume'] = $data['edit_resume'];
                     $sess['a_login'] = TRUE;
                     $this->session->set_userdata($sess);
                     // $message['msg'][0] = " در این قسمت می توانید رزومه خود را بسازید ";
@@ -226,7 +230,7 @@ class Login extends CI_Controller {
                 $username = $this->db->escape_str($this->input->post('username'));
                 $username = trim($username , ' ');
                 $password = $this->db->escape_str($this->input->post('password'));
-                $check = $this->base_model->get_data('applicant' , 'id , tel_number ,  username , pic_name , password' , 'row' , array('username'=>$username));
+                $check = $this->base_model->get_data('applicant' , 'id , tel_number ,  username , pic_name , password , add_resume , edit_resume' , 'row' , array('username'=>$username));
                 if(empty($check)){
                     $message['msg'][0] = " نام کاربری به اسم  ".$username." وجود ندارد ";
                     $message['msg'][1] = 'danger2';
@@ -245,6 +249,8 @@ class Login extends CI_Controller {
                     $sess['a_id'] = $check->id;
                     $sess['a_tel'] = $check->tel_number;
                     $sess['a_username'] = $check->username;
+                    $sess['add_resume'] = $check->add_resume;
+                    $sess['edit_resume'] = $check->edit_resume;
                     $sess['a_login'] = TRUE;
                     $sess['pic_seeker'] = $check->pic_name;
                     $this->session->set_userdata($sess);

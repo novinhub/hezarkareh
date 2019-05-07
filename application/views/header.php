@@ -25,7 +25,6 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('files/');?>assets/css/owl.carousel.min.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('files/');?>assets/css/jquery.nstSlider.min.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('files/');?>css/rtl.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url('files/');?>assets/bootstrap-PersianDateTimePicker/jquery.Bootstrap-PersianDateTimePicker.min.css">
 
     <!-- Custom Css -->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('files/');?>css/main.css">
@@ -38,7 +37,7 @@
     <link rel="apple-touch-icon" href="<?php echo base_url('files/');?>images/apple-touch-icon.png">
     <link rel="apple-touch-icon" sizes="72x72" href="<?php echo base_url('files/');?>images/icon-72x72.png">
     <link rel="apple-touch-icon" sizes="114x114" href="<?php echo base_url('files/');?>images/icon-114x114.png">
-
+    <link rel="stylesheet" href="<?php echo base_url('files/');?>assets/persian_date/css/persianDatepicker-default.css" />
 
     <!--[if lt IE 9]>
     <script src="assets/js/html5shiv.min.js"></script>
