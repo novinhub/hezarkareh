@@ -148,13 +148,18 @@
     <script type="text/javascript" src="<?php echo base_url('files/');?>assets/js/tinymce.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url('files/');?>assets/js/slick.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url('files/');?>assets/js/jquery.ajaxchimp.min.js"></script>
-    <script type="text/javascript" src="<?php echo base_url('files/');?>assets/bootstrap-PersianDateTimePicker/jalaali.js"></script>
-    <script type="text/javascript" src="<?php echo base_url('files/');?>assets/bootstrap-PersianDateTimePicker/jquery.Bootstrap-PersianDateTimePicker.js"></script>
 
     <script src="<?php echo base_url('files/');?>js/custom.js"></script>
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC87gjXWLqrHuLKR0CTV5jNLdP4pEHMhmg"></script>
-    <script src="<?php echo base_url('files/');?>js/map.js"></script>
+    <script type="text/javascript" src="<?php echo base_url('files/');?>js/map.js"></script>
+    <script type="text/javascript" src="<?php echo base_url('files/');?>assets/persian_date/js/persianDatepicker.min.js"></script>
+    <script>
+        $(function () {
+            //usage
+            $(".usage").persianDatepicker();
+        });
+    </script>
   </body>
 
 <!-- Mirrored from themerail.com/html/oficiona/home-1.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 13 Mar 2019 09:18:09 GMT -->
