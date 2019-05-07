@@ -135,6 +135,7 @@
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script type="text/javascript" src="<?php echo base_url('files/');?>assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url('files/');?>assets/mine/add_input.js"></script>
     <script type="text/javascript" src="<?php echo base_url('files/');?>assets/js/popper.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url('files/');?>assets/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url('files/');?>assets/js/feather.min.js"></script>

@@ -1,6 +1,6 @@
 <form action="#" class="job-post-form rtl">
 	<div class="basic-info-input">
-  <div class="dashboard-section upload-profile-photo col-md-3 mb-5">
+		<div class="dashboard-section upload-profile-photo col-md-3 mb-5">
 			<div class="update-photo">
 				<img class="image" src="<?php echo base_url('upload/employer/avatar/') ;?>default66.png" alt="">
 			</div>
@@ -87,17 +87,13 @@
 			</div>
 		</div>
 
-		<div id="education" class="row">
+		<div id="education" class="row field_wrapper">
+
 			<label class="col-md-3 col-form-label">تحصیلات:</label>
 			<div class="col-md-9">
 				<div class="form-group">
 					<input type="text" class="form-control" placeholder="رشته تحصیلی">
 				</div>
-			</div>
-		</div>
-		<div class="row">
-			<label class="col-md-3 col-form-label"></label>
-			<div class="col-md-9">
 				<div class="form-group">
 					<input type="text" class="form-control" placeholder="گرایش">
 				</div>
@@ -105,10 +101,11 @@
 					<input type="text" class="form-control" placeholder="دانشگاه">
 				</div>
 				<div class="form-group">
-					<textarea class="form-control" placeholder="توضیخات"></textarea>
+					<textarea class="form-control" placeholder="توضیحات"></textarea>
 				</div>
-				<!-- <a href="#" class="add-new-field">+ Add Education</a> -->
+				<button type="button" class="add-new-field add_button">تحصیلات جدید</button>
 			</div>
+
 		</div>
 		<div id="experience" class="row">
 			<label class="col-md-3 col-form-label">پیشینه شغلی :</label>
@@ -152,25 +149,10 @@
 				</div>
 				<!-- <a href="#" class="add-new-field">+ Add Experience</a> -->
 			</div>
-    </div>
-    <div class="row">
+		</div>
+		<div class="row">
 
-    <button class="button" type="submit">ارسال رزومه</button>
-    </div>
-    <div class="col-md-4">
-							<div class="col-md-6">
-								<div class="form-group">
-									<label for="j_created_date">از تاریخ :</label>
-									<input type="text" class="form-control" name="start_date" id="j_created_date" readonly data-mddatetimepicker="true" data-enabletimepicker="true" data-placement="bottom" value="" placeholder="Jalali Created Date">
-								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="form-group">
-									<label for="j_created_date">تا تاریخ :</label>
-									<input type="text" class="form-control" name="end_date" id="j_created_date" readonly data-mddatetimepicker="true" data-enabletimepicker="true" data-placement="bottom" value="" placeholder="Jalali Created Date">
-								</div>
-							</div>
-						</div>
-                    
+			<button class="button" type="submit">ارسال رزومه</button>
+		</div>
 	</div>
 </form>
