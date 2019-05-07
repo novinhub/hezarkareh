@@ -30,10 +30,11 @@
                 </div>
                 <div class="dashboard-menu">
                   <ul>
-                    <li class="active"><i class="fas fa-home"></i><a href="<?php echo base_url('applicant');?>">داشبورد</a></li>
-                    <li><i class="fas fa-file-alt"></i><a href="<?php echo base_url('applicant/resume');?>">رزومه</a></li>
-                    <li><i class="fas fa-edit"></i><a href="<?php echo base_url('applicant/edit_resume');?>">ساخت رزومه</a></li>
-                    <li><i class="fas fa-heart"></i><a href="dashboard-bookmark.html">نشان شده ها</a></li>
+<li class="<?php if($active == 'dashbord'){ ?>active<?php }?>"><i class="fas fa-home"></i><a href="<?php echo base_url('applicant');?>">داشبورد</a></li>
+<li class="<?php if($active == 'resume'){ ?>active<?php }?>"><i class="fas fa-file-alt"></i><a href="<?php echo base_url('applicant/resume');?>">رزومه</a></li>
+<li class="<?php if($active == 'add_resume'){ ?>active<?php }?>"><i class="fas fa-edit"></i><a href="<?php echo base_url('applicant/add_resume');?>"> رزومه ساز</a></li>
+<li class="<?php if($active == 'edit_resume'){ ?>active<?php }?>"><i class="fas fa-edit"></i><a href="<?php echo base_url('applicant/edit_resume');?>">ویرایش رزومه</a></li>
+<li><i class="fas fa-heart"></i><a href="dashboard-bookmark.html">نشان شده ها</a></li>
                     <li><i class="fas fa-check-square"></i><a href="dashboard-applied.html">درخواست های استخدام</a></li>
                   </ul>
                   <ul class="delete">
