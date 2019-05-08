@@ -1,19 +1,18 @@
 <div class="rtl">
-<div class="personal-information dashboard-section last-child details-section">
-                  <h4><i data-feather="user-plus"></i>اطلاعات شخصی</h4>
-                  <ul class=""> 
-                    <li class="float-right pr-2"><span>نام و نام خانوادگی:</span> علی شیرازی</li>
-                    <li class="float-right pr-2"><span>تاریخ تولد:</span> 22/08/1397</li>
-                    <li class="float-right pr-2"><span>مکان تولد:</span> شیراز </li>
-                    <li class="float-right pr-2"><span>دسته بندی:</span> طراحی</li>
-                    <li class="float-right pr-2"><span>مکان:</span> شیراز</li>
-                    <li class="float-right pr-2"><span>زمان:</span>تمام وقت </li>
-                    <li class="float-right pr-2"><span>تجربه:</span> 3سال</li>
-                    <li class="float-right pr-2"><span>دستمزد:</span> 3ملیون</li>
-                    <li class="float-right pr-2"><span>جنسیت:</span> مرد</li>
-                     <li class="float-right pr-2"><span>سن:</span> 24</li>
-                  </ul>
-                </div>
+<div class="information mb-4">
+<h4><i data-feather="user-plus"></i>طلاعات شخصی</h4>
+                      <ul>
+                        <li ><span>نام و نام خانوادگی:</span> علی شیرازی</li>
+                        <li ><span>شماره تماس:</span> 09338643897</li>
+                        <li><span>تاریخ تولد:</span> 22/08/1397</li>
+                        <li><span>دسته بندی:</span> طراحی</li>
+                        <li><span>مکان:</span> شیراز</li>
+                        <li><span>جنسیت:</span> مرد</li>
+                        <li><span>سن:</span> 24</li>
+                        <li><span>وضعیت خدمت:</span> معاف</li>
+                      </ul>
+                    </div>
+
                 <div class="about-details details-section dashboard-section">
                   <h4><i data-feather="align-left"></i>دریاره من</h4>
               <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p
