@@ -149,6 +149,7 @@
     <script type="text/javascript" src="<?php echo base_url('files/');?>assets/js/tinymce.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url('files/');?>assets/js/slick.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url('files/');?>assets/js/jquery.ajaxchimp.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url('files/');?>assets/mine/tooltip.js"></script>
 
     <script src="<?php echo base_url('files/');?>js/custom.js"></script>
 
@@ -160,6 +161,30 @@
             //usage
             $(".usage").persianDatepicker();
         });
+    </script>
+    <script>
+    		// education
+		$(document).ready(function(){
+            var maxField = 3;
+            var addButton = $('.add_button');
+            var wrapper = $('.field_wrapper');
+            var fieldHTML = '<div class="row "><label class="col-md-3 col-form-label">تحصیلات:</label><div class="col-md-9"><div class="form-group"><input type="text" class="form-control" name="major[]" placeholder=" رشته تحصیلی (گرایش)"></div><div class="form-group"><select class="form-control" name="proof[]"><option selected disabled style="display:none;">مقطع تحصیلی</option><?php if(isset($proof)){ foreach($proof as $rows){ echo '<option value="'. $rows->id .'" >'.$rows->proof_name.'</option>'; } }?></select></div><div class="form-group"><input type="text" class="form-control" name="institute[]" placeholder="موسسه آموزشی"></div><div class="form-group"><div class="row"><input type="text" name="study_start[]" class="form-control usage col-md-4" placeholder="تاریخ شروع"><input type="text" name="study_end[]" class="form-control usage col-md-4" placeholder="تاریخ پایان"><div class="row col-md-4"><label class="col-md-8 mt-4">تا همین لحظه</label><input class="col-md-1" name="study_still[]" type="checkbox" value="1" style="margin-top:20px"></div></div></div><div class="form-group"><textarea class="form-control" name="explain[]" placeholder="توضیحات"></textarea></div><button type="button" class="add-new-field remove_button bg-btn-custom">حذف تحصیلات</button></div></div>';
+                
+            var x = 1;
+            
+            $(addButton).click(function(){
+                if(x < maxField){ 
+                    x++;
+                    $(wrapper).append(fieldHTML);
+                }
+            });
+            $(wrapper).on('click', '.remove_button', function(e){
+                e.preventDefault();
+                $(this).parent('div').parent('div').remove();
+                x--; 
+            });
+        });	
+        // education
     </script>
   </body>
 

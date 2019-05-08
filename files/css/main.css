@@ -9693,7 +9693,23 @@ header .absolute-nav {
 .bootstrap-select .dropdown-toggle .filter-option-inner-inner{
   margin-right: 6px;
 }
-.bg-btn-custom{
+.bg-btn-danger{
   background-color: #ffa9a9!important;
   color:#ff0000!important;
+}
+.bg-badge-success{
+  background-color: #01d13d;
+  color:white!important;
+}
+.bg-badge-danger{
+  background-color:#Ff2231 ;
+  color:white!important;
+}
+.bg-badge-info{
+  background-color: #888895 ;
+  color:white!important;
+}
+.bg-badge-warning{
+  background-color: #ffac16 ;
+  color:white!important;
 }
