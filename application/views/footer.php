@@ -149,6 +149,7 @@
     <script type="text/javascript" src="<?php echo base_url('files/');?>assets/js/tinymce.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url('files/');?>assets/js/slick.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url('files/');?>assets/js/jquery.ajaxchimp.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url('files/');?>assets/mine/tooltip.js"></script>
 
     <script src="<?php echo base_url('files/');?>js/custom.js"></script>
 

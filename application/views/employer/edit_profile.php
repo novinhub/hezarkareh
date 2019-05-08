@@ -8,8 +8,17 @@
 </div>
 <?php } ?>
 <form action="<?php echo base_url('employer/edit'); ?>" method="post" class="dashboard-form rtl" enctype="multipart/form-data">
+
 	<div class="dashboard-section basic-info-input">
 		<h4><i data-feather="user-check"></i>پروفایل</h4>
+		<div class="dashboard-section upload-profile-photo col-md-3 mb-5">
+		<div class="update-photo">
+			<img class="image" src="<?php echo base_url('upload/employer/avatar/').$this->session->userdata('co_pic');?>" alt="">
+		</div>
+		<div class="file-upload">
+			<input title=" عکس ارسالی باید کمتر از 2MB باشد و یکی از فورمت های  PNG|JPEG|GIF باشد" data-toggle="tooltip" data-placement="bottom"  type="file" name="co_pic" class="file-input ">انتخاب لوگو شرکت
+    </div>
+  </div>
 		<div class="form-group row">
 			<label class="col-sm-3 col-form-label">نام و نام خانوادگی :</label>
 			<div class="col-sm-9">
@@ -60,16 +69,9 @@
 			</div>
 		</div>
 	</div>
-	<div class="dashboard-section upload-profile-photo">
-		<div class="update-photo">
-			<img class="image" src="<?php echo base_url('upload/employer/avatar/').$this->session->userdata('co_pic');?>" alt="">
-		</div>
-		<div class="file-upload">
-			<input type="file" name="co_pic" class="file-input">انتخاب لوگو شرکت
-    </div>
-  </div>
-  <small class="text-primary"> عکس ارسالی باید کمتر از 2MB باشد و یکی از فورمت های  PNG|JPEG|GIF باشد </small>
-  <button type="submit" name="sub">ثبت ویرایش</button>
+	<div class="row">
+	<button class="button" type="submit" name="sub">ثبت ویرایش</button>
+	</div>
 </form>
 
 
