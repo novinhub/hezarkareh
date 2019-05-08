@@ -9693,3 +9693,7 @@ header .absolute-nav {
 .bootstrap-select .dropdown-toggle .filter-option-inner-inner{
   margin-right: 6px;
 }
+.bg-btn-custom{
+  background-color: #ffa9a9!important;
+  color:#ff0000!important;
+}

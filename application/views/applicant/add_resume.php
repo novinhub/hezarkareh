@@ -30,7 +30,7 @@
 					<div class="col-md-6">
 						<div class="form-group">
 							<select class="form-control">
-								<option>وضعیت تاهل : </option>
+								<option selected disabled style="display:none;">وضعیت تاهل : </option>
 								<option>مجرد</option>
 								<option>متاهل</option>
 							</select>
@@ -39,13 +39,21 @@
 					</div>
 					<div class="col-md-6">
 						<div class="form-group">
-							<input type="text" class="form-control" placeholder="محل سکونت خود را وارد کنید ">
+      <div id="load-selected" class=" form-control  responsive">
+							<select id="pemissions-list" name="place_id" class="selectpicker " title='نام استان و شهر خود را وارد کنید ' data-live-search="true" required>
+								<?php foreach($place as $rows){ if($rows->id == $employer->place_id){$select = "selected";}else{$select = '';} ?>
+								<option value="<?php echo $rows->id;?>" <?php echo $select;?>>
+									<?php echo $rows->state." - ".$rows->city;?>
+								</option>
+								<?php } ?>
+							</select>
+				</div>
 						</div>
 					</div>
 					<div class="col-md-6">
 						<div class="form-group">
 							<select class="form-control">
-								<option>وضعیت خدمت</option>
+								<option selected disabled style="display:none;"> وضعیت خدمت</option>
 								<option>معافیت تحصیلی</option>
 								<option>معاف</option>
 								<option>اتمام خدمت</option>
@@ -58,7 +66,7 @@
 					<div class="col-md-6">
 						<div class="form-group">
 							<select class="form-control">
-								<option>وضعیت شغلی</option>
+								<option selected disabled style="display:none;">وضعیت شغلی</option>
 								<option>شاغل</option>
 								<option>بیکار</option>
 								<option>شاغل و جویای کار</option>
@@ -68,19 +76,27 @@
 					</div>
 					<div class="col-md-6">
 						<div class="form-group">
-							<input type="text" class="form-control" placeholder="شماره همراه">
+						<div id="load-selected" class=" form-control col-sm-9 responsive">
+							<select id="pemissions-list" name="field_id" class="selectpicker " title= 'حوزه فعالیت خود را وارد کنید' data-live-search="true" required>
+								<?php foreach($field as $row){ if($row->id == $employer->field_id){$select = "selected";}else{$select = '';} ?>
+								<option value="<?php echo $row->id;?>" <?php echo $select;?>>
+									<?php echo $row->name;?>
+								</option>
+								<?php } ?>
+							</select>
+				</div>
 						</div>
 					</div>
 					<div class="col-md-6">
 						<div class="form-group">
-							<input type="text" class="form-control" placeholder="شماره تلفن">
+							<input type="text" class="form-control" placeholder="پست الکترونیکی">
 						</div>
 					</div>
 
 					<div class="col-md-6">
 						<div class="form-group">
 							<select class="form-control">
-								<option>جنسیت</option>
+								<option selected disabled style="display:none;">جنسیت</option>
 								<option>مرد</option>
 								<option>زن</option>
 							</select>
@@ -96,37 +112,49 @@
 			</div>
 		</div>
 
-		<div id="education" class="row field_wrapper">
-
+		<div id="education" class=" field_wrapper">
+		<div class="row ">
 			<label class="col-md-3 col-form-label">تحصیلات:</label>
 			<div class="col-md-9">
 				<div class="form-group">
 					<input type="text" class="form-control" placeholder="رشته تحصیلی">
 				</div>
 				<div class="form-group">
-					<input type="text" class="form-control" placeholder="گرایش">
+							<select class="form-control">
+								<option selected disabled style="display:none;">مقطع:</option>
+								<option>دیپلم</option>
+								<option>کارشناسی</option>
+								<option>کارشناسی ارشد</option>
+								<option>دکترا</option>
+							</select>
 				</div>
 				<div class="form-group">
 					<input type="text" class="form-control" placeholder="دانشگاه">
 				</div>
 				<div class="form-group">
+				<div class="row">
+					<input type="text" class="form-control usage col-md-4" placeholder="تاریخ شروع">
+					<input type="text" class="form-control usage col-md-4" placeholder="تاریخ پایان">
+					<div class="row col-md-4">
+					<label class="col-md-8 mt-4">تا همین لحظه</label>
+					<input class="col-md-1 " type="checkbox" style="margin-top:20px">
+					</div>
+					</div>
+				</div>
+				<div class="form-group">
 					<textarea class="form-control" placeholder="توضیحات"></textarea>
 				</div>
-				<button type="button" class="add-new-field add_button">تحصیلات جدید</button>
+				<button type="button" class="add-new-field add_button">اضافه کردن تحصیلات</button>
 			</div>
-
+			</div>
 		</div>
-		<div id="experience" class="row">
+		<div id="experience" class="field_wrapper2">
+			<div class="row">
 			<label class="col-md-3 col-form-label">پیشینه شغلی :</label>
 			<div class="col-md-9">
-				<div class="form-group">
+			<div class="form-group">
 					<input type="text" class="form-control" placeholder="نام شرکت">
 				</div>
-			</div>
-		</div>
-		<div class="row">
-			<label class="col-md-3 col-form-label"></label>
-			<div class="col-md-9">
 				<div class="form-group">
 					<input type="text" class="form-control" placeholder="سطح ارشدیت">
 				</div>
@@ -134,29 +162,45 @@
 					<input type="text" class="form-control" placeholder="گروه شغلی">
 				</div>
 				<div class="form-group">
+				<div class="row">
+					<input type="text" class="form-control usage col-md-4" placeholder="تاریخ شروع">
+					<input type="text" class="form-control usage col-md-4" placeholder="تاریخ پایان">
+					<div class="row col-md-4">
+					<label class="col-md-8 mt-4">تا همین لحظه</label>
+					<input class="col-md-1 " type="checkbox" style="margin-top:20px">
+					</div>
+					</div>
+				</div>
+				<div class="form-group">
 					<textarea class="form-control" placeholder="توضیحات"></textarea>
 				</div>
-				<!-- <a href="#" class="add-new-field">+ Add Experience</a> -->
+				<button type="button" class="add-new-field add_button2">اضافه کردن شغل</button>
 			</div>
 		</div>
-		<div id="skill" class="row">
+		</div>
+		<div id="skill" class="field_wrapper3">
+			<div class="row">
 			<label class="col-md-3 col-form-label">مهارت ها</label>
 			<div class="col-md-9">
-				<div class="form-group">
+			<div class="form-group">
 					<input type="text" class="form-control" placeholder="دانش و مهارت">
 				</div>
-			</div>
-		</div>
-		<div class="row">
-			<label class="col-md-3 col-form-label"></label>
-			<div class="col-md-9">
 				<div class="form-group">
-					<input type="text" class="form-control" placeholder="میزان تسلط">
+				<select class="form-control">
+								<option>میزان تسلط : </option>
+								<option>خیلی کم </option>
+								<option>کم</option>
+								<option>متوسط</option>
+								<option>خوب</option>
+								<option>عالی</option>
+							</select>
+							<i class="fa fa-caret-down"></i>
 				</div>
 				<div class="form-group">
 					<input type="number" class="form-control" placeholder="توضیحات">
 				</div>
-				<!-- <a href="#" class="add-new-field">+ Add Experience</a> -->
+				<button type="button" class="add-new-field add_button3">اضافه کردن مهارت</button>
+			</div>
 			</div>
 		</div>
 		<div class="row">
@@ -164,4 +208,6 @@
 			<button class="button" type="submit">ارسال رزومه</button>
 		</div>
 	</div>
+	
 </form>
+
