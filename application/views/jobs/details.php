@@ -9,14 +9,14 @@
               <div class="job-title-and-info">
                 <div class="title">
                   <div class="thumb">
-                    <img src="<?php echo base_url('files/')?>images/job/company-logo-1.png" class="img-fluid" alt="">
+                    <img src="<?php echo base_url('upload/employer/avatar/').$job->co_pic;?>" class="img-fluid" alt="">
                   </div>
                   <div class="title-body">
-                    <h4>آشپز فست فود</h4>
+                    <h4><?php echo $job->title;?></h4>
                     <div class="info">
-                      <span class="company"><a href="#"><i data-feather="briefcase"></i>آشپز </a></span>
-                      <span class="office-location"><a href="#"><i data-feather="map-pin"></i>شیراز </a></span>
-                      <span class="job-type full-time"><a href="#"><i data-feather="clock"></i>موقت</a></span>
+                      <span class="company"><i data-feather="briefcase"></i><?php echo $job->co_name;?></span>
+                      <span class="office-location"><i data-feather="map-pin"></i><?php echo $job->state." - ".$job->city;?> </span>
+                      <span class="job-type full-time"><i data-feather="clock"></i><?php  echo $job->assist_name; ?></span>
                     </div>
                   </div>
                 </div>
@@ -30,53 +30,31 @@
                   <div class="col-xl-7 col-lg-8 offset-xl-1">
                     <div class="description details-section">
                       <h4><i data-feather="align-left"></i>توضیحات شغل</h4>
-<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد. </p>
+<p><?php echo $job->explain; ?> </p>
                     </div>
-                    <div class="responsibilities details-section">
-                      <h4><i data-feather="zap"></i>وضایف</h4>
-                      <ul>
-                        <li>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از.</li>
-                        <li>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از.</li>
-                        <li>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از.</li>
-                        <li>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از.</li>
-                        <li>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از.</li>
-                        <li>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از.</li>
-                      </ul>
-                    </div>
-                    <div class="edication-and-experience details-section">
-                      <h4><i data-feather="book"></i>تحصیلات و تجربیات</h4>
-                      <ul>
-                        <li>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از.</li>
-                        <li>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از.</li>
-                        <li>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از.</li>
-                        <li>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از.</li>
-                        <li>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از.</li>
-                      </ul>
-                    </div>
+
+
                     <div class="other-benifit details-section">
                       <h4><i data-feather="gift"></i>مزایا</h4>
-                      <ul>
-                        <li>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از.</li>
-                        <li>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از.</li>
-                        <li>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از.</li>
-                        <li>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از.</li>
-                      </ul>
+                      <?php if($job->benefit == ''){echo 'ثبت نشده است';}else{echo $job->benefit;};?>
                     </div>
-                    <div class="job-apply-buttons">
-                      <a href="#" class="apply">فرستادم رزومه</a>
+                    <!-- <div class="job-apply-buttons">
+                      <a href="#" class="apply">فرستاk رزومه</a>
                       <a href="#" class="email"><i data-feather="mail"></i>فرستادن</a>
-                    </div>
+                    </div> -->
                   </div>
                   <div class="col-xl-4  col-lg-4">
                     <div class="information-and-share">
                       <div class="job-summary">
                         <h4>خلاصه کار </h4>
                         <ul>
-                          <li>نوع کار:<span>تمام وقت</span></li>
-                          <li> سابقه کار:<span>3سال</span></li>
-                          <li>مکان<span>شیراز</span></li>
-                          <li>حقوق:<span>3ملیون</span></li>
-                          <li>جنسیت<span>مرد</span></li>
+                          <li>نوع همکاری:<span><?php echo $job->assist_name;?></span></li>
+                          <li>حوزه فعالیت : <span><?php echo $job->name;?></span></li>
+                          <li> سابقه کار:<span><?php echo $job->exp_name;?></span></li>
+                          <li>دستمزد :<span><?php echo $job->salary_name;?></span></li>
+                          <li>مدرک تحصیلی :<span><?php echo $job->proof_name;?></span></li>
+                          <li>وضعیت سربازی :<span><?php echo $job->soldier_name;?></span></li>
+                          <li>جنسیت : <span><?php echo $job->sex_name;?></span></li>
                         </ul>
                       </div>
                       <div class="share-job-post">

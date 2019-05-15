@@ -16,7 +16,7 @@
                             
                             <span class="office-location"><i data-feather="map-pin"></i><?php echo $rows->state." - ".$rows->city;?></span>
                             <span class="job-type temporary"><i data-feather="clock"></i><?php echo $rows->assist_name;?></span>
-                            <span class="badge bg-badge-danger">فوری</span>
+                            <!-- <span class="badge bg-badge-danger">فوری</span> -->
                           </div>
                         </div>
                         <div class="more">
@@ -30,3 +30,17 @@
                       </div>
                     </div>
                    <?php } }?>
+                
+
+                   <!-- <div class="pagination-list text-center">
+                  <nav class="navigation pagination">
+                    <div class="nav-links">
+                      <a class="prev page-numbers" href="#"><i class="fas fa-angle-right"></i></a>
+                      <a class="page-numbers" href="#">1</a>
+                      <span aria-current="page" class="page-numbers current">2</span>
+                      <a class="page-numbers" href="#">3</a>
+                      <a class="page-numbers" href="#">4</a>
+                      <a class="next page-numbers" href="#"><i class="fas fa-angle-left"></i></a>
+                    </div>
+                  </nav>                
+                </div> -->

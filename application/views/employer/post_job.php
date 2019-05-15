@@ -20,8 +20,8 @@
 			<label class="col-sm-3 col-form-label font-lg"> مکان : </label>
       <div id="load-selected" class=" form-control col-sm-9 responsive">
 							<select id="pemissions-list" name="place_id" class="selectpicker " title='نام استان و شهر خود را وارد کنید ' data-live-search="true" required>
-								<?php foreach($place as $rows){ if($rows->id == $employer->place_id){$select = "selected";}else{$select = '';} ?>
-								<option value="<?php echo $rows->id;?>" <?php echo $select;?>>
+								<?php foreach($place as $rows){ ?>
+								<option value="<?php echo $rows->id;?>" <?php if($rows->id == $employer->place_id){echo "selected";}?> >
 									<?php echo $rows->state." - ".$rows->city;?>
 								</option>
 								<?php } ?>
@@ -32,8 +32,8 @@
 			<label class="col-sm-3 col-form-label font-lg"> دسته بندی شغل  : </label>
       <div id="load-selected" class=" form-control col-sm-9 responsive">
 							<select id="pemissions-list" name="field_id" class="selectpicker " title= 'حوزه فعالیت خود را وارد کنید' data-live-search="true" required>
-								<?php foreach($field as $row){ if($row->id == $employer->field_id){$select = "selected";}else{$select = '';} ?>
-								<option value="<?php echo $row->id;?>" <?php echo $select;?>>
+								<?php foreach($field as $row){ ?>
+								<option value="<?php echo $row->id;?>" <?php if($row->id == $employer->field_id){echo "selected";}?> >
 									<?php echo $row->name;?>
 								</option>
 								<?php } ?>

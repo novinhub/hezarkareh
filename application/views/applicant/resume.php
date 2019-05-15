@@ -1,90 +1,84 @@
+<?php if($this->session->has_userdata('msg')){ $msg = $this->session->userdata('msg');?>
+<div class="alert alert-<?php echo $msg[1]; ?> text-white alert-dismissible fade show text-center text-white m-3" role="alert">
+  <?php echo $msg[0]; ?>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span class="text-white" aria-hidden="true">&times;</span>
+  </button>
+</div>
+<?php } ?>
 <div class="rtl">
 <div class="information mb-4">
-<h4><i data-feather="user-plus"></i>طلاعات شخصی</h4>
+<h4><i data-feather="user-plus"></i> اطلاعات شخصی </h4>
                       <ul>
-                        <li ><span>نام و نام خانوادگی:</span> علی شیرازی</li>
-                        <li ><span>شماره تماس:</span> 09338643897</li>
-                        <li><span>تاریخ تولد:</span> 22/08/1397</li>
-                        <li><span>دسته بندی:</span> طراحی</li>
-                        <li><span>مکان:</span> شیراز</li>
-                        <li><span>جنسیت:</span> مرد</li>
-                        <li><span>سن:</span> 24</li>
-                        <li><span>وضعیت خدمت:</span> معاف</li>
+                        <li ><span>نام و نام خانوادگی : </span><?php echo $resume->fullname;?></li>
+                        <li><span> مکان : </span><?php echo $resume->state." - ".$resume->city; ?></li>
+                        <li><span> حوزه فعالیت : </span> <?php echo $resume->field_name; ?></li>
+                        <li><span> وضعیت شغلی : </span><?php echo $resume->status_name; ?></li>
+                        <li><span> جنسیت : </span><?php echo $resume->sex_name; ?></li>
+                        <li><span> وضعیت تاهل : </span> <?php echo $resume->marital_status;?> </li>
+                        <li><span> سن : </span><?php echo $age; ?></li>
+                        <?php if($resume->sex_id != 3){ ?> 
+                        <li><span>وضعیت خدمت : </span><?php echo $resume->soldier_name;?></li>
+                        <?php } ?>
+                        <?php if($resume->email != ''){ ?>
+                        <li><span> ایمیل : </span> <?php echo $resume->email; ?></li>
+                        <?php } ?>
                       </ul>
                     </div>
 
                 <div class="about-details details-section dashboard-section">
-                  <h4><i data-feather="align-left"></i>دریاره من</h4>
-              <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p
-              >
+                  <h4><i data-feather="align-left"></i>درباره من</h4>
+              <p><?php echo $resume->about; ?></p>
                 </div>
+
+                <?php if(!empty($study)){ ?>
                 <div class="edication-background details-section dashboard-section">
                   <h4><i data-feather="book"></i>تحصیلات</h4>
+                  <?php foreach($study as $row){?>
                   <div class="education-label">
-                    <span class="study-year">1395-1397</span>
-                    <h5>رشته برق دانشگاه شیراز</span></h5>
-                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. </p>
+                    <span class="study-year"><?php echo substr($row->start , 0 , 4)." تا "; if($row->still == 1){echo 'الان';}else{echo substr($row->end , 0 , 4); }?></span>
+                    <h5><?php echo $row->major." - ".$row->proof_name;?></h5>
+                    <span class="institute"><?php echo $row->institute;?></span>
+                    <br>
+                     <p><?php echo $row->explain ?></p>
                   </div>
-
+                 <?php } ?>
                 </div>
+                <?php } ?>
+                 <?php if(!empty($job)){?>
                 <div class="experience dashboard-section details-section">
                   <h4><i data-feather="briefcase"></i>سوابق شغلی</h4>
+                  <?php foreach($job as $rows){?>
                   <div class="experience-section">
-                    <span class="service-year">1397 - الان</span>
-                    <h5>مدیر فنی شرکت نوین تک</h5>
-                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. </p>
+                    <span class="service-year"><?php echo substr($rows->start , 0 , 4)." تا "; if($rows->still == 1){echo 'الان';}else{echo substr($rows->end , 0 , 4); }?></span>
+                    <h5><?php echo $rows->position." - ".$rows->company;?></h5>
+                    <p><?php echo $rows->explain; ?></p>
                   </div>
+                  <?php } ?>
                 </div>
+                 <?php } ?>
+                 <?php if(!empty($skill)){?>
                 <div class="professonal-skill dashboard-section details-section">
                   <h4><i data-feather="feather"></i>توانایی ها</h4>
-                  <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. </p>
                   <div class="progress-group">
+                    <?php foreach($skill as $skills){ ?>
                     <div class="progress-item">
                       <div class="progress-head">
-                        <p class="progress-on">Photoshop</p>
+                        <p class="progress-on"><?php echo $skills->name; ?></p>
                       </div>
                       <div class="progress-body">
                         <div class="progress">
-                          <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 0;"></div>
+                          <div class="progress-bar" role="progressbar" aria-valuenow="<?php echo $skills->percent;?>" aria-valuemin="0" aria-valuemax="100" style="width: 0;"></div>
                         </div>
-                        <p class="progress-to">70%</p>
+                        <p class="progress-to"><?php echo $skills->percent;?>%</p>
                       </div>
                     </div>
-                    <div class="progress-item">
-                      <div class="progress-head">
-                        <p class="progress-on">HTML/CSS</p>
-                      </div>
-                      <div class="progress-body">
-                        <div class="progress">
-                          <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 0;"></div>
-                        </div>
-                        <p class="progress-to">90%</p>
-                      </div>
-                    </div>
-                    <div class="progress-item">
-                      <div class="progress-head">
-                        <p class="progress-on">JavaScript</p>
-                      </div>
-                      <div class="progress-body">
-                        <div class="progress">
-                          <div class="progress-bar" role="progressbar" aria-valuenow="74" aria-valuemin="0" aria-valuemax="100" style="width: 0;"></div>
-                        </div>
-                        <p class="progress-to">74%</p>
-                      </div>
-                    </div>
-                    <div class="progress-item">
-                      <div class="progress-head">
-                        <p class="progress-on">PHP</p>
-                      </div>
-                      <div class="progress-body">
-                        <div class="progress">
-                          <div class="progress-bar" role="progressbar" aria-valuenow="86" aria-valuemin="0" aria-valuemax="100" style="width: 0;"></div>
-                        </div>
-                        <p class="progress-to">86%</p>
-                      </div>
-                    </div>
+                    <?php } ?>
                   </div>
                 </div>
+                 <?php } ?>
+                 <br>
+                 <br>
                 <!-- <div class="special-qualification dashboard-section details-section">
                   <h4><i data-feather="gift"></i>Special Qualification</h4>
                   <ul>
@@ -135,10 +129,10 @@
                   </div>
                 </div> -->
 
-                <div class="download-resume dashboard-section mt-4">
+                <!-- <div class="download-resume dashboard-section mt-4">
                   <a href="#">دانلود pdf<i data-feather="download"></i></a>
                 </div>
-              </div>
+              </div> -->
               
               <!-- <div class="skill-and-profile dashboard-section">
                   <div class="skill">

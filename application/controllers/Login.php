@@ -14,7 +14,7 @@ class Login extends CI_Controller {
         if($this->session->has_userdata('e_login') and $this->session->userdata('e_login') == TRUE){
             redirect('employer');
         }
-        if($this->session->has_userdata('a_login') and $this->session->userdata('a_login') == TRUE){
+        if($this->session->has_userdata('a_login') or $this->session->userdata('a_login') == TRUE){
             redirect('home');
         }
         if(isset($_POST['sub'])){

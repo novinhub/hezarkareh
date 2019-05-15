@@ -11,10 +11,10 @@
 	<div class="basic-info-input">
 		<div class="dashboard-section upload-profile-photo col-md-3 mb-5">
 			<div class="update-photo">
-				<img class="image" src="<?php echo base_url('upload/employer/avatar/').$this->session->userdata('pic_seeker') ;?>" alt="">
+				<img class="image" src="<?php echo base_url('upload/applicant/avatar/').$this->session->userdata('pic_seeker') ;?>" alt="">
 			</div>
 			<div class="file-upload">
-				<input type="file" name="pic_name" class="file-input">انتخاب آواتار
+				<input type="file" title=" عکس ارسالی باید کمتر از 2MB باشد و یکی از فورمت های  PNG|JPEG|GIF باشد" data-toggle="tooltip" data-placement="bottom" name="pic_name" class="file-input">انتخاب آواتار
 			</div>
 		</div>
 		<div id="full-name" class="form-group row">
@@ -31,8 +31,8 @@
 						<div class="form-group">
       <div id="load-selected" class=" form-control  responsive">
 							<select id="pemissions-list" name="place" class="selectpicker " title='نام استان و شهر خود را وارد کنید ' data-live-search="true" required>
-								<?php foreach($place as $rows){ if($rows->id == $employer->place_id){$select = "selected";}else{$select = '';} ?>
-								<option value="<?php echo $rows->id;?>" <?php echo $select;?>>
+								<?php foreach($place as $rows){  ?>
+								<option value="<?php echo $rows->id;?>">
 									<?php echo $rows->state." - ".$rows->city;?>
 								</option>
 								<?php } ?>
@@ -44,8 +44,8 @@
 						<div class="form-group">
 						<div id="load-selected" class=" form-control responsive">
 							<select id="pemissions-list" name="field" class="selectpicker " title= 'حوزه فعالیت خود را وارد کنید' data-live-search="true" required>
-								<?php foreach($field as $row){ if($row->id == $employer->field_id){$select = "selected";}else{$select = '';} ?>
-								<option value="<?php echo $row->id;?>" <?php echo $select;?>>
+								<?php foreach($field as $row){ ?>
+								<option value="<?php echo $row->id;?>">
 									<?php echo $row->name;?>
 								</option>
 								<?php } ?>
@@ -55,7 +55,7 @@
 					</div>
 					<div class="col-md-6">
 						<div class="form-group">
-							<select class="form-control" name="sex">
+							<select class="form-control" name="sex" required>
 								<option selected disabled style="display:none;">جنسیت</option>
 								<?php foreach($sex as $a){?>
 								<option value="<?php echo $a->id;?>"><?php echo $a->sex_name; ?></option>
@@ -66,7 +66,7 @@
 					</div>
 					<div class="col-md-6">
 						<div class="form-group">
-							<select class="form-control" name="marital">
+							<select class="form-control" name="marital" required>
 								<option selected disabled style="display:none;">وضعیت تاهل </option>
 								<?php foreach($marital as $b){ ?>
 								<option value="<?php echo $b->id;?>"><?php echo $b->marital_status; ?></option>
@@ -77,7 +77,7 @@
 					</div>
 					<div class="col-md-6">
 						<div class="form-group">
-							<select class="form-control" name="status">
+							<select class="form-control" name="status" required>
 								<option selected disabled style="display:none;">وضعیت شغلی</option>
 								<?php foreach($status as $c){ ?>
 								<option value="<?php echo $c->id; ?>"><?php echo $c->status_name; ?></option>
@@ -89,7 +89,7 @@
 
 					<div class="col-md-6">
 						<div class="form-group">
-							<select class="form-control" name="soldier">
+							<select class="form-control" name="soldier" required>
 								<option selected disabled style="display:none;"> وضعیت خدمت</option>
 								<?php foreach($soldier as $d){ ?>
 									<option value="<?php echo $d->id; ?>"><?php echo $d->soldier_name;?></option>
@@ -106,7 +106,7 @@
 					</div>
 					<div class="col-md-6">
 						<div class="form-group">
-							<input type="email" class="form-control" name='email' placeholder="پست الکترونیکی">
+							<input type="email" title="لطفا ایمیل معتبر وارد کنید" class="form-control" name='email' placeholder="پست الکترونیکی">
 						</div>
 					</div>
 				</div>
@@ -121,8 +121,8 @@
 					<input type="text" class="form-control" placeholder=" رشته تحصیلی (گرایش) " name="major[]">
 				</div>
 				<div class="form-group">
-							<select class="form-control" name='proof'>
-								<option selected disabled style="display:none;">مقطع تحصیلی</option>
+							<select class="form-control" name='proof[]'>
+								<option value="1" selected readonly style="display:none;">مقطع تحصیلی</option>
 								<?php foreach($proof as $e){ ?>
                                  <option value="<?php echo $e->id; ?>"> <?php echo $e->proof_name; ?> </option>
 								<?php } ?>
@@ -137,76 +137,84 @@
 					<input type="text" name="study_end[]" class="form-control usage col-md-4 bg-white" readonly placeholder="تاریخ پایان">
 					<div class="row col-md-4">
 					<label class="col-md-8 mt-4">تا همین لحظه</label>
-					<input class="col-md-1 " name="study_still[]" type="checkbox" style="margin-top:20px">
+					<input class="col-md-1" onclick="check_study(this)" type="checkbox" style="margin-top:20px">
+					<input type='hidden' name="study_still[]" value='0'>
 					</div>
 					</div>
 				</div>
 				<div class="form-group">
-					<textarea class="form-control" name="explain[]" placeholder="توضیحات"></textarea>
+					<textarea class="form-control" name="study_explain[]" placeholder="توضیحات"></textarea>
 				</div>
 				<button type="button" class="add-new-field add_button">اضافه کردن تحصیلات</button>
 			</div>
 			</div>
 		</div>
-		<div id="experience" class="field_wrapper2">
+		 <div id="experience" class="field_wrapper2">
 			<div class="row">
 			<label class="col-md-3 col-form-label">پیشینه شغلی :</label>
 			<div class="col-md-9">
 			<div class="form-group">
-					<input type="text" class="form-control" placeholder="نام شرکت">
+					<input type="text" name="company[]" class="form-control" placeholder="نام شرکت">
 				</div>
 				<div class="form-group">
-					<input type="text" class="form-control" placeholder="سطح ارشدیت">
-				</div>
-				<div class="form-group">
-					<input type="text" class="form-control" placeholder="گروه شغلی">
+					<input type="text" name="position[]" class="form-control" placeholder="سطح ارشدیت">
 				</div>
 				<div class="form-group">
 				<div class="row">
-					<input type="text" class="form-control usage col-md-4" placeholder="تاریخ شروع">
-					<input type="text" class="form-control usage col-md-4" placeholder="تاریخ پایان">
+					<input type="text" name="job_start[]" readonly class="form-control bg-white usage col-md-4" placeholder="تاریخ شروع">
+					<input type="text" name="job_end[]" readonly class="form-control bg-white usage col-md-4" placeholder="تاریخ پایان">
 					<div class="row col-md-4">
 					<label class="col-md-8 mt-4">تا همین لحظه</label>
-					<input class="col-md-1 " type="checkbox" style="margin-top:20px">
+					<input class="col-md-1" onclick="check_study(this)" type="checkbox" style="margin-top:20px">
+					<input type='hidden' name="job_still[]" value='0'>
 					</div>
 					</div>
 				</div>
 				<div class="form-group">
-					<textarea class="form-control" placeholder="توضیحات"></textarea>
+					<textarea class="form-control" name="job_explain[]" placeholder="توضیحات"></textarea>
 				</div>
 				<button type="button" class="add-new-field add_button2">اضافه کردن شغل</button>
 			</div>
 		</div>
 		</div>
+		
 		<div id="skill" class="field_wrapper3">
 			<div class="row">
 			<label class="col-md-3 col-form-label">مهارت ها</label>
 			<div class="col-md-9">
 			<div class="form-group">
-					<input type="text" class="form-control" placeholder="دانش و مهارت">
+					<input type="text" name="skill[]" class="form-control" placeholder="دانش و مهارت">
 				</div>
 				<div class="form-group">
-				<select class="form-control">
-								<option>میزان تسلط : </option>
-								<option>خیلی کم </option>
-								<option>کم</option>
-								<option>متوسط</option>
-								<option>خوب</option>
-								<option>عالی</option>
+				<select class="form-control" name="percent[]">
+								<option value="0" readonly selected style="display:none;">میزان تسلط : </option>
+								<option value="20">خیلی کم </option>
+								<option value="40">کم</option>
+								<option value="60">متوسط</option>
+								<option value="80">خوب</option>
+								<option value="100">عالی</option>
 							</select>
 							<i class="fa fa-caret-down"></i>
-				</div>
-				<div class="form-group">
-					<input type="number" class="form-control" placeholder="توضیحات">
 				</div>
 				<button type="button" class="add-new-field add_button3">اضافه کردن مهارت</button>
 			</div>
 			</div>
 		</div>
+		<br>
+		<br>
+		<div class="row">
+		<label class="col-md-3 col-form-label">درباره من</label>
+		<div class='col-md-9'>
+		<div class="form-group">
+		<textarea class="form-control" name="about" placeholder="درباره خود یک یا دو پارگراف بنویسید"></textarea>
+		</div>
+		</div>
+		</div>
+		
 		<div class="row">
 
 			<button name='sub' class="button" type="submit">ارسال رزومه</button>
-		</div>
+		</div> 
 	</div>
 	
 </form>

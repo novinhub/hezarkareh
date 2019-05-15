@@ -157,13 +157,13 @@ function get_count($table , $where){
     }
 }
 
-// function delete_data($table , $where){
-//     if($this->db->delete($table, $where)){
-//         return TRUE;
-//     }else{
-//         return FALSE;
-//     }
-// }
+function delete($table , $where){
+    if($this->db->delete($table, $where)){
+        return TRUE;
+    }else{
+        return FALSE;
+    }
+}
 // --select--update--insert--delete--  //
 
 }

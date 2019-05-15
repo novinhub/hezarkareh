@@ -8,7 +8,7 @@
             <div class="dashboard-sidebar col-md-3 rtl">
                 <div class="user-info">
                   <div class="thumb">
-                    <img src="<?php echo base_url('upload/employer/avatar/').$this->session->userdata('pic_seeker') ;?>" class="img-fluid circle img-thumbnail" alt="">
+                    <img src="<?php echo base_url('upload/applicant/avatar/').$this->session->userdata('pic_seeker') ;?>" class="img-fluid circle img-thumbnail" alt="">
                   </div>
                   <div class="user-body mr-4">
                     <h5>علی شیرازی</h5>

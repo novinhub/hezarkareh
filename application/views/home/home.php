@@ -516,28 +516,19 @@
           <div class="col-md-3 col-sm-6">
             <div class="fact">
               <div class="fact-icon">
-                <i data-feather="briefcase"></i>
-              </div>
-              <p class="fact-number"><span class="count" data-form="0" data-to="103"></span></p>
-              <p class="fact-name">پیشنهاد کار</p>
-            </div>
-          </div>
-          <div class="col-md-3 col-sm-6">
-            <div class="fact">
-              <div class="fact-icon">
                 <i data-feather="users"></i>
               </div>
-              <p class="fact-number"><span class="count" data-form="0" data-to="684"></span></p>
+              <p class="fact-number"><span class="count" data-form="0" data-to="<?php echo $sum[0]->ce; ?>"></span></p>
               <p class="fact-name">کارفرما</p>
             </div>
           </div>
           <div class="col-md-3 col-sm-6">
             <div class="fact">
               <div class="fact-icon">
-                <i data-feather="file-text"></i>
+                <i data-feather="briefcase"></i>
               </div>
-              <p class="fact-number"><span class="count" data-form="0" data-to="1354"></span></p>
-              <p class="fact-name">رزومه</p>
+              <p class="fact-number"><span class="count" data-form="0" data-to="<?php echo $sum[0]->cj;?>"></span></p>
+              <p class="fact-name">پیشنهاد کار</p>
             </div>
           </div>
           <div class="col-md-3 col-sm-6">
@@ -545,8 +536,17 @@
               <div class="fact-icon">
                 <i data-feather="award"></i>
               </div>
-              <p class="fact-number"><span class="count" data-form="0" data-to="1620"></span></p>
+              <p class="fact-number"><span class="count" data-form="0" data-to="<?php echo $sum[0]->ca; ?>"></span></p>
               <p class="fact-name">کارجو</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="fact">
+              <div class="fact-icon">
+                <i data-feather="file-text"></i>
+              </div>
+              <p class="fact-number"><span class="count" data-form="0" data-to="<?php echo $sum[0]->cr; ?>"></span></p>
+              <p class="fact-name">رزومه</p>
             </div>
           </div>
         </div>

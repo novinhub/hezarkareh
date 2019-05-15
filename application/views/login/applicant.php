@@ -54,7 +54,7 @@
 
               <form action="<?php echo base_url('login/applicant')?>" method="post">
               <div class="form-group">
-                  <input type="text" name = "tel" maxlength="11" pattern="[0-9]{11}" name ='tel' placeholder="شماره همراه" class="form-control" required>
+                  <input type="text" name = "tel" data-toggle="tooltip" data-placement="bottom" maxlength="11" pattern="[0-9]{11}" name ='tel' placeholder="شماره همراه" class="form-control" required>
                 </div>
                 <div class="form-group">
                   <input type="text" name = "username" placeholder="نام کاربری" class="form-control" required>

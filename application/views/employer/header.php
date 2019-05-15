@@ -34,14 +34,14 @@
                     <li class="<?php if($active == 'edit'){echo 'active';}?>" ><i class="fas fa-user"></i><a href="<?php echo base_url('employer/edit');?>">ویرایش پروفایل</a></li>
                     <li class="<?php if($active == 'post'){echo 'active';}?>"><i class="fas fa-plus-square"></i><a href="<?php echo base_url('employer/post');?>">ایجاد آگهی جدید</a></li>
                     <li class="<?php if($active == 'jobs'){echo 'active';}?>"><i class="fas fa-briefcase"></i><a href="<?php echo base_url('employer/jobs');?>">آگهی های من</a></li>
-                    <li><i class="fas fa-users"></i><a href="<?php echo base_url('employer/manage_candidate');?>">کارجو های مرتبط</a></li>
+                    <!-- <li><i class="fas fa-users"></i><a href="<?php echo base_url('employer/manage_candidate');?>">کارجو های مرتبط</a></li> -->
                   </ul>
                   <ul class="delete">
                     <li><i class="fas fa-power-off"></i><a href="" data-toggle="modal" data-target="#modal-logoute">خارج شدن</a></li>
-                    <li><i class="fas fa-trash-alt"></i><a href="#" data-toggle="modal" data-target="#modal-delete">پاک کرده رزومه</a></li>
+                    <!-- <li><i class="fas fa-trash-alt"></i><a href="#" data-toggle="modal" data-target="#modal-delete">پاک کرده رزومه</a></li> -->
                   </ul>
                   <!--delet Modal -->
-                  <div class="modal fade modal-delete" id="modal-delete" tabindex="-1" role="dialog" aria-hidden="true">
+                  <!-- <div class="modal fade modal-delete" id="modal-delete" tabindex="-1" role="dialog" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                       <div class="modal-content">
                         <div class="modal-body">
@@ -55,7 +55,7 @@
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </div> -->
                   <!-- Delet Modal -->
                   <!-- Logout Modal -->
                   <div class="modal fade modal-delete" id="modal-logoute" tabindex="-1" role="dialog" aria-hidden="true">

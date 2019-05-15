@@ -54,7 +54,7 @@
 
               <form action="<?php echo base_url('login/employer')?>" method="post">
               <div class="form-group">
-                  <input type="text" title='لطفا شماره تلفن معتبر وارد کنید' name = "tel" maxlength="11" pattern="[0-9]{11}" placeholder="شماره همراه" class="form-control" required>
+                  <input type="text" title='لطفا شماره تلفن معتبر وارد کنید' data-toggle="tooltip" data-placement="bottom" name = "tel" maxlength="11" pattern="[0-9]{11}" placeholder="شماره همراه" class="form-control" required>
                 </div>
                 <div class="form-group">
                   <input type="text" name = "username" placeholder="نام کاربری" class="form-control" required>

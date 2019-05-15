@@ -3868,10 +3868,10 @@ a:focus {
   border-radius: 50%;
   background: #246df8;
   top: 7px;
-  left: 0;
 }
 
 .edication-background .education-label .study-year {
+  margin-right: 20px;
   font-size: 1.4rem;
   color: #6f7484;
   margin-bottom: 5px;
@@ -3910,10 +3910,10 @@ a:focus {
   border-radius: 50%;
   background: #246df8;
   top: 7px;
-  left: 0;
 }
 
 .experience .experience-section .service-year {
+  margin-right: 20px;
   font-size: 1.4rem;
   color: #6f7484;
   margin-bottom: 5px;
@@ -9712,4 +9712,10 @@ header .absolute-nav {
 .bg-badge-warning{
   background-color: #ffac16 ;
   color:white!important;
+}
+.institute{
+  font-weight: bolder;
+}
+.remove_button3 , .remove_button2 , .remove_button , .add_button , .add_button2 , .add_button3{
+  cursor: pointer;
 }
