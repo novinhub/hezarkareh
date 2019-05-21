@@ -122,7 +122,7 @@
 				</div>
 				<div class="form-group">
 							<select class="form-control" name='proof[]'>
-								<option value="1" selected readonly style="display:none;">مقطع تحصیلی</option>
+							<option selected disabled style="display:none;">مقطع تحصیلی</option>
 								<?php foreach($proof as $e){ ?>
                                  <option value="<?php echo $e->id; ?>" <?php if($s->proof_id == $e->id){echo 'selected';} ?> > <?php echo $e->proof_name; ?> </option>
 								<?php } ?>
@@ -164,7 +164,7 @@
 				</div>
 				<div class="form-group">
 							<select class="form-control" name='proof[]'>
-								<option value="1" selected readonly style="display:none;">مقطع تحصیلی</option>
+							<option selected disabled style="display:none;">مقطع تحصیلی</option>
 								<?php foreach($proof as $e){ ?>
                                  <option value="<?php echo $e->id; ?>"> <?php echo $e->proof_name; ?> </option>
 								<?php } ?>

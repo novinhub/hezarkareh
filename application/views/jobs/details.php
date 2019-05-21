@@ -33,7 +33,7 @@
                   <a class="apply" onclick="checkLogin()"  >فرستادن رزومه</a>
                 <?php  }else{ ?>
                 <a onclick ="bookmark(<?php echo $job->id;?>)" class="save <?php if($bookmark == 1){ ?>save_active<?php }?>"><i data-feather="heart"></i><span id="book_span"><?php if($bookmark == 1){echo 'حذف نشان';}else{echo 'نشان کردن';}?></span></a>
-                <a onclick ="sent(<?php echo $job->id;?>)" class="apply" id='sent_status'><?php if($sent == 1){echo 'بازگشت رزومه';}else{echo 'ارسال رزومه';}?></a>
+                <a onclick ="sent(<?php echo $job->id;?> , <?php echo $job->employer_id;?>)" class="apply" id='sent_status'><?php if($sent == 1){echo 'بازگشت رزومه';}else{echo 'ارسال رزومه';}?></a>
               <?php  } ?>
                 </div>
                 <?php } ?>
@@ -135,7 +135,7 @@ function bookmark(id){
   xhttp.send('job_id='+id);
 }
 
-function sent(id){
+function sent(id , emp){
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
@@ -152,6 +152,6 @@ function sent(id){
   };
   xhttp.open("post", "<?php echo base_url("jobs/sent/")?>", true);
   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-  xhttp.send('job_id='+id);
+  xhttp.send('job_id='+id+'&emp='+emp);
 }
     </script>

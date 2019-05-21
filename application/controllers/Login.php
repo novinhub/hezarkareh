@@ -92,7 +92,7 @@ class Login extends CI_Controller {
         if($this->session->has_userdata('e_login') and $this->session->userdata('e_login') == TRUE){
             redirect('employer');
         }
-        if($this->session->has_userdata('a_login') and $this->session->userdata('a_login') == TRUE){
+        if($this->session->has_userdata('a_login') or $this->session->userdata('a_login') == TRUE){
             redirect('home');
         }
         if(isset($_POST['sub'])){
@@ -144,7 +144,7 @@ class Login extends CI_Controller {
         if($this->session->has_userdata('a_login') and $this->session->userdata('a_login')){
             redirect('applicant');
         }
-        if($this->session->has_userdata('e_login') and $this->session->userdata('e_login')){
+        if($this->session->has_userdata('e_login') or $this->session->userdata('e_login')){
             redirect('home');
         }
         if(isset($_POST['sub'])){
@@ -199,9 +199,6 @@ class Login extends CI_Controller {
                     $sess['edit_resume'] = $data['edit_resume'];
                     $sess['a_login'] = TRUE;
                     $this->session->set_userdata($sess);
-                    // $message['msg'][0] = " در این قسمت می توانید رزومه خود را بسازید ";
-                    // $message['msg'][1] = 'info2';
-                    // $this->session->set_flashdata($message);
                     redirect("applicant");
                     }
                 }
@@ -218,7 +215,7 @@ class Login extends CI_Controller {
         if($this->session->has_userdata('a_login') and $this->session->userdata('a_login')){
             redirect('applicant');
         }
-        if($this->session->has_userdata('e_login') and $this->session->userdata('e_login')){
+        if($this->session->has_userdata('e_login') or $this->session->userdata('e_login')){
             redirect('home');
         }
         if(isset($_POST['sub'])){

@@ -11,7 +11,7 @@
                     <img src="<?php echo base_url('upload/applicant/avatar/').$this->session->userdata('pic_seeker') ;?>" class="img-fluid circle img-thumbnail" alt="">
                   </div>
                   <div class="user-body mr-4">
-                    <h5>علی شیرازی</h5>
+                    <h5><?php echo $this->session->userdata('a_username');?></h5>
                     <!-- <span></span> -->
                   </div>
                 </div>
@@ -22,9 +22,9 @@
                     </div>
                     <div class="progress-body">
                       <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 0;"></div>
+                        <div class="progress-bar" role="progressbar" aria-valuenow="<?php echo $percent;?>" aria-valuemin="0" aria-valuemax="100" style="width: 0;"></div>
                       </div>
-                      <p class="progress-to left">70%</p>
+                      <p class="progress-to left"><?php echo $percent;?>%</p>
                     </div>
                   </div>
                 </div>
@@ -37,29 +37,13 @@
 <?php } if($this->session->userdata('edit_resume') == 1){ ?>
 <li class="<?php if($active == 'edit_resume'){ ?>active<?php }?>"><i class="fas fa-edit"></i><a href="<?php echo base_url('applicant/edit_resume');?>">ویرایش رزومه</a></li>
 <?php } ?>
-<li><i class="fas fa-heart"></i><a href="dashboard-bookmark.html">نشان شده ها</a></li>
-                    <li><i class="fas fa-check-square"></i><a href="dashboard-applied.html">درخواست های استخدام</a></li>
+<li class="<?php if($active == 'bookmark'){ ?>active<?php }?>"><i class="fas fa-heart"></i><a href="<?php echo base_url('applicant/bookmark')?>">نشان شده ها</a></li>
+                    <!-- <li><i class="fas fa-check-square"></i><a href="dashboard-applied.html">درخواست های استخدام</a></li> -->
                   </ul>
                   <ul class="delete">
-                    <li><i class="fas fa-power-off"></i><a href="#" data-toggle="modal" data-target="#modal-logoute">خارج شدن</a></li>
-                    <li><i class="fas fa-trash-alt"></i><a href="#" data-toggle="modal" data-target="#modal-delete">پاک کرده رزومه</a></li>
+                    <li><i class="fas fa-power-off"></i><a href="" data-toggle="modal" data-target="#modal-logoute">خارج شدن</a></li>
                   </ul>
                   <!--delet Modal -->
-                  <div class="modal fade modal-delete" id="modal-delete" tabindex="-1" role="dialog" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                      <div class="modal-content">
-                        <div class="modal-body">
-                          <h4><i data-feather="trash-2"></i>پاک کردن رزومه</h4>
-                          <p>آیا میخواهید رزوlه شما از لیست رزومه ها پاک شود؟</p>
-                          
-                          <div class="modal-footer d-block text-center">
-                     <a class="btn btn-danger px-4 py-3 btn-custom" href="#">بله</a>
-                     <button type="button" class="close btn bg-secondary px-4 py-3 text-light ml-4 mr-2 float-none" data-dismiss="modal">بستن </button>
-                     </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
                   <!-- Delet Modal -->
                   <!-- Logout Modal -->
                   <div class="modal fade modal-delete" id="modal-logoute" tabindex="-1" role="dialog" aria-hidden="true">

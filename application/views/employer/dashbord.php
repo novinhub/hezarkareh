@@ -7,7 +7,7 @@
                   </div>
                   <div class="user-statistic">
                     <i data-feather="file-text"></i>
-                    <h3>123</h3>
+                    <h3><?php echo $count_resume;?></h3>
                     <h6>رزومه های ارسال شده</h6>
                   </div>
                   <div class="user-statistic">

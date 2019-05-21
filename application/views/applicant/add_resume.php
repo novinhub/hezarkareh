@@ -55,9 +55,9 @@
 					</div>
 					<div class="col-md-6">
 						<div class="form-group">
-							<select class="form-control" name="sex" required>
+							<select class="form-control" name="sex" required id="select_sex">
 								<option selected disabled style="display:none;">جنسیت</option>
-								<?php foreach($sex as $a){?>
+								<?php foreach($sex as $a){ ?>
 								<option value="<?php echo $a->id;?>"><?php echo $a->sex_name; ?></option>
 								<?php } ?>
 							</select>
@@ -89,7 +89,7 @@
 
 					<div class="col-md-6">
 						<div class="form-group">
-							<select class="form-control" name="soldier" required>
+							<select class="form-control" name="soldier" required id="soldier">
 								<option selected disabled style="display:none;"> وضعیت خدمت</option>
 								<?php foreach($soldier as $d){ ?>
 									<option value="<?php echo $d->id; ?>"><?php echo $d->soldier_name;?></option>
@@ -122,7 +122,7 @@
 				</div>
 				<div class="form-group">
 							<select class="form-control" name='proof[]'>
-								<option value="1" selected readonly style="display:none;">مقطع تحصیلی</option>
+								<option selected disabled style="display:none;">مقطع تحصیلی</option>
 								<?php foreach($proof as $e){ ?>
                                  <option value="<?php echo $e->id; ?>"> <?php echo $e->proof_name; ?> </option>
 								<?php } ?>
@@ -206,7 +206,7 @@
 		<label class="col-md-3 col-form-label">درباره من</label>
 		<div class='col-md-9'>
 		<div class="form-group">
-		<textarea class="form-control" name="about" placeholder="درباره خود یک یا دو پارگراف بنویسید"></textarea>
+		<textarea class="form-control" name="about" placeholder="درباره خود یک یا دو پارگراف بنویسید" required></textarea>
 		</div>
 		</div>
 		</div>
@@ -218,4 +218,18 @@
 	</div>
 	
 </form>
+<script>
+		var select_sex = document.getElementById('select_sex');
+		var soldier = document.getElementById('soldier');
+		alt = soldier.innerHTML;
+		select_sex.onchange = function(){
+                var selected = select_sex.selectedIndex;
+                if(selected == 2){
+                    soldier.innerHTML = '<option value="0" selected style="display:none;">وضعیت خدمت</option>';
+                }else{
+					soldier.innerHTML = alt;
+				}
+        }
+
+</script>
 

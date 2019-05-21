@@ -13,13 +13,39 @@ function __construct(){
     if(!$this->session->has_userdata('a_login') or $this->session->userdata('a_login') != TRUE or $this->session->has_userdata('e_login')){
       show_404();
 	}
-	$header['title'] = ' داشبورد | هزارکاره ';
-	$header['active'] = 'dashbord';
-    $this->load->view('header' , $header);
-    $this->load->view('applicant/header');
-	$this->load->view('applicant/dashbord');
-	$this->load->view('applicant/footer');
-	$this->load->view('footer');
+	$id =$this->session->userdata('a_id');
+	if(isset($id) and is_numeric($id)){
+		$pro = $this->base_model->get_data('resume' , 'id , email , date_birth' , 'row' , array('applicant_id'=>$id));
+		if(empty($pro)){
+			$data['percent'] = 0;
+		}else{
+			$c_job = $this->base_model->get_count('his_job' , array('resume_id'=>$pro->id));
+			$c_study = $this->base_model->get_count('his_study' , array('resume_id'=> $pro->id));
+			$c_skill = $this->base_model->get_count('skill' , array('resume_id'=>$pro->id));
+			$percent = 100;
+			if($c_job == 0){
+				$percent -= 10;
+			}if($c_study == 0){
+				$percent -= 10;
+			}if($c_skill == 0){
+				$percent -= 10;
+			}if($pro->email != ''){
+				$percent -= 5;
+			}if($pro->date_birth != ''){
+				$percent -= 5;
+			}
+			$data['percent'] = $percent;
+		}
+		$header['title'] = ' داشبورد | هزارکاره ';
+		$header['active'] = 'dashbord';
+		$this->load->view('header' , $header);
+		$this->load->view('applicant/header' , $data);
+		$this->load->view('applicant/dashbord');
+		$this->load->view('applicant/footer');
+		$this->load->view('footer');
+	}else{
+		show_404();
+	}
 	}
 
 		function add_resume(){
@@ -32,6 +58,8 @@ function __construct(){
 				$this->session->set_flashdata($message);
 				redirect('applicant/edit_resume');
 			}
+			$id = $this->session->userdata('a_id');
+			if(isset($id) and is_numeric($id)){
 			if(isset($_POST['sub'])){
 				$this->form_validation->set_rules('fullname','fullname','required|max_length[100]');
 				$this->form_validation->set_rules('place'   ,'place'   ,'required|numeric');
@@ -58,7 +86,7 @@ function __construct(){
 					$resume['email'] = $this->input->post('email');
 					$resume['date_birth'] = $this->input->post('date_birth');
 					$resume['about'] = $this->input->post('about');
-					$resume['applicant_id'] = $this->session->userdata('a_id');
+					$resume['applicant_id'] = $id;
 					$resume['date_create'] = $date['d'];
 					$resume['time_create'] = $date['t'];
 					$resume['date_modified'] = 'ثبت نشده است';
@@ -84,36 +112,42 @@ function __construct(){
 					$res = $this->base_model->insert('resume' , $resume);
 					$size = count($_POST['study_still']);
 					for($i = 0 ; $i < $size ; $i++){
-						$study[] = array(
-							'major'=> htmlspecialchars($_POST['major'][$i]),
-							'proof_id'=> htmlspecialchars($_POST['proof'][$i]),
-							'institute'=> htmlspecialchars($_POST['institute'][$i]),
-							'start'=>htmlspecialchars($_POST['study_start'][$i]),
-							'end'=>htmlspecialchars($_POST['study_end'][$i]),
-							'still'=>htmlspecialchars($_POST['study_still'][$i]),
-							'explain'=>htmlspecialchars($_POST['study_explain'][$i]),
-							'resume_id'=>$res
-						);
+						if($_POST['major'][$i] != '' or $_POST['proof'][$i] != '' or $_POST['institute'][$i] != '' or $_POST['study_explain'][$i] != ''){
+							$study[] = array(
+								'major'=> htmlspecialchars($_POST['major'][$i]),
+								'proof_id'=> htmlspecialchars($_POST['proof'][$i]),
+								'institute'=> htmlspecialchars($_POST['institute'][$i]),
+								'start'=>htmlspecialchars($_POST['study_start'][$i]),
+								'end'=>htmlspecialchars($_POST['study_end'][$i]),
+								'still'=>htmlspecialchars($_POST['study_still'][$i]),
+								'explain'=>htmlspecialchars($_POST['study_explain'][$i]),
+								'resume_id'=>$res
+							);
+						}
 					}
 					$size2 = count($_POST['job_still']);
 					for($j = 0 ; $j < $size2 ; $j++){
-						$job[] = array(
-							'company'=> htmlspecialchars($_POST['company'][$j]),
-							'position'=> htmlspecialchars($_POST['position'][$j]),
-							'start'=>htmlspecialchars($_POST['job_start'][$j]),
-							'end'=> htmlspecialchars($_POST['job_end'][$j]),
-							'still'=>htmlspecialchars($_POST['job_still'][$j]),
-							'explain'=>htmlspecialchars($_POST['job_explain'][$j]),
-							'resume_id'=>$res
-						);
+						if($_POST['company'][$j] != '' or $_POST['position'][$j] != '' or $_POST['job_explain'][$j] != '' ){
+							$job[] = array(
+								'company'=> htmlspecialchars($_POST['company'][$j]),
+								'position'=> htmlspecialchars($_POST['position'][$j]),
+								'start'=>htmlspecialchars($_POST['job_start'][$j]),
+								'end'=> htmlspecialchars($_POST['job_end'][$j]),
+								'still'=>htmlspecialchars($_POST['job_still'][$j]),
+								'explain'=>htmlspecialchars($_POST['job_explain'][$j]),
+								'resume_id'=>$res
+							);
+						}
 					}
 					$size3 = count($_POST['percent']);
 					for($z = 0 ; $z < $size3 ; $z++){
-						$skill[] = array(
-							'name'=>htmlspecialchars($_POST['skill'][$z]),
-							'percent'=>htmlspecialchars($_POST['percent'][$z]),
-							'resume_id'=>$res
-						);
+						if($_POST['skill'][$z] != '' or $_POST['percent'][$z] != ''){
+							$skill[] = array(
+								'name'=>htmlspecialchars($_POST['skill'][$z]),
+								'percent'=>htmlspecialchars($_POST['percent'][$z]),
+								'resume_id'=>$res
+							);
+						}
 					}
 				 $res = $this->base_model->update('applicant' , $applicant , array('id'=>$this->session->userdata('a_id')));
 				 if(isset($study) and !empty($study)){
@@ -149,17 +183,38 @@ function __construct(){
 					redirect('applicant/edit_resume');
 				}
 				 
-					echo "<pre>";
-					var_dump($_POST);
-					var_dump($resume);
-					var_dump($study);
-					var_dump($job);
-					var_dump($skill);
-					echo "</pre>";
+					// echo "<pre>";
+					// var_dump($_POST);
+					// var_dump($resume);
+					// var_dump($study);
+					// var_dump($job);
+					// var_dump($skill);
+					// echo "</pre>";
 
 
 				}
 			}else{
+				$pro = $this->base_model->get_data('resume' , 'id , email , date_birth' , 'row' , array('applicant_id'=>$id));
+				if(empty($pro)){
+					$data['percent'] = 0;
+				}else{
+					$c_job = $this->base_model->get_count('his_job' , array('resume_id'=>$pro->id));
+					$c_study = $this->base_model->get_count('his_study' , array('resume_id'=> $pro->id));
+					$c_skill = $this->base_model->get_count('skill' , array('resume_id'=>$pro->id));
+					$percent = 100;
+					if($c_job == 0){
+						$percent -= 10;
+					}if($c_study == 0){
+						$percent -= 10;
+					}if($c_skill == 0){
+						$percent -= 10;
+					}if($pro->email != ''){
+						$percent -= 5;
+					}if($pro->date_birth != ''){
+						$percent -= 5;
+					}
+					$data['percent'] = $percent;
+				}
 				$data['place'] = $this->base_model->get_data('place' , '*');
 				$data['field'] = $this->base_model->get_data('field' , '*');
 				$data['sex'] = $this->base_model->get_data('sex' , '*' , 'result' , array('id > '=>1));
@@ -176,7 +231,10 @@ function __construct(){
 				$this->load->view('applicant/footer');
 				$this->load->view('footer');
 			}
+		}else{
+				show_404();
 			}
+}
 
 
 	function edit_resume(){
@@ -244,6 +302,7 @@ function __construct(){
 			$res = $this->base_model->update('resume' , $resume , array('id'=> $id));
 			$size = count($_POST['study_still']);
 			for($i = 0 ; $i < $size ; $i++){
+				if($_POST['major'][$i] != '' or $_POST['proof'][$i] != '' or $_POST['institute'][$i] != '' or $_POST['study_explain'][$i] != ''){
 				$study[] = array(
 					'major'=> htmlspecialchars($_POST['major'][$i]),
 					'proof_id'=> htmlspecialchars($_POST['proof'][$i]),
@@ -255,8 +314,10 @@ function __construct(){
 					'resume_id'=>$id
 				);
 			}
+		}
 			$size2 = count($_POST['job_still']);
 			for($j = 0 ; $j < $size2 ; $j++){
+				if($_POST['company'][$j] != '' or $_POST['position'][$j] != '' or $_POST['job_explain'][$j] != '' ){
 				$job[] = array(
 					'company'=> htmlspecialchars($_POST['company'][$j]),
 					'position'=> htmlspecialchars($_POST['position'][$j]),
@@ -267,14 +328,17 @@ function __construct(){
 					'resume_id'=>$id
 				);
 			}
+		}
 			$size3 = count($_POST['percent']);
 			for($z = 0 ; $z < $size3 ; $z++){
+				if($_POST['skill'][$z] != '' or $_POST['percent'][$z] != ''){
 				$skill[] = array(
 					'name'=>htmlspecialchars($_POST['skill'][$z]),
 					'percent'=>htmlspecialchars($_POST['percent'][$z]),
 					'resume_id'=>$id
 				);
 			}
+		}
 		 if(isset($study) and !empty($study)){
 			$res = $this->base_model->delete('his_study' , array('resume_id'=>$id)); 
 			$res = $this->base_model->insert_batch('his_study' ,$study);
@@ -310,6 +374,28 @@ function __construct(){
 
 		}
 	}else{
+		$user_id = $this->session->userdata('a_id');
+		$pro = $this->base_model->get_data('resume' , 'id , email , date_birth' , 'row' , array('applicant_id'=>$user_id));
+		if(empty($pro)){
+			$data['percent'] = 0;
+		}else{
+			$c_job = $this->base_model->get_count('his_job' , array('resume_id'=>$pro->id));
+			$c_study = $this->base_model->get_count('his_study' , array('resume_id'=> $pro->id));
+			$c_skill = $this->base_model->get_count('skill' , array('resume_id'=>$pro->id));
+			$percent = 100;
+			if($c_job == 0){
+				$percent -= 10;
+			}if($c_study == 0){
+				$percent -= 10;
+			}if($c_skill == 0){
+				$percent -= 10;
+			}if($pro->email != ''){
+				$percent -= 5;
+			}if($pro->date_birth != ''){
+				$percent -= 5;
+			}
+			$data['percent'] = $percent;
+		}
 		$data['place'] = $this->base_model->get_data('place' , '*');
 		$data['field'] = $this->base_model->get_data('field' , '*');
 		$data['sex'] = $this->base_model->get_data('sex' , '*' , 'result' , array('id > '=>1));
@@ -317,7 +403,7 @@ function __construct(){
 		$data['soldier'] = $this->base_model->get_data('soldier' , '*' , 'result' , array('id > '=> 1));
 		$data['proof'] = $this->base_model->get_data('proof' , '*' , 'result' , array('id > '=> 1));
 		$data['marital'] = $this->base_model->get_data('marital' , '*');
-		$data['resume'] = $this->base_model->get_data('resume' , '*' , 'row' , array('id'=> $this->session->userdata('a_id')));
+		$data['resume'] = $this->base_model->get_data('resume' , '*' , 'row' , array('id'=> $user_id));
 		$resume_id = $data['resume']->id;
 		$data['study'] = $this->base_model->get_data('his_study' , '*' , 'result' , array('resume_id'=>$resume_id));
 		$data['job'] = $this->base_model->get_data('his_job' , '*' , 'result' , array('resume_id'=>$resume_id));
@@ -336,7 +422,28 @@ function __construct(){
 	show_404();
 	}
 $date = $this->convertdate->convert(time());	
-$user_id = $this->session->userdata('a_id');	
+$user_id = $this->session->userdata('a_id');
+	$pro = $this->base_model->get_data('resume' , 'id , email , date_birth' , 'row' , array('applicant_id'=>$user_id));
+	if(empty($pro)){
+		$data['percent'] = 0;
+	}else{
+		$c_job = $this->base_model->get_count('his_job' , array('resume_id'=>$pro->id));
+		$c_study = $this->base_model->get_count('his_study' , array('resume_id'=> $pro->id));
+		$c_skill = $this->base_model->get_count('skill' , array('resume_id'=>$pro->id));
+		$percent = 100;
+		if($c_job == 0){
+			$percent -= 10;
+		}if($c_study == 0){
+			$percent -= 10;
+		}if($c_skill == 0){
+			$percent -= 10;
+		}if($pro->email != ''){
+			$percent -= 5;
+		}if($pro->date_birth != ''){
+			$percent -= 5;
+		}
+		$data['percent'] = $percent;
+	}	
 $data['resume'] = $this->base_model->run_query("SELECT r.id , r.fullname , r.sex_id , r.email , r.date_birth , r.about , p.state , p.city , f.name AS field_name , s.sex_name , m.marital_status , st.status_name , so.soldier_name FROM resume r LEFT JOIN place p ON r.place_id = p.id LEFT JOIN field f ON r.field_id = f.id LEFT JOIN sex s ON r.sex_id = s.id LEFT JOIN marital m ON r.marital_id = m.id LEFT JOIN status_job st ON r.status_id = st.id LEFT JOIN soldier so ON r.soldier_id = so.id WHERE applicant_id = '$user_id' " , 'row');
 if(empty($data['resume'])){
 	$message['msg'][0] = ' ابتدا رزومه خود را ایجاد کنید ';
@@ -365,7 +472,43 @@ $this->load->view('footer');
 }
 
 
-	//log out
+
+	public function bookmark(){
+		if(!$this->session->has_userdata('a_login') or $this->session->userdata('a_login') != TRUE){
+			show_404();
+			}
+			$user_id = $this->session->userdata('a_id');
+			$pro = $this->base_model->get_data('resume' , 'id , email , date_birth' , 'row' , array('applicant_id'=>$user_id));
+			if(empty($pro)){
+				$data['percent'] = 0;
+			}else{
+				$c_job = $this->base_model->get_count('his_job' , array('resume_id'=>$pro->id));
+				$c_study = $this->base_model->get_count('his_study' , array('resume_id'=> $pro->id));
+				$c_skill = $this->base_model->get_count('skill' , array('resume_id'=>$pro->id));
+				$percent = 100;
+				if($c_job == 0){
+					$percent -= 10;
+				}if($c_study == 0){
+					$percent -= 10;
+				}if($c_skill == 0){
+					$percent -= 10;
+				}if($pro->email != ''){
+					$percent -= 5;
+				}if($pro->date_birth != ''){
+					$percent -= 5;
+				}
+				$data['percent'] = $percent;
+			}	
+			$data['jobs'] = $this->base_model->run_query("SELECT job.id , job.title , place.state , place.city , assist.assist_name , employer.co_pic , employer.co_name FROM job INNER JOIN bookmark ON job.id = bookmark.job_id LEFT JOIN place ON place.id = job.place_id LEFT JOIN field ON field.id = job.field_id LEFT JOIN assist ON assist.id = job.assist_id LEFT JOIN employer ON employer.id = job.employer_id WHERE job.pub = 1 ORDER BY bookmark.id DESC" );
+			$header['title'] = ' کار های نشان شده | هزارکاره ';
+            $header['active'] = 'bookmark';
+            $this->load->view('header' , $header);
+            $this->load->view('applicant/header' , $data);
+            $this->load->view('applicant/bookmark');
+            $this->load->view('applicant/footer');
+            $this->load->view('footer');
+	}
+		//log out
 		public function log_out(){
 			$this->session->sess_destroy();
 			redirect('home');

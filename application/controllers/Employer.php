@@ -28,6 +28,7 @@ public function index(){
 			$header['title'] = 'داشبورد کارفرما | هزار کاره';
 			$header['active'] = 'dashbord';
 			$data['count_job'] = $this->base_model->get_count('job' , array('employer_id'=> $id));
+			$data['count_resume'] = $this->base_model->get_count('sent' , array('employer_id'=>$id));
 			$this->load->view('header' , $header);
 			$this->load->view('employer/header' , $data);
 			$this->load->view('employer/dashbord');
@@ -82,18 +83,18 @@ public function index(){
 			 $this->session->set_userdata($sess);
 			 $res = $this->base_model->update('employer' , $data , array('id'=> $id));
 			 if($state == FALSE){
-				$message['msg'][0] = " اطلاعات شما با موفقیت ثبت شد. در ارسال عکس لطفا طبق نکات گفته شده عمل کنید ";
+				$message['msg'][0] = " اطلاعات شما با موفقیت ویرایش شد. در ارسال عکس لطفا طبق نکات گفته شده عمل کنید ";
 				$message['msg'][1] = 'info2';
 				$this->session->set_flashdata($message);
 				redirect('employer/edit');
 			 }
 			 if($res){
-					$message['msg'][0] = "اطلاعات شما با موفقیت ثبت شد";
+					$message['msg'][0] = "اطلاعات شما با موفقیت ویرایش شد";
 					$message['msg'][1] = 'success2';
 					$this->session->set_flashdata($message);
 					redirect('employer/edit');
 			 }else{
-				$message['msg'][0] = "متاسفانه مشکلی در ثبت اطلاعات رخ داده است";
+				$message['msg'][0] = "متاسفانه مشکلی در ویرایش اطلاعات رخ داده است";
 				$message['msg'][1] = 'danger2';
 				$this->session->set_flashdata($message);
 				redirect('employer/edit');
@@ -238,11 +239,11 @@ public function post(){
 			if($pro->explain != ''){ $percent += 15; }
 			if($pro->place_id != 0){ $percent += 15; }
 			if($pro->field_id != 0){ $percent += 15; }
-		$data['jobs'] = $this->base_model->get_data_join('job' , 'employer' , 'job.id , job.title , job.exp ,  place.state , job.expire , job.expire_time , place.city , assist.assist_name , employer.co_pic , employer.co_name' , 'job.employer_id = employer.id' ,'result', array('job.employer_id'=>$id) , NULL , NULL , array('job.id' , 'DESC') , array('place' , 'place.id = job.place_id') , array('assist' , 'assist.id = job.assist_id'));
+		$data['jobs'] = $this->base_model->run_query("SELECT job.id , job.title , job.exp , job.expire , job.expire_time , place.state , place.city , assist.assist_name FROM job LEFT JOIN place ON place.id = job.place_id LEFT JOIN assist ON assist.id = job.assist_id WHERE job.employer_id = '$id' ORDER BY job.id DESC ");	
 		$data['percent'] = $percent;
 		$header['title'] = 'آگهی های من | هزارکاره';
 		$header['active'] = 'jobs';	
-		    $this->load->view('header' , $header);
+		  $this->load->view('header' , $header);
 			$this->load->view('employer/header' , $data);
 			$this->load->view('employer/manage_jobs');
 			$this->load->view('employer/footer');
@@ -288,7 +289,7 @@ public function edit_post(){
 		$data['explain'] = $this->input->post('explain');
 		$data['benefit'] = $this->input->post('benefit');
 		$data['date_modified'] = $date['d']." ".$date['t'];
-		// $data['pub'] = 1;
+		// $data['pub'] = 0;
 		$res = $this->base_model->update('job' , $data , array('id'=> $id));
 		if($res == FALSE){
 			$message['msg'][0] = ' مشکلی در ثبت اطلاعات رخ داده است لطفا دوباره سعی کنید ';
@@ -373,6 +374,8 @@ public function resume(){
 			$data['percent'] = $percent;
 			$header['title'] = ' مدیریت رزومه ها | هزارکاره ';
 			$header['active'] = 'jobs';
+			$data['resume'] = $this->base_model->run_query("SELECT resume.id , resume.fullname , place.state , place.city , field.name ,status_job.status_name ,applicant.pic_name FROM resume INNER JOIN sent ON resume.id = sent.resume_id LEFT JOIN place ON place.id = resume.place_id LEFT JOIN field ON field.id = resume.field_id LEFT JOIN status_job ON status_job.id = resume.status_id LEFT JOIN applicant ON applicant.id = resume.applicant_id WHERE sent.employer_id = '$employer_id' AND sent.job_id = '$id' ");
+			// $data['resume'] = $this->base_model->run_query("SELECT resume.fullname , applicant.pic_name FROM sent INNER JOIN resume ON sent.resume_id = resume.id INNER JOIN applicant ON sent.applicant_id = applicant.id ");
 			$this->load->view('header' , $header);
 			$this->load->view('employer/header' , $data);
 			$this->load->view('employer/manage_candidate');
