@@ -29,7 +29,7 @@ public function index(){
 			$header['active'] = 'dashbord';
 			$data['count_job'] = $this->base_model->get_count('job' , array('employer_id'=> $id));
 			$this->load->view('header' , $header);
-			 $this->load->view('employer/header' , $data);
+			$this->load->view('employer/header' , $data);
 			$this->load->view('employer/dashbord');
 			$this->load->view('employer/footer');
 			$this->load->view('footer');
@@ -70,20 +70,20 @@ public function index(){
 					'max_size' => "2000"
 				);
 				$this->load->library('upload', $config);
-				if ($this->upload->do_upload('co_pic')) {
+				if($this->upload->do_upload('co_pic')){
 					$data['co_pic'] = $_FILES['co_pic']['name'];
 					$sess['co_pic'] = $data['co_pic'];
 					$state = TRUE;
-				} else {
+				}else {
 					$state = FALSE;
 				}
 			 }
-			 $sess['fullname'] =  $data['fullname'];
+			 $sess['co_name'] =  $data['co_name'];
 			 $this->session->set_userdata($sess);
 			 $res = $this->base_model->update('employer' , $data , array('id'=> $id));
 			 if($state == FALSE){
 				$message['msg'][0] = " اطلاعات شما با موفقیت ثبت شد. در ارسال عکس لطفا طبق نکات گفته شده عمل کنید ";
-				$message['msg'][1] = 'danger2';
+				$message['msg'][1] = 'info2';
 				$this->session->set_flashdata($message);
 				redirect('employer/edit');
 			 }
@@ -167,6 +167,7 @@ public function post(){
 			$data['expire'] = $ex['d'];
 			$data['expire_time'] = $ex['t'];
 			$data['pub'] = 1;
+			$data['exp'] = 0;
 			$data['employer_id'] = $id;
 			$res = $this->base_model->insert('job' , $data);
 			if($res == FALSE){
@@ -227,6 +228,7 @@ public function post(){
 		}
 		$id = $this->session->userdata('id');
 		if(isset($id) and is_numeric($id)){
+			$date = $this->convertdate->convert(time());
 			$pro = $this->base_model->get_data('employer' , 'fullname , co_name , co_web , co_pic , explain , place_id , field_id' , 'row' , array('id'=>$id));
 			$percent = 0;
 			if($pro->fullname != ''){ $percent += 15; }
@@ -236,36 +238,7 @@ public function post(){
 			if($pro->explain != ''){ $percent += 15; }
 			if($pro->place_id != 0){ $percent += 15; }
 			if($pro->field_id != 0){ $percent += 15; }
-
-		// 	$total_rows = $this->base_model->get_count('job' , array('employer_id'=> $id));
-		// 	$config['base_url'] = base_url('employer/jobs');
-		// 	$config['total_rows'] = $total_rows;
-		// 	$config['per_page'] = '1';
-		// 	$config["uri_segment"] = '3';
-		// 	$config['num_links'] = '5';
-		// 	$config['next_link'] = '<i class="fas fa-angle-right"></i>';
-		// 	$config['last_link'] = 'صفحه آخر';
-		// 	$config['prev_link'] = '<i class="fas fa-angle-left"></i>';
-		// 	$config['first_link'] = 'صفحه اول';
-		// 	$config['full_tag_open'] = '<div class="pagination-list text-center"><nav class="navigation pagination"><div class="nav-links">';
-		// 	$config['full_tag_close'] = '</div></nav></div>';
-		// 	$config['cur_tag_open'] = '<span class="page-numbers current" aria-current="page">';
-		// 	$config['cur_tag_close'] = '</span>';
-		// 	$config['num_tag_open'] = '';
-		// 	$config['num_tag_close'] = '';
-		// 	$config['next_tag_open'] = '<a class="next page-numbers">';
-		// 	$config['next_tag_close'] = '</a>';
-		// 	$config['last_tag_open'] = '<a class="prev page-numbers">';
-		// 	$config['last_tag_close'] = '</a>';
-		// 	$config['first_tag_open'] = '<a class="prev page-numbers">';
-		// 	$config['first_tag_close'] = '</a>';
-		// 	$config['prev_tag_open'] = '<a class="next page-numbers">';
-		// 	$config['prev_tag_close'] = '</a>';
-		// 	$config['suffix'] = "";
-		// $this->pagination->initialize($config);     
-		// $offset = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
-		// $data['page'] = $this->pagination->create_links();
-		$data['jobs'] = $this->base_model->get_data_join('job' , 'employer' , 'job.id , job.title , place.state , job.expire , job.expire_time , place.city , assist.assist_name , employer.co_pic , employer.co_name' , 'job.employer_id = employer.id' ,'result', array('job.employer_id'=>$id) , 10 , 0 , array('job.id' , 'DESC') , array('place' , 'place.id = job.place_id') , array('assist' , 'assist.id = job.assist_id'));
+		$data['jobs'] = $this->base_model->get_data_join('job' , 'employer' , 'job.id , job.title , job.exp ,  place.state , job.expire , job.expire_time , place.city , assist.assist_name , employer.co_pic , employer.co_name' , 'job.employer_id = employer.id' ,'result', array('job.employer_id'=>$id) , NULL , NULL , array('job.id' , 'DESC') , array('place' , 'place.id = job.place_id') , array('assist' , 'assist.id = job.assist_id'));
 		$data['percent'] = $percent;
 		$header['title'] = 'آگهی های من | هزارکاره';
 		$header['active'] = 'jobs';	
@@ -279,16 +252,135 @@ public function post(){
 		}
 		}
 		//jobs
-public function manage_candidate(){
+
+public function edit_post(){
+	$employer_id = $this->session->userdata('id');
+	$id = $this->uri->segment(3);
+	if(isset($employer_id) and is_numeric($employer_id) and isset($id) and is_numeric($id)){
+	if(isset($_POST['sub'])){
+       
+		$this->form_validation->set_rules('title','title','required|max_length[100]');
+		$this->form_validation->set_rules('place_id'   ,'place_id'   ,'required|numeric');
+		$this->form_validation->set_rules('field_id'   ,'field_id'   ,'required|numeric');
+		$this->form_validation->set_rules('assist_id'  ,'assist_id'  ,'required|numeric');
+		$this->form_validation->set_rules('exp_id' ,'exp_id' ,'required|numeric');
+		$this->form_validation->set_rules('salary_id' ,'salary_id' ,'required|numeric');
+		$this->form_validation->set_rules('proof_id' ,'proof_id' ,'required|numeric');
+		$this->form_validation->set_rules('sex_id'   ,'sex_id'     ,'required|numeric');
+		$this->form_validation->set_rules('soldier_id','soldier_id' ,'required|numeric');
+		$this->form_validation->set_rules('explain' ,'explain' ,'required');
+		if($this->form_validation->run() == FALSE){
+			$message['msg'][0] = "لطفا اطلاعات خواسته شده را وارد کنید";
+			$message['msg'][1] = 'danger2';
+			$this->session->set_flashdata($message);
+			redirect('employer/edit_post/'.$id);
+		}
+		$date = $this->convertdate->convert(time());
+		$data['title'] = $this->input->post('title');
+		$data['place_id'] = $this->input->post('place_id');
+		$data['field_id'] = $this->input->post('field_id');
+		$data['assist_id'] = $this->input->post('assist_id');
+		$data['exp_id'] = $this->input->post('exp_id');
+		$data['salary_id'] = $this->input->post('salary_id');
+		$data['proof_id'] = $this->input->post('proof_id');
+		$data['sex_id'] = $this->input->post('sex_id');
+		$data['soldier_id'] = $this->input->post('soldier_id');
+		$data['explain'] = $this->input->post('explain');
+		$data['benefit'] = $this->input->post('benefit');
+		$data['date_modified'] = $date['d']." ".$date['t'];
+		// $data['pub'] = 1;
+		$res = $this->base_model->update('job' , $data , array('id'=> $id));
+		if($res == FALSE){
+			$message['msg'][0] = ' مشکلی در ثبت اطلاعات رخ داده است لطفا دوباره سعی کنید ';
+			$message['msg'][1] = 'danger2';
+			$this->session->set_flashdata($message);
+			redirect('employer/edit_post/'.$id);
+		}else{
+			$message['msg'][0] = ' آگهی شما با موفقیت ویرایش شد . جهت انتشار آگهی لطفا منتظر تایید ما باشید ';
+			$message['msg'][1] = 'success2';
+			$this->session->set_flashdata($message);
+			redirect('employer/edit_post/'.$id);
+		}
+
+	}else{
+		$data['job'] = $this->base_model->get_data('job' , '*' , 'row' , array('id'=> $id , 'employer_id'=> $employer_id));
+		if(empty($data['job'])){
+			$message['msg'][0] = ' آگهی مورد نظر یافت نشد ';
+			$message['msg'][1] = 'info2';
+			$this->session->set_flashdata($message);
+			redirect('employer/jobs');
+		}
+		if($data['job']->exp == 1){
+			$message['msg'][0] = ' ابتدا آگهی خود را تمدید کنید ';
+			$message['msg'][1] = 'info2';
+			$this->session->set_flashdata($message);
+			redirect('employer/jobs');
+		}
+		$pro = $this->base_model->get_data('employer' , 'fullname , co_name , co_web , co_pic , explain , place_id , field_id' , 'row' , array('id'=>$employer_id));
+		$percent = 0;
+		if($pro->fullname != ''){ $percent += 15; }
+		if($pro->co_name != ''){ $percent += 15; }
+		if($pro->co_web != ''){ $percent += 10; }
+		if($pro->co_pic != 'default.png'){ $percent += 15; }
+		if($pro->explain != ''){ $percent += 15; }
+		if($pro->place_id != 0){ $percent += 15; }
+		if($pro->field_id != 0){ $percent += 15; }
+		$data['percent'] = $percent;
+		$data['place'] = $this->base_model->get_data('place' , '*' , 'result' , NULL , NULL , NULL , array('state' , 'ASC'));
+		$data['field'] = $this->base_model->get_data('field' , '*' , 'result' , NULL , NULL , NULL , array('name' , 'ASC'));
+		$data['assist'] = $this->base_model->get_data('assist' , '*');
+		$data['experience'] = $this->base_model->get_data('experience' , '*');
+		$data['sex'] = $this->base_model->get_data('sex' , '*');
+		$data['salary'] = $this->base_model->get_data('salary' , '*');
+		$data['soldier'] = $this->base_model->get_data('soldier' , '*');
+		$data['proof'] = $this->base_model->get_data('proof' , '*');
+		$header['title'] = ' ویرایش آگهی  '.$data['job']->title." | هزارکاره ";
+		$header['active'] =  'jobs';
+		$this->load->view('header' ,$header );
+		$this->load->view('employer/header' , $data);
+		$this->load->view('employer/edit_post');
+		$this->load->view('employer/footer');
+		$this->load->view('footer');
+	}
+	}else{
+		show_404();
+	}
+}		
+
+public function resume(){
 		if(!$this->session->has_userdata('e_login') or $this->session->userdata('e_login') != TRUE){
 			show_404();
 		}
-		
-		$this->load->view('header');
-		$this->load->view('employer/header');
-		$this->load->view('employer/manage_candidate');
-		$this->load->view('employer/footer');
-		$this->load->view('footer');
+		$employer_id = $this->session->userdata('id');
+		$id = $this->uri->segment(3);
+		if(isset($employer_id) and isset($id) and is_numeric($employer_id) and is_numeric($id)){
+			$job = $this->base_model->get_data('job' , 'id' , 'row' , array('id'=> $id , 'employer_id'=> $employer_id));
+			if(empty($job)){
+				$message['msg'][0] = ' آگهی مورد نظر یافت نشد ';
+				$message['msg'][1] = 'info2';
+				$this->session->set_flashdata($message);
+				redirect('employer/jobs');
+			}
+			$pro = $this->base_model->get_data('employer' , 'fullname , co_name , co_web , co_pic , explain , place_id , field_id' , 'row' , array('id'=>$employer_id));
+			$percent = 0;
+			if($pro->fullname != ''){ $percent += 15; }
+			if($pro->co_name != ''){ $percent += 15; }
+			if($pro->co_web != ''){ $percent += 10; }
+			if($pro->co_pic != 'default.png'){ $percent += 15; }
+			if($pro->explain != ''){ $percent += 15; }
+			if($pro->place_id != 0){ $percent += 15; }
+			if($pro->field_id != 0){ $percent += 15; }
+			$data['percent'] = $percent;
+			$header['title'] = ' مدیریت رزومه ها | هزارکاره ';
+			$header['active'] = 'jobs';
+			$this->load->view('header' , $header);
+			$this->load->view('employer/header' , $data);
+			$this->load->view('employer/manage_candidate');
+			$this->load->view('employer/footer');
+			$this->load->view('footer');
+		}else{
+			show_404();
+		}
 		}
 public function log_out(){
 	$this->session->sess_destroy();

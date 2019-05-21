@@ -11,7 +11,7 @@
                     <img src="<?php echo base_url('upload/employer/avatar/').$this->session->userdata('co_pic');?>" class="img-fluid circle img-thumbnail" alt="">
                   </div>
                   <div class="user-body mr-4">
-                    <h5><?php if($this->session->userdata('fullname') != ''){echo $this->session->userdata('fullname');}else{echo $this->session->userdata('username');} ?></h5>
+                    <h5><?php if($this->session->userdata('co_name') != ''){echo $this->session->userdata('co_name');}else{echo $this->session->userdata('username');} ?></h5>
                     <!-- <span></span> -->
                   </div>
                 </div>
@@ -38,25 +38,7 @@
                   </ul>
                   <ul class="delete">
                     <li><i class="fas fa-power-off"></i><a href="" data-toggle="modal" data-target="#modal-logoute">خارج شدن</a></li>
-                    <!-- <li><i class="fas fa-trash-alt"></i><a href="#" data-toggle="modal" data-target="#modal-delete">پاک کرده رزومه</a></li> -->
                   </ul>
-                  <!--delet Modal -->
-                  <!-- <div class="modal fade modal-delete" id="modal-delete" tabindex="-1" role="dialog" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                      <div class="modal-content">
-                        <div class="modal-body">
-                          <h4><i data-feather="trash-2"></i>پاک کردن رزومه</h4>
-                          <p>آیا میخواهید رزوlه شما از لیست رزومه ها پاک شود؟</p>
-                          
-                          <div class="modal-footer d-block text-center">
-                     <a class="btn btn-danger px-4 py-3 btn-custom" href="#">بله</a>
-                     <button type="button" class="close btn bg-secondary px-4 py-3 text-light ml-4 mr-2 float-none" data-dismiss="modal">بستن </button>
-                     </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div> -->
-                  <!-- Delet Modal -->
                   <!-- Logout Modal -->
                   <div class="modal fade modal-delete" id="modal-logoute" tabindex="-1" role="dialog" aria-hidden="true">
                     <div class="modal-dialog" role="document">

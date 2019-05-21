@@ -57,6 +57,7 @@ class Login extends CI_Controller {
                     $data['time_log'] = $date['t'];
                     $data['place_id'] = '';
                     $data['field_id'] = '';
+                    $data['credit'] = 10;
                     $res = $this->base_model->insert('employer' , $data);
                     if($res == FALSE){
                         $message['msg'][0] = "مشکلی در ثبت اطلاعات رخ داده است . لطفا دوباره سعی کنید";
@@ -67,8 +68,9 @@ class Login extends CI_Controller {
                     $sess['id'] = $res;
                     $sess['username'] = $data['username'];
                     $sess['tel_number'] = $data['tel_number'];
-                    $sess['fullname'] = $data['fullname'];
+                    $sess['co_name'] = $data['co_name'];
                     $sess['co_pic'] = $data['co_pic'];
+                    $sess['credit'] = $data['credit'];
                     $sess['e_login'] = TRUE;
                     $this->session->set_userdata($sess);
                     $message['msg'][0] = " در این قسمت اطلاعات مربوط به پروفایل خود را تکمیل کنید ";
@@ -105,7 +107,7 @@ class Login extends CI_Controller {
                 $username = $this->db->escape_str($this->input->post('username'));
                 $password = $this->db->escape_str($this->input->post('password'));
                 $username = trim($username , ' ');
-                $check = $this->base_model->get_data('employer' , 'id , username , tel_number , password , fullname , co_pic ' , 'row' , array('username'=>$username));
+                $check = $this->base_model->get_data('employer' , 'id , username , tel_number , password , co_name , co_pic , credit ' , 'row' , array('username'=>$username));
                 if(empty($check)){
                     $message['msg'][0] = " نام کاربری به اسم  ".$username." وجود ندارد ";
                     $message['msg'][1] = 'danger2';
@@ -124,8 +126,9 @@ class Login extends CI_Controller {
                     $sess['id'] = $check->id;
                     $sess['username'] = $check->username;
                     $sess['tel_number'] = $check->tel_number;
-                    $sess['fullname'] = $check->fullname;
+                    $sess['co_name'] = $check->co_name;
                     $sess['co_pic'] = $check->co_pic;
+                    $sess['credit'] = $check->credit;
                     $sess['e_login'] = TRUE;
                     $this->session->set_userdata($sess);
                     redirect('employer');

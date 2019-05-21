@@ -1,3 +1,12 @@
+<?php if($this->session->has_userdata('msg')){ $msg = $this->session->userdata('msg');?>
+<div class="alert alert-<?php echo $msg[1]; ?> text-white alert-dismissible fade show text-center text-white m-3" role="alert">
+	<?php echo $msg[0]; ?>
+	<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span class="text-white" aria-hidden="true">&times;</span>
+  </button>
+
+</div>
+<?php } ?>
 <h6 class="p-3 mb-3" >آگهی های من</h6>
 
                    <?php if(empty($jobs)){ ?>
@@ -16,13 +25,20 @@
                             
                             <span class="office-location"><i data-feather="map-pin"></i><?php echo $rows->state." - ".$rows->city;?></span>
                             <span class="job-type temporary"><i data-feather="clock"></i><?php echo $rows->assist_name;?></span>
-                            <!-- <span class="badge bg-badge-danger">فوری</span> -->
+                            
+                            <?php  if($rows->exp == 1){ ?>
+                            <span class="badge bg-badge-danger">منقضی شده</span>
+                            <?php  } ?>
                           </div>
                         </div>
                         <div class="more">
                           <div class="buttons">
-                          <a href="#" class="button">تمدید آگهی</a>
-                          
+                           <?php if($rows->exp == 1){ ?>
+                            <a href="#" class="button">تمدید آگهی</a>
+                            <?php }else{ ?> 
+                              <a href="<?php echo base_url('employer/edit_post/').$rows->id;?>" class="button">ویرایش آگهی</a>
+                            <?php } ?>
+                            <a href="<?php echo base_url('employer/resume/').$rows->id;?>" class="button"> مدیریت رزومه ها</a>
                           </div>
                         
                           <p class="deadline"> تاریخ انقضا :  <?php echo $rows->expire." ".$rows->expire_time; ?></p>
@@ -30,17 +46,3 @@
                       </div>
                     </div>
                    <?php } }?>
-                
-
-                   <!-- <div class="pagination-list text-center">
-                  <nav class="navigation pagination">
-                    <div class="nav-links">
-                      <a class="prev page-numbers" href="#"><i class="fas fa-angle-right"></i></a>
-                      <a class="page-numbers" href="#">1</a>
-                      <span aria-current="page" class="page-numbers current">2</span>
-                      <a class="page-numbers" href="#">3</a>
-                      <a class="page-numbers" href="#">4</a>
-                      <a class="next page-numbers" href="#"><i class="fas fa-angle-left"></i></a>
-                    </div>
-                  </nav>                
-                </div> -->

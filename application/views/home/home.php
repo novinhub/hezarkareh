@@ -6,7 +6,7 @@
             <div class="banner-content lefttbox text-center">
               <h1>58,246 کار </h1>
               <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. </p>
-              <a href="add-resume.html" class="button">قرار دادن رزومه</a>
+              <a href="<?php  echo base_url('home/add_resume');?>" class="button"> ایجاد رزومه</a>
             </div>
           </div>
         </div>
@@ -80,7 +80,7 @@
                 <a class="nav-link" id="feature-tab" data-toggle="tab" href="#feature" role="tab" aria-controls="feature" aria-selected="false">Feature Job</a>
               </li>
             </ul> -->
-             <h4 class="text-center mb-4">آخرین پیشنهادات</h4>
+             <h4 class="text-center mb-4">آخرین فرصت های شغلی</h4>
             <div class="tab-content" id="myTabContent">
               <div class="tab-pane fade show active" id="recent" role="tabpanel" aria-labelledby="recent-tab">
                 <?php if(empty($jobs)){?>
@@ -565,7 +565,7 @@
               </div>
               <span>آیا شما</span>
               <h3>کارفرما هستید؟</h3>
-              <a href="#" data-toggle="modal" data-target="#modalemployer">ثبت نام کنید <i class="fas fa-arrow-right"></i></a>
+              <a href="<?php echo base_url('login/employer');?>">ثبت نام کنید <i class="fas fa-arrow-right"></i></a>
             </div>
           </div>
           <div class="col-lg-6">
@@ -575,94 +575,11 @@
               </div>
               <span>آیا شما</span>
               <h3>کارجو هستید؟</h3>
-              <a href="#" data-toggle="modal" data-target="#modalCandidate">ثبت نام کنید <i class="fas fa-arrow-right"></i></a>
+              <a href="<?php echo base_url('login/applicant')?>">ثبت نام کنید <i class="fas fa-arrow-right"></i></a>
             </div>
           </div>
         </div>
       </div>
     </div>
     <!-- Registration Box End -->
-
-    <!-- Modal Employer -->
-    <div class="account-entry">
-      <div class="modal fade" id="modalemployer" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title"><i data-feather="edit"></i>ثبت نام</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <div class="account-type">
-                <a href="#" class="candidate-acc"><i data-feather="user"></i>کارجو</a>
-                <a href="#" class="employer-acc active"><i data-feather="briefcase"></i>کارفرما</a>
-              </div>
-              <form action="#">
-                <div class="form-group">
-                  <input type="text" placeholder="Username" class="form-control">
-                </div>
-                <div class="form-group">
-                  <input type="email" placeholder="Email Address" class="form-control">
-                </div>
-                <div class="form-group">
-                  <input type="password" placeholder="Password" class="form-control">
-                </div>
-                <div class="more-option terms">
-                  <div class="form-check">
-                  </div>
-                </div>
-                <button class="button primary-bg btn-block">ثبت نام</button>
-              </form>
-              <p class="mt-2">ثبت نام کرده اید؟ <a class="btn btn-primary" href="#">ورود</a></p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
- <!--/ Modal Employer -->
- <!-- Modal Candidate -->
-     <div class="account-entry">
-      <div class="modal fade" id="modalCandidate" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title"><i data-feather="edit"></i>ثبت نام</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <div class="account-type">
-                <a href="#" class="candidate-acc active"><i data-feather="user"></i>کارجو</a>
-                <a href="#" class="employer-acc "><i data-feather="briefcase"></i>کارفرما</a>
-              </div>
-              <form action="#">
-                <div class="form-group">
-                  <input type="text" placeholder="Username" class="form-control">
-                </div>
-                <div class="form-group">
-                  <input type="email" placeholder="Email Address" class="form-control">
-                </div>
-                <div class="form-group">
-                  <input type="password" placeholder="Password" class="form-control">
-                </div>
-                <div class="more-option terms">
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck3">
-                    <label class="form-check-label" for="defaultCheck3">
-                      I accept the <a href="#">terms & conditions</a>
-                    </label>
-                  </div>
-                </div>
-                <button class="button primary-bg btn-block">Register</button>
-              </form>
-              <p class="mt-2">ثبت نام کرده اید؟ <a class="btn btn-primary" href="#">ورود</a></p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
- <!--/ Modal Employer -->
  

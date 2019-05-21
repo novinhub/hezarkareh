@@ -2636,6 +2636,10 @@ a:focus {
   color: #ff8fa6;
   border-color: #ff8fa6;
 }
+.save_active{
+  color: #ff8fa6 !important;
+  border-color: #ff8fa6 !important;
+}
 
 .responsibilities ul,
 .edication-and-experience ul,
@@ -9716,6 +9720,6 @@ header .absolute-nav {
 .institute{
   font-weight: bolder;
 }
-.remove_button3 , .remove_button2 , .remove_button , .add_button , .add_button2 , .add_button3{
+.remove_button3 , .remove_button2 , .remove_button , .add_button , .add_button2 , .add_button3 , .buttons a{
   cursor: pointer;
 }

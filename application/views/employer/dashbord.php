@@ -12,8 +12,8 @@
                   </div>
                   <div class="user-statistic">
                     <i data-feather="users"></i>
-                    <h3>32</h3>
-                    <h6>درخواست های مصاحبه</h6>
+                    <h3><?php echo $this->session->userdata('credit');?></h3>
+                    <h6>اعتبار باقی مانده</h6>
                   </div>
                 </div>
                 <div class="manage-candidate-container rtl mt-6">
