@@ -9723,3 +9723,78 @@ header .absolute-nav {
 .remove_button3 , .remove_button2 , .remove_button , .add_button , .add_button2 , .add_button3 , .buttons a{
   cursor: pointer;
 }
+/* login */
+.box-login {
+  width: 400px; /* Largura */
+  padding: 50px; /* Margem do conteúdo */
+  background-color: rgba(0, 68, 255, 0.788);
+  text-align:center;
+  margin-right: auto;
+  margin-left: 7%;
+  border-radius: 10px;
+  
+
+}
+.box-login h3 {
+  color: white;
+  text-transform: uppercase;
+  font-weight: 500;
+  border-bottom: 1px white solid;
+  padding-bottom: 20px;
+}
+.box-login input[type = "text"],.box-login input[type = "password"]{
+  border:0;
+  background:none;
+  display:block;
+  margin:20px auto;
+  text-align:center;
+  border: 2px solid #3498db;
+  padding:14px 10px;
+  width:200px;
+  outline:none;
+  color: white;
+  border-radius:15px;
+  transition:0.25s;
+  background-color: white;
+}
+.box-login input[type = "text"]:focus,.box-login input[type = "password"]:focus {
+  width:280px;
+  border-color:#f5f5f5;
+}
+.box-login input[type = "submit"]{
+  border:0;
+  background: none;
+  display:block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #f5f5f5;
+  padding:14px 10px;
+  width:200px;
+  outline:none;
+  color:white;
+  border-radius:15px;
+  transition:0.25s;
+  cursor:pointer;
+  margin-top: 35px;
+}
+.box-login input[type = "submit"]:hover{
+  background:#f5f5f5;
+  color: black;
+}
+.my-10{
+  margin-top: 10rem!important;
+  margin-bottom: 10rem!important;
+}
+.box-login span a {
+  border-radius: 15px;
+  font-weight: 400;
+  padding:5px 20px;
+  border: 2px solid #f5f5f5;
+  margin-top: 20px;
+}
+.border-bottom-white{
+  border-bottom: 1px white solid;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+/* /login */

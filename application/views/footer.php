@@ -1,4 +1,4 @@
-   <?php if($this->uri->segment(1) != 'applicant' and $this->uri->segment(1) != 'employer'){ ?>
+   <?php if($this->uri->segment(1) != 'applicant' and $this->uri->segment(1) != 'employer' and $this->uri->segment(1) != 'home' and $this->uri->segment(1) != 'login'){ ?>
     <!-- Call to Action -->
     <div class="call-to-action-bg padding-top-90 padding-bottom-90">
       <div class="container">

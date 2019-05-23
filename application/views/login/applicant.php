@@ -7,7 +7,7 @@
   </button>
 </div>
 <?php } ?>
- <div class="row">
+ <!-- <div class="row">
      <div class="col-md-2"></div>
      <div class="col-md-4">
  <div class="account-entry">
@@ -72,6 +72,21 @@
       </div>
     </div>
     </div>
+    </div> -->
+    <div class="banner-2-bg p-5 ">
+    <div class="my-10 ">    
+    <form class="box-login ">
+    <h3>ورود کارجو</h3>
+    <div class="border-bottom-white">
+    <input type="text" name="" placeholder="نام کاربری ">
+    <input type="password" name="" placeholder="رمز عبور">
+    <input type="submit" name="" value="ورود به پنل">
     </div>
-
+    <div class="row mt-3">
+    <span class="col-md-7 "><a class="bg-white " href="">فراموشی رمز عبور</a></span>
+    <span class="col-md-5 "><a class="bg-white " href="">ثبت نام</a></span>
+    </div>
+  </form>
+  </div>
+  </div>
  
