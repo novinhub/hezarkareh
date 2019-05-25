@@ -52,7 +52,7 @@
             </div>
             <div class="modal-body">
 
-              <form action="<?php echo base_url('login/applicant')?>" method="post">
+              <form action="<?php //echo base_url('login/applicant')?>" method="post">
               <div class="form-group">
                   <input type="text" title='شماره تلفن معتبر وارد کنید' name = "tel" data-toggle="tooltip" data-placement="bottom" maxlength="11" pattern="[0-9]{11}" name ='tel' placeholder="شماره همراه" class="form-control" required>
                 </div>
@@ -75,16 +75,16 @@
     </div> -->
     <div class="banner-2-bg p-5 ">
     <div class="my-10 ">    
-    <form class="box-login ">
+    <form class="box-login" action="<?php echo base_url('login/applicant');?>" method="post">
     <h3>ورود کارجو</h3>
     <div class="border-bottom-white">
-    <input type="text" name="" placeholder="نام کاربری ">
-    <input type="password" name="" placeholder="رمز عبور">
-    <input type="submit" name="" value="ورود به پنل">
+    <input type="text" name="username" placeholder="نام کاربری " required>
+    <input type="password" name="password" placeholder="رمز عبور" required>
+    <input type="submit" name="sub" value="ورود به پنل">
     </div>
     <div class="row mt-3">
     <span class="col-md-7 "><a class="bg-white " href="">فراموشی رمز عبور</a></span>
-    <span class="col-md-5 "><a class="bg-white " href="">ثبت نام</a></span>
+    <span class="col-md-5 "><a class="bg-white " href="<?php echo base_url('signup/applicant');?>">ثبت نام</a></span>
     </div>
   </form>
   </div>
