@@ -73,20 +73,24 @@
     </div>
     </div>
     </div> -->
-    <div class="banner-2-bg p-5 ">
-    <div class="my-10 ">    
-    <form class="box-login" action="<?php echo base_url('login/applicant');?>" method="post">
-    <h3>ورود کارجو</h3>
-    <div class="border-bottom-white">
-    <input type="text" name="username" placeholder="نام کاربری " required>
-    <input type="password" name="password" placeholder="رمز عبور" required>
-    <input type="submit" name="sub" value="ورود به پنل">
-    </div>
-    <div class="row mt-3">
-    <span class="col-md-7 "><a class="bg-white " href="">فراموشی رمز عبور</a></span>
-    <span class="col-md-5 "><a class="bg-white " href="<?php echo base_url('signup/applicant');?>">ثبت نام</a></span>
-    </div>
-  </form>
-  </div>
-  </div>
+    <div class="row my-10">
+		<div class="col-lg-8 d-none d-lg-block">
+			<img  src="<?php echo base_url('files/');?>images/bg/login.jpg">
+		</div>
+		<div class="col-sm-12 col-lg-3">
+			<form class="box-login" action="<?php echo base_url('login/applicant');?>" method="post">
+				<h3>ورود کارجو</h3>
+				<div class="border-bottom-white">
+					<input type="text" name="username" placeholder="نام کاربری " required>
+					<input type="password" name="password" placeholder="رمز عبور" required>
+					<input type="submit" name="sub" value="ورود به پنل">
+				</div>
+				<div class="row mt-3">
+					<span class="col-7 "><a class="bg-white " href="<?php echo base_url('');?>">فراموشی رمز عبور</a></span>
+					<span class="col-5 "><a class="bg-white " href="<?php echo base_url('signup/applicant');?>">ثبت نام</a></span>
+				</div>
+			</form>
+		</div>
+
+</div>
  
