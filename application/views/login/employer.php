@@ -90,7 +90,7 @@
 					<input type="submit" name="sub" value="ورود به پنل">
 				</div>
 				<div class="row mt-3">
-					<span class="col-7 "><a class="bg-white " href="<?php echo base_url('');?>">فراموشی رمز عبور</a></span>
+					<span class="col-7 "><a class="bg-white " href="<?php echo base_url('forget/employer');?>">فراموشی رمز عبور</a></span>
 					<span class="col-5 "><a class="bg-white " href="<?php echo base_url('signup/employer');?>">ثبت نام</a></span>
 				</div>
 			</form>
