@@ -45,13 +45,11 @@
 
 			</ul>
 
-<p class="navbar-text"><a href="<?php echo base_url('deal/buy');?>" class="label bg-warning">خرید</a></p>
-<p class="navbar-text"><a href="<?php echo base_url('deal/sell');?>" class="label bg-primary">فروش</a></p>
+			<p class="navbar-text"><a href="<?php echo base_url('deal/buy');?>" class="label bg-warning">خرید</a>
+			</p>
+			<p class="navbar-text"><a href="<?php echo base_url('deal/sell');?>" class="label bg-primary">فروش</a>
+			</p>
 			<ul class="nav navbar-nav navbar-right">
-
-
-
-
 				<li class="dropdown dropdown-user">
 					<a class="dropdown-toggle" data-toggle="dropdown">
 						<img src="<?php echo base_url('uploads/avatar/').$this->session->userdata('pic_name');?>" alt="">
@@ -60,9 +58,6 @@
 
 						<i class="caret"></i>
 					</a>
-				
-
-
 					<ul class="dropdown-menu dropdown-menu-right">
 						<li><a href="<?php echo base_url('admin/edit/').$this->session->userdata('id');?>"><i class="icon-user-plus"></i> ویرایش حساب کاربری</a>
 						</li>
@@ -73,8 +68,6 @@
 			</ul>
 		</div>
 	</div>
-
-
 	<!-- Page container -->
 	<div class="page-container">
 
@@ -90,13 +83,13 @@
 						<div class="category-content">
 							<div class="media">
 
-								<a class="media-left"><img src="<?php echo base_url('uploads/avatar/').$this->session->userdata('pic_name');?>" class="img-circle img-sm" alt=""></a>
+								<a class="media-left"><img src="<?php echo base_url('uploads/avatar/default_avatar.png')?>" class="img-circle img-sm" alt=""></a>
 
 								<div class="media-body">
 
 									<span class="media-heading text-semibold display-inline-block mt-10">
-										<?php echo $this->session->userdata('name');?>
-				
+										<?php echo $this->session->userdata('name');?> علی شیرازی
+
 									</span>
 
 								</div>
@@ -112,15 +105,20 @@
 					<div class="sidebar-category sidebar-category-visible">
 						<div class="category-content no-padding">
 							<ul class="navigation navigation-main navigation-accordion">
-	
-<li class="<?php if($active == 'dashbord'){echo 'active';}?>"><a href="<?php echo base_url('home'); ?>"><i class="icon-home4"></i> <span>داشبورد</span></a></li>
-                           
-							<li>
+
+								<li class="<?php if($active == 'dashbord'){echo 'active';}?>"><a href="<?php echo base_url('home'); ?>"><i class="icon-home4"></i> <span>داشبورد</span></a>
+								</li>
+
+								<li>
 									<a href=""><i class="icon-users4 <?php if($active == 'admin'){echo 'active';} ?>"></i> <span>کاربران</span></a>
 									<ul>
-										<li class="<?php if($active_sub == 'admin_archive'){echo 'active';} ?>"><a href="<?php echo base_url('admin/archive') ?>">آرشیو کاربران</a></li>
-					
-<li class="<?php if($active_sub == 'admin_add'){echo 'active';} ?>"><a href="<?php echo base_url('admin/add') ?>">افزودن کاربر</a></li>
+										<li class="<?php if($active_sub == 'admin_archive'){echo 'active';} ?>"><a href="<?php echo base_url('employer/arshive') ?>">آرشیو کارفرمایان</a>
+										</li>
+
+										<li class="<?php if($active_sub == 'admin_add'){echo 'active';} ?>"><a href="<?php echo base_url('employer/jobs') ?>">آگهی ها </a>
+										</li>
+										<li class="<?php if($active_sub == 'admin_add'){echo 'active';} ?>"><a href="<?php echo base_url('employer/unspecified_jobs') ?>">آگهی های تایید نشده</a>
+										</li>
 									</ul>
 								</li>
 								<!-- /main -->
