@@ -22,24 +22,20 @@
 									</div>
 
 									<h5 class="text-semibold mb-5">
-										<a href="#" class="text-default">Increasing travelling own</a>
+										<a href="#" class="text-default">برنامه نویس وب</a>
 									</h5>
 
 									<ul class="list-inline list-inline-separate text-muted content-group">
-										<li>By <a href="#" class="text-muted">Eugene</a></li>
+										<li>توسط <a href="#" class="text-muted">نوین تک</a></li>
 										<li>July 17th, 2016</li>
 									</ul>
-
-									Supplied directly pleasant we ignorant ecstatic of jointure so if. These spoke house of we. Ask put yet excuse person see change. Do inhabiting no stimulated unpleasing of admiration he. Enquire explain another he in brandon enjoyed be service. Given mrs she first china.
 								</div>
 
 								<div class="panel-footer panel-footer-condensed">
 									<div class="heading-elements not-collapsible">
-										<ul class="list-inline list-inline-separate heading-text text-muted">
-											<li><a href="#" class="text-muted"><i class="icon-heart6 text-size-base text-pink position-left"></i> 391</a></li>
-										</ul>
+									<a href=""><span class="heading-text label label-success">انتشار</span></a>
 
-										<a href="#" class="heading-text pull-right">Read more <i class="icon-arrow-left13 position-right"></i></a>
+										<a href="#" class="heading-text pull-right">دیدن آگهی<i class="icon-arrow-left13 position-right"></i></a>
 									</div>
 								</div>
 							</div>
