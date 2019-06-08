@@ -11,7 +11,7 @@
                     <img src="<?php echo base_url('upload/employer/avatar/').$this->session->userdata('co_pic');?>" class="img-fluid circle img-thumbnail" alt="">
                   </div>
                   <div class="user-body mr-4">
-                    <h5><?php if($this->session->userdata('co_name') != ''){echo $this->session->userdata('co_name');}else{echo $this->session->userdata('username');} ?></h5>
+                    <h5><?php if($this->session->userdata('co_name') != ''){echo $this->session->userdata('co_name');}else{echo $this->session->userdata('e_username');} ?></h5>
                     <!-- <span></span> -->
                   </div>
                 </div>
@@ -22,9 +22,9 @@
                     </div>
                     <div class="progress-body">
                       <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="<?php echo $percent;?>" aria-valuemin="0" aria-valuemax="100" style="width: 0;"></div>
+                        <div class="progress-bar" role="progressbar" aria-valuenow="<?php echo $this->session->userdata('e_pro');?>" aria-valuemin="0" aria-valuemax="100" style="width: 0;"></div>
                       </div>
-                      <p class="progress-to left"><?php echo $percent."%";?></p>
+                      <p class="progress-to left"><?php echo $this->session->userdata('e_pro')."%";?></p>
                     </div>
                   </div>
                 </div>

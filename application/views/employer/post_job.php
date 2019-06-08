@@ -20,8 +20,9 @@
 			<label class="col-sm-3 col-form-label font-lg"> مکان : </label>
       <div id="load-selected" class=" form-control col-sm-9 responsive">
 							<select id="pemissions-list" name="place_id" class="selectpicker " title='نام استان و شهر خود را وارد کنید ' data-live-search="true" required>
-								<?php foreach($place as $rows){ ?>
-								<option value="<?php echo $rows->id;?>" <?php if($rows->id == $employer->place_id){echo "selected";}?> >
+                <?php $place_id = $this->session->userdata('e_place');
+                 foreach($place as $rows){ ?>
+								<option value="<?php echo $rows->id;?>" <?php if($rows->id == $place_id){echo "selected";}?> >
 									<?php echo $rows->state." - ".$rows->city;?>
 								</option>
 								<?php } ?>
@@ -32,8 +33,10 @@
 			<label class="col-sm-3 col-form-label font-lg"> دسته بندی شغل  : </label>
       <div id="load-selected" class=" form-control col-sm-9 responsive">
 							<select id="pemissions-list" name="field_id" class="selectpicker " title= 'حوزه فعالیت خود را وارد کنید' data-live-search="true" required>
-								<?php foreach($field as $row){ ?>
-								<option value="<?php echo $row->id;?>" <?php if($row->id == $employer->field_id){echo "selected";}?> >
+                <?php 
+                $field_id = $this->session->userdata('e_field');
+                foreach($field as $row){ ?>
+								<option value="<?php echo $row->id;?>" <?php if($row->id == $field_id){echo "selected";}?> >
 									<?php echo $row->name;?>
 								</option>
 								<?php } ?>
@@ -125,6 +128,12 @@
                         <textarea type="text" name="benefit" class="form-control" placeholder="در این قسمت مزایای که می توانید تامین کنید را بنویسید"></textarea>
                       </div>
                     </div>
+
+                    <select class="form-control" name="tags[]" id="selectTags" multiple="multiple" placeholder="کلمات کلیدی را نوشته و اینتر بزنید" >
+                      <?php foreach($tags as $row){ ?>
+  <option value="<?php echo $row->id;?>"><?php echo $row->name;?></option>
+                      <?php } ?>
+</select>
                     <div class="form-group row">
                       <label class="col-md-3 col-form-label"></label>
                       <div class="col-md-9">
@@ -133,3 +142,10 @@
                     </div>
                   </div>
                 </form>
+<script>
+$("#selectTags").select2({
+    tags: true,
+    placeholder:"کلمات کلیدی را نوشته و اینتر بزنید",
+    dir : 'rtl'
+})
+</script>

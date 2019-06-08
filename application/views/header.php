@@ -38,12 +38,15 @@
     <link rel="apple-touch-icon" sizes="72x72" href="<?php echo base_url('files/');?>images/icon-72x72.png">
     <link rel="apple-touch-icon" sizes="114x114" href="<?php echo base_url('files/');?>images/icon-114x114.png">
     <link rel="stylesheet" href="<?php echo base_url('files/');?>assets/persian_date/css/persianDatepicker-default.css" />
+    <link rel="stylesheet" href="<?php echo base_url('files/') ?>tagging/dist/css/select2.min.css"  />
+
 
     <!--[if lt IE 9]>
     <script src="assets/js/html5shiv.min.js"></script>
     <script src="assets/js/respond.min.js"></script>
     <![endif]-->
-
+    <script type="text/javascript" src="<?php echo base_url('files/');?>assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url('files/')?>tagging/dist/js/select2.min.js"></script>
   </head>
   <body>
 

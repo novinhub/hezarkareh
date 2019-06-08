@@ -2386,7 +2386,7 @@ a:focus {
   margin-top: 10px;
   font-weight: 350;
   display: block;
-  text-align: right;
+  text-align: left;
 }
 
 .job-list:last-child {
@@ -9763,7 +9763,7 @@ header .absolute-nav {
   margin:20px auto;
   text-align:center;
   border: 2px solid #3498db;
-  padding:14px 10px;
+  padding:10px 10px;
   width:200px;
   outline:none;
  
@@ -9782,7 +9782,7 @@ header .absolute-nav {
   margin: 20px auto;
   text-align: center;
   border: 2px solid #f5f5f5;
-  padding:14px 10px;
+  padding:10px 10px;
   width:200px;
   outline:none;
   color:white;

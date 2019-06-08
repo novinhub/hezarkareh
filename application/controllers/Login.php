@@ -29,7 +29,7 @@ class Login extends CI_Controller {
                 $username = $this->db->escape_str($this->input->post('username'));
                 $password = $this->db->escape_str($this->input->post('password'));
                 $username = trim($username , ' ');
-                $check = $this->base_model->get_data('employer' , 'id , username , tel_number , password , co_name , co_pic , credit ' , 'row' , array('username'=>$username));
+                $check = $this->base_model->get_data('employer' , '*' , 'row' , array('username'=>$username));
                 if(empty($check)){
                     $message['msg'][0] = " نام کاربری به اسم  ".$username." وجود ندارد ";
                     $message['msg'][1] = 'danger2';
@@ -45,12 +45,23 @@ class Login extends CI_Controller {
                     $data['date_log'] = $date['d'];
                     $data['time_log'] = $date['t'];
                     $this->base_model->update('employer' , $data , array('id'=> $check->id));
-                    $sess['id'] = $check->id;
-                    $sess['username'] = $check->username;
-                    $sess['tel_number'] = $check->tel_number;
+                    $percent = 0;
+                    if($check->fullname != ''){ $percent += 15; }
+                    if($check->co_name != ''){ $percent += 15; }
+                    if($check->co_web != ''){ $percent += 10; }
+                    if($check->co_pic != 'default.png'){ $percent += 15; }
+                    if($check->explain != ''){ $percent += 15; }
+                    if($check->place_id != 0){ $percent += 15; }
+                    if($check->field_id != 0){ $percent += 15; }
+                    $sess['e_pro'] = $percent;
+                    $sess['e_id'] = $check->id;
+                    $sess['e_username'] = $check->username;
+                    $sess['e_tel'] = $check->tel_number;
                     $sess['co_name'] = $check->co_name;
                     $sess['co_pic'] = $check->co_pic;
                     $sess['credit'] = $check->credit;
+                    $sess['e_place'] = $check->place_id;
+                    $sess['e_field'] = $check->field_id;
                     $sess['e_login'] = TRUE;
                     $this->session->set_userdata($sess);
                     redirect('employer');

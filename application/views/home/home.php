@@ -518,7 +518,7 @@
               <div class="fact-icon">
                 <i data-feather="users"></i>
               </div>
-              <p class="fact-number"><span class="count" data-form="0" data-to="<?php echo $sum[0]->ce; ?>"></span></p>
+              <p class="fact-number"><span class="count" data-form="0" data-to="<?php echo $sum->employer; ?>"></span></p>
               <p class="fact-name">کارفرما</p>
             </div>
           </div>
@@ -527,7 +527,7 @@
               <div class="fact-icon">
                 <i data-feather="briefcase"></i>
               </div>
-              <p class="fact-number"><span class="count" data-form="0" data-to="<?php echo $sum[0]->cj;?>"></span></p>
+              <p class="fact-number"><span class="count" data-form="0" data-to="<?php echo $sum->job;?>"></span></p>
               <p class="fact-name">پیشنهاد کار</p>
             </div>
           </div>
@@ -536,7 +536,7 @@
               <div class="fact-icon">
                 <i data-feather="award"></i>
               </div>
-              <p class="fact-number"><span class="count" data-form="0" data-to="<?php echo $sum[0]->ca; ?>"></span></p>
+              <p class="fact-number"><span class="count" data-form="0" data-to="<?php echo $sum->applicant; ?>"></span></p>
               <p class="fact-name">کارجو</p>
             </div>
           </div>
@@ -545,7 +545,7 @@
               <div class="fact-icon">
                 <i data-feather="file-text"></i>
               </div>
-              <p class="fact-number"><span class="count" data-form="0" data-to="<?php echo $sum[0]->cr; ?>"></span></p>
+              <p class="fact-number"><span class="count" data-form="0" data-to="<?php echo $sum->resume; ?>"></span></p>
               <p class="fact-name">رزومه</p>
             </div>
           </div>
@@ -565,7 +565,11 @@
               </div>
               <span>آیا شما</span>
               <h3>کارفرما هستید؟</h3>
+              <?php if($this->session->has_userdata('e_login')){ ?>  
+                <a href="<?php echo base_url('login/employer');?>"> ایجاد آگهی  <i class="fas fa-arrow-right"></i></a>
+              <?php } else { ?>
               <a href="<?php echo base_url('login/employer');?>">ثبت نام کنید <i class="fas fa-arrow-right"></i></a>
+              <?php } ?>
             </div>
           </div>
           <div class="col-lg-6">
@@ -575,7 +579,11 @@
               </div>
               <span>آیا شما</span>
               <h3>کارجو هستید؟</h3>
+              <?php if($this->session->has_userdata('a_login')){ ?>
+                <a href="<?php echo base_url('login/applicant')?>"> ایجاد آگهی  <i class="fas fa-arrow-right"></i></a>
+              <?php } else { ?> 
               <a href="<?php echo base_url('login/applicant')?>">ثبت نام کنید <i class="fas fa-arrow-right"></i></a>
+              <?php } ?>
             </div>
           </div>
         </div>

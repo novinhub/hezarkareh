@@ -89,10 +89,10 @@
             </div>
             <div class="col-lg-2 col-sm-6">
               <div class="footer-widget footer-shortcut-link">
-                <h4>Employers</h4>
+                <h4>کارفرمایان</h4>
                 <div class="widget-inner">
                   <ul>
-                    <li><a href="#">Create Account</a></li>
+                    <li><a href="<?php echo base_url('login/employer')?>">ورود </a> / <a href="<?php echo base_url('signup/employer')?>">ثبت نام</a></a>
                     <li><a href="#">Products/Service</a></li>
                     <li><a href="#">Post a Job</a></li>
                     <li><a href="#">FAQ</a></li>
@@ -134,7 +134,7 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script type="text/javascript" src="<?php echo base_url('files/');?>assets/js/jquery.min.js"></script>
+
     <script type="text/javascript" src="<?php echo base_url('files/');?>assets/js/popper.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url('files/');?>assets/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url('files/');?>assets/js/feather.min.js"></script>

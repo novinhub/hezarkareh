@@ -55,20 +55,24 @@ class Signup extends CI_Controller {
                     $data['time_log'] = $date['t'];
                     $data['place_id'] = '';
                     $data['field_id'] = '';
-                    $data['credit'] = 10;
+                    $data['credit'] = 5;
                     $res = $this->base_model->insert('employer' , $data);
+                    $this->base_model->set('employer' , 'employer + 1 ' , array('id'=>1) , 'count_data');
                     if($res == FALSE){
                         $message['msg'][0] = "مشکلی در ثبت اطلاعات رخ داده است . لطفا دوباره سعی کنید";
                         $message['msg'][1] = 'info2';
                         $this->session->set_flashdata($message);
                         redirect('signup/employer');
                     }else{   
-                    $sess['id'] = $res;
-                    $sess['username'] = $data['username'];
-                    $sess['tel_number'] = $data['tel_number'];
+                    $sess['e_id'] = $res;
+                    $sess['e_username'] = $data['username'];
+                    $sess['e_tel'] = $data['tel_number'];
                     $sess['co_name'] = $data['co_name'];
                     $sess['co_pic'] = $data['co_pic'];
                     $sess['credit'] = $data['credit'];
+                    $sess['e_pro'] = 0;
+                    $sess['e_place'] = 0;
+                    $sess['e_field'] = 0;
                     $sess['e_login'] = TRUE;
                     $this->session->set_userdata($sess);
                     $message['msg'][0] = " در این قسمت اطلاعات مربوط به پروفایل خود را تکمیل کنید ";

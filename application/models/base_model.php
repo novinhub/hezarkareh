@@ -19,13 +19,13 @@ function get_data($table , $select , $ret = 'result', $where = NULL , $limit = N
     
     $this->db->select($select);
     
-    if($where !=NULL){
+    if($where != NULL){
         $this -> db -> where($where);
     }
-    if($order_by !=NULL){
+    if($order_by != NULL){
         $this->db->order_by($order_by[0] , $order_by[1]);
     }
-    if($group_by !=NULL){
+    if($group_by != NULL){
         $this -> db -> group_by($group_by);
     }
     if($between != NULL){
@@ -126,10 +126,12 @@ function insert_batch($table , $data){
 	}else{
 		return FALSE;
 	}
-	
 }
-function update($table , $data , $where){
-    $this->db->where($where);
+
+function update($table , $data , $where = NULL){
+    if($where != NULL){
+        $this->db->where($where);
+    }
     if($this->db->update($table , $data)){
         return TRUE;
     }else{
@@ -138,11 +140,8 @@ function update($table , $data , $where){
 }
 
 function update_batch($table , $data , $key){
-    if($this->db->update_batch($table , $data , $key)){
-        return TRUE;
-    }else{
-        return FALSE;
-    }
+    $affected_rows = $this->db->update_batch($table , $data , $key);
+    return $affected_rows;
 }
 function set($set_name , $set_value , $where , $table){
     $this->db->set($set_name , $set_value , FALSE);

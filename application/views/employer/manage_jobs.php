@@ -24,7 +24,7 @@
                           <div class="info">
                             
                             <span class="office-location"><i data-feather="map-pin"></i><?php echo $rows->state." - ".$rows->city;?></span>
-                            <span class="job-type temporary"><i data-feather="clock"></i><?php echo $rows->assist_name;?></span>
+                            <span class="job-type temporary"><i data-feather="clock"></i><?php echo $rows->name;?></span>
                             
                             <?php  if($rows->exp == 1){ ?>
                             <span class="badge bg-badge-danger">منقضی شده</span>

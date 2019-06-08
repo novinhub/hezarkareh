@@ -2,6 +2,7 @@
 class Check{
 	public function my_hook(){
         $CI =& get_instance();
+        if($CI->uri->segment(1) == '' or $CI->uri->segment(1) == 'home'){
         $CI->load->library('Convertdate');
         $date = $CI->convertdate->convert(time());
         $d = $date['d'];
@@ -32,6 +33,7 @@ class Check{
         }else{
            $CI->base_model->set('visit' , 'visit + 1' , array('id'=>$check->id) , 'visit');
         }
-	}
+    }
+}
 }
 ?>
