@@ -110,15 +110,23 @@
 								</li>
 
 								<li>
-									<a href=""><i class="icon-users4 <?php if($active == 'admin'){echo 'active';} ?>"></i> <span>کاربران</span></a>
+									<a href=""><i class="icon-users4 <?php if($active == 'admin'){echo 'active';} ?>"></i> <span>کارفرمایان</span></a>
 									<ul>
-										<li class="<?php if($active_sub == 'admin_archive'){echo 'active';} ?>"><a href="<?php echo base_url('employer/arshive') ?>">آرشیو کارفرمایان</a>
+										<li class="<?php if($active_sub == 'admin_archive'){echo 'active';} ?>"><a href="<?php echo base_url('employer/archive') ?>">آرشیو کارفرمایان</a>
 										</li>
 
 										<li class="<?php if($active_sub == 'admin_add'){echo 'active';} ?>"><a href="<?php echo base_url('employer/jobs') ?>">آگهی ها </a>
 										</li>
 										<li class="<?php if($active_sub == 'admin_add'){echo 'active';} ?>"><a href="<?php echo base_url('employer/unspecified_jobs') ?>">آگهی های تایید نشده</a>
 										</li>
+									</ul>
+								</li>
+								<li>
+									<a href=""><i class="icon-users4 <?php if($active == 'admin'){echo 'active';} ?>"></i> <span>کارجویان</span></a>
+									<ul>
+										<li class="<?php if($active_sub == 'admin_archive'){echo 'active';} ?>"><a href="<?php echo base_url('applicant/archive') ?>">آرشیو کارفرمایان</a>
+										</li>
+
 									</ul>
 								</li>
 								<!-- /main -->

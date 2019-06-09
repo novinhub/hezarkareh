@@ -5,7 +5,7 @@
     <li class="active">Basic examples</li>
   </ul>
 </div>
-<form action="#">
+
 						<div class="panel panel-flat">
 							<div class="panel-body">
 								<div class="row">
@@ -15,35 +15,25 @@
 
 											<div class="form-group">
 												<label>نام و نام خانوادگی: </label>
-												<input type="text" class="form-control" placeholder="">
+												<p class="form-control" placeholder=""></p>
 											</div>
 											<div class="form-group">
 												<label>نام شرکت: </label>
-												<input type="text" class="form-control" placeholder="">
+												<p type="text" class="form-control" placeholder=""></p>
 											</div>
 
 											<div class="form-group">
-											<label>مکان: </label>
-											<select class="form-control" name="money_id" required>
-												<option>دلار</option>
-												<option>یورو</option>
-												<option>یوان</option>
-												<option>درهم</option>
-											</select>
-										</div>
-											<div class="form-group">
-												<label>ایمیل: </label>
-												<input type="email" class="form-control" placeholder="">
+												<label>مکان:</label>
+												<p class="form-control" placeholder=""></p>
 											</div>
 											<div class="form-group">
-											<label>حوزه فعالیت: </label>
-											<select class="form-control" name="money_id" required>
-												<option>دلار</option>
-												<option>یورو</option>
-												<option>یوان</option>
-												<option>درهم</option>
-											</select>
-                                        </div>
+												<label>ایمیل: </label>
+												<p class="form-control" placeholder=""></p>
+											</div>
+											<div class="form-group">
+												<label>حوزه فعالیت:</label>
+												<p class="form-control" placeholder=""></p>
+											</div>
 											<div class="form-group">
 												<label>اطلاعات تکمیلی:</label>
 												<textarea class="form-control" ></textarea>
@@ -59,5 +49,5 @@
 								</div>
 							</div>
 						</div>
-					</form>
+
 					<!-- /2 columns form -->

@@ -15,38 +15,28 @@
 
 											<div class="form-group">
 												<label>نام و نام خانوادگی: </label>
-												<input type="text" class="form-control" placeholder="">
+												<input type="text" class="form-control" placeholder="" readonly>
 											</div>
 											<div class="form-group">
 												<label>نام شرکت: </label>
-												<input type="text" class="form-control" placeholder="">
+												<input type="text" class="form-control" placeholder="" readonly>
 											</div>
 
 											<div class="form-group">
-											<label>مکان: </label>
-											<select class="form-control" name="money_id" required>
-												<option>دلار</option>
-												<option>یورو</option>
-												<option>یوان</option>
-												<option>درهم</option>
-											</select>
-										</div>
-											<div class="form-group">
-												<label>ایمیل: </label>
-												<input type="email" class="form-control" placeholder="">
+												<label>مکان:</label>
+												<input type="text" class="form-control" placeholder="" readonly>
 											</div>
 											<div class="form-group">
-											<label>حوزه فعالیت: </label>
-											<select class="form-control" name="money_id" required>
-												<option>دلار</option>
-												<option>یورو</option>
-												<option>یوان</option>
-												<option>درهم</option>
-											</select>
-                                        </div>
+												<label>ایمیل: </label>
+												<input type="email" class="form-control" placeholder="" readonly>
+											</div>
+											<div class="form-group">
+												<label>حوزه فعالیت:</label>
+												<input type="text" class="form-control" placeholder="" readonly>
+											</div>
 											<div class="form-group">
 												<label>اطلاعات تکمیلی:</label>
-												<textarea class="form-control" ></textarea>
+												<textarea readonly class="form-control" ></textarea >
 											</div>
 										</fieldset>
 									</div>

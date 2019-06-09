@@ -17,7 +17,7 @@
 						<div class="col-md-3">
 							<div class="form-group">
 								<label>جستجو : </label>
-								<input class="form-control" name="fullname" value="<?php echo $this->input->get('fullname');?>" type="search" onkeyup="search_cust(this)" placeholder="نام مشتری خود را جستجو کنید">
+								<input class="form-control"  type="search"  placeholder="نام آگهی خود را جستجو کنید">
 
 							</div>
 						</div>
@@ -25,35 +25,35 @@
 							<div class="col-md-6">
 								<div class="form-group">
 									<label for="j_created_date">از تاریخ :</label>
-									<input type="text" class="form-control" name="start_date" id="j_created_date" readonly data-mddatetimepicker="true" data-enabletimepicker="true" data-placement="bottom" value="<?php if($this->input->get('start_date')){echo $this->input->get('start_date');}else{echo $date;} ?>" placeholder="Jalali Created Date">
+									<input type="text" class="form-control"  id="j_created_date" readonly data-mddatetimepicker="true" data-enabletimepicker="true" data-placement="bottom"  placeholder="Jalali Created Date">
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
 									<label for="j_created_date">تا تاریخ :</label>
-									<input type="text" class="form-control" name="end_date" id="j_created_date" readonly data-mddatetimepicker="true" data-enabletimepicker="true" data-placement="bottom" value="<?php if($this->input->get('end_date')){echo $this->input->get('end_date');}else{echo $date;} ?>" placeholder="Jalali Created Date">
+									<input type="text" class="form-control" name="end_date" id="j_created_date" readonly data-mddatetimepicker="true" data-enabletimepicker="true" data-placement="bottom"  placeholder="Jalali Created Date">
 								</div>
 							</div>
 						</div>
 						<div class="col-md-2">
 							<div class="form-group">
-								<label>نوع معامله : </label>
+								<label>مکان : </label>
 								<select class="form-control" name="type" required>
-									<option value="0" <?php if($this->input->get('type') == 0){echo 'selected';}?> >همه</option>
-									<option value="1" <?php if($this->input->get('type') == 1){echo 'selected';}?> >خرید</option>
-									<option value="2" <?php if($this->input->get('type') == 2){echo 'selected';}?> >فروش</option>
+									<option>همه</option>
+									<option>خرید</option>
+									<option>فروش</option>
 									
 								</select>
 							</div>
 						</div>
 						<div class="col-md-2">
 							<div class="form-group">
-								<label>ارز معامله : </label>
-								<select class="form-control" name="money_id" required>
-								    <option value="0" <?php if($this->input->get('money_id') == 0){echo 'selected';}?>>همه</option>
-										<?php foreach($unit as $units){ ?>
-											<option  value="<?php echo $units->id;?>" <?php if($units->id == $this->input->get('money_id')){echo 'selected';}?> ><?php echo $units->name;?></option>
-										<?php } ?>	
+								<label>دسته بندی آگهی : </label>
+								<select class="form-control" name="type" required>
+									<option>همه</option>
+									<option>خرید</option>
+									<option>فروش</option>
+									
 								</select>
 							</div>
 						</div>
@@ -70,9 +70,9 @@
 		<thead>
 			<tr>
 				<th>ردیف</th>
-				<th>نام کارفرما</th>
-				<th>تعداد آگهی ها</th>
-				<th>تاریخ ثبت نام</th>
+				<th>عنوان شغل</th>
+				<th>مکان</th>
+				<th>دسته بندی شغل</th>
 				<th>وضعیت</th>
 				<th class="text-center">ابزارک</th>
 			</tr>
@@ -83,15 +83,15 @@
 		<tbody>
 			<tr class="base_cust">
                 <td>1</td>
-                <td>علی شیرازی</td>
-				<td>4</td>
-				<td>1398/2/8</td>
+                <td> <a href="<?php echo base_url('employer/detail_jobs') ?>">برنامه نویس وب</a></td>
+				<td>شیراز</td>
+				<td>برنامه نویس</td>
 				<td><a><span class="label label-success">فعال</span></a></td>
 				<td class="text-center">
 					<ul class="icons-list">
-						<li data-toggle="tooltip" title="ویرایش " class="text-success"><a href="<?php echo base_url('employer/edit') ?>"><i class="icon-profile"></i></a>
+						<li data-toggle="tooltip" title="ثبت آگهی " class="text-success"><a href=""><i class="icon-checkmark4"></i></a>
 						</li>
-						<li data-toggle="tooltip" title="آگهی ها" class="text-primary"><a href="<?php echo base_url('employer/employer_jobs') ?>"><i class="icon-books"></i></a>
+						<li data-toggle="tooltip" title="ویرایش آگهی" class="text-primary"><a href="<?php echo base_url('employer/edit_jobs') ?>"><i class="icon-quill4"></i></a>
 						</li>
 					</ul>
 				</td>

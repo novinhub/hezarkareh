@@ -8,15 +8,21 @@ class Employer extends CI_Controller {
         parent::__construct();
     }
 
-    public function arshive(){
+    public function archive(){
         $this->load->view('header');
-        $this->load->view('employer/arshive');
+        $this->load->view('employer/archive');
         $this->load->view('footer');
 
     }
     public function edit(){
         $this->load->view('header');
         $this->load->view('employer/edit');
+        $this->load->view('footer');
+
+    }
+    public function profile(){
+        $this->load->view('header');
+        $this->load->view('employer/profile');
         $this->load->view('footer');
 
     }
@@ -29,6 +35,18 @@ class Employer extends CI_Controller {
 	    public function jobs(){
         $this->load->view('header');
         $this->load->view('employer/jobs');
+        $this->load->view('footer');
+
+    }
+    public function detail_jobs(){
+        $this->load->view('header');
+        $this->load->view('employer/detail_jobs');
+        $this->load->view('footer');
+
+    }
+    public function edit_jobs(){
+        $this->load->view('header');
+        $this->load->view('employer/edit_jobs');
         $this->load->view('footer');
 
     }

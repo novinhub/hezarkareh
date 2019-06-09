@@ -38,13 +38,13 @@
 		<tbody>
 			<tr class="base_cust">
                 <td>1</td>
-                <td>علی شیرازی</td>
+                <td><a href="<?php echo base_url('employer/profile') ?>"> علی شیرازی</a></td>
 				<td>4</td>
 				<td>1398/2/8</td>
 				<td><a><span class="label label-success">فعال</span></a></td>
 				<td class="text-center">
 					<ul class="icons-list">
-						<li data-toggle="tooltip" title="ویرایش " class="text-success"><a href="<?php echo base_url('employer/edit') ?>"><i class="icon-profile"></i></a>
+						<li data-toggle="tooltip" title="ویرایش " class="text-success"><a href="<?php echo base_url('employer/edit') ?>"><i class="icon-quill4"></i></a>
 						</li>
 						<li data-toggle="tooltip" title="آگهی ها" class="text-primary"><a href="<?php echo base_url('employer/employer_jobs') ?>"><i class="icon-books"></i></a>
 						</li>
