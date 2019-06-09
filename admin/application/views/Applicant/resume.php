@@ -78,12 +78,9 @@
 							<p class="form-control" placeholder="" readonly>
 							</P>
 						</div>
-					
 
-			
 				</div>
 				<div class="col-md-6">
-
 				<legend class="text-semibold"><i class="icon-quill4 position-left"></i>تحصیلات: </legend>
 						<div class="form-group">
 							<label> رشته تحصیلی (گرایش)  </label>
