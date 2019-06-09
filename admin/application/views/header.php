@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" dir="rtl">
+
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -58,6 +59,7 @@
 
 						<i class="caret"></i>
 					</a>
+				
 					<ul class="dropdown-menu dropdown-menu-right">
 						<li><a href="<?php echo base_url('admin/edit/').$this->session->userdata('id');?>"><i class="icon-user-plus"></i> ویرایش حساب کاربری</a>
 						</li>

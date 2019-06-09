@@ -5029,11 +5029,11 @@ ul.dropdown-menu .dropdown-content-heading:first-child {
   background-color: #4CAF50;
 }
 .label-info {
-  border-color: #00BCD4;
+  border-color: rgb(136, 136, 136);
 }
 .label-info[href]:hover,
 .label-info[href]:focus {
-  background-color: #00BCD4;
+  background-color: rgb(136, 136, 136);
 }
 .label-warning {
   border-color: #FF5722;
@@ -7038,4 +7038,9 @@ padding: 10px;
 }
 .mt-label{
   margin-top: 7px;
+}
+
+.label-info {
+  background-color: rgb(136, 136, 136);
+ 
 }
